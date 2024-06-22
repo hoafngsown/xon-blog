@@ -1,0 +1,27 @@
+{
+  "common": {
+    "navigation": {
+      "home": "trang chủ",
+      "blog": "blog",
+      "contact": "liên hệ"
+    },
+    "drawer": {
+      "home": "trang chủ",
+      "blog": "blog tui viết",
+      "contact": "liên hệ",
+      "experience": "kinh nghiệm làm việc",
+      "resume": "Tải CV của tui ở đây"
+    },
+    "headerMobile": {
+      "title": "Góc của Xơn",
+      "description": "những chuyện 'linh tinh'"
+    }
+  },
+  "page": {
+    "notFound": {
+      "title": "Không tìm thấy trang mà bạn tìm kiếm",
+      "description": "Có lẽ trang mà bạn tìm kiếm không tồn tại hoặc bạn không có quyền để truy cập",
+      "button": "Trở lại màn hình chính"
+    }
+  }
+}

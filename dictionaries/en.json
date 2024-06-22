@@ -1,0 +1,27 @@
+{
+  "common": {
+    "navigation": {
+      "home": "home",
+      "blog": "blog",
+      "contact": "contact"
+    },
+    "drawer": {
+      "home": "home",
+      "blog": "my blogs",
+      "contact": "contact me",
+      "experience": "my experience",
+      "resume": "download my resume here"
+    },
+    "headerMobile": {
+      "title": "Daniel Space",
+      "description": "My bullshit stories"
+    }
+  },
+  "page": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "Either this page doesn't exist or you don't have permission to access it",
+      "button": "Back to home page"
+    }
+  }
+}
