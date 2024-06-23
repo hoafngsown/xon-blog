@@ -37,7 +37,7 @@ export default function BottomNavigation() {
   }, [t]);
 
   return (
-    <div className="fixed bottom-2 left-0 h-[50px] w-full bg-white px-2">
+    <nav className="fixed bottom-2 left-0 h-[50px] w-full bg-white px-2">
       <ul className="border-primary flex h-full list-none items-stretch justify-between overflow-hidden rounded-[40px] border border-solid p-1.5">
         {MOBILE_LINK.map((item, index) => {
           const isActive = pathname === item.url;
@@ -48,7 +48,7 @@ export default function BottomNavigation() {
             >
               <Link
                 href={item.url}
-                className="flex h-full items-center justify-center gap-x-1"
+                className="flex h-full items-center justify-center gap-x-1 sm:gap-x-2"
               >
                 {item.icon && (
                   <item.icon
@@ -57,7 +57,7 @@ export default function BottomNavigation() {
                 )}
                 <h3
                   className={cn(
-                    "text-title font-medium capitalize",
+                    "text-xs font-medium capitalize sm:text-sm",
                     isActive && "text-white",
                   )}
                 >
@@ -71,6 +71,6 @@ export default function BottomNavigation() {
           <NavigationDrawer />
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
