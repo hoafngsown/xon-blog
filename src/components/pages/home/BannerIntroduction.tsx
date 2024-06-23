@@ -33,8 +33,8 @@ export default function BannerIntroduction({ currentSlide }: Props) {
       className={cn(
         "absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center sm:bottom-full sm:left-[20%] sm:translate-y-full md:left-full md:-translate-x-full xl:bottom-0",
         {
-          "xl:left-1/2 xl:-translate-x-1/2": [1, 4, 5].includes(currentSlide),
-          "xl:bottom-1/2": currentSlide === 2,
+          "xl:bottom-full xl:left-full ": [1, 4].includes(currentSlide),
+          "xl:bottom-1/2": [2, 5].includes(currentSlide),
           "xl:bottom-full xl:left-0 xl:translate-x-[20px] xl:translate-y-full":
             currentSlide === 3,
         },
