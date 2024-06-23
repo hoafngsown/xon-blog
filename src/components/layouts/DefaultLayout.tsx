@@ -4,6 +4,7 @@ import React from "react";
 import Header from "../common/Header";
 import BottomNavigation from "../common/Navigation/BottomNavigation";
 import TopNavigation from "../common/Navigation/TopNavigation";
+import SocialSideBar from "../common/Navigation/SocialSideBar";
 
 export default function DefaultLayout({
   children,
@@ -12,8 +13,8 @@ export default function DefaultLayout({
   params: { locale: string };
 }) {
   return (
-    <main className="relative min-h-screen bg-white">
-      <section className="container mx-auto">
+    <main className="bg-background relative h-[85vh]">
+      <section className="">
         <div className="hidden md:block">
           <Header />
         </div>
@@ -22,7 +23,7 @@ export default function DefaultLayout({
           <BottomNavigation />
         </div>
 
-        <div className="mt-20 md:mt-0">{children}</div>
+        <div className="container mx-auto mt-20 md:mt-[110px]">{children}</div>
       </section>
       <Image
         src={BackgroundImage}
@@ -31,6 +32,8 @@ export default function DefaultLayout({
         objectFit="cover"
         className="-z-10"
       />
+
+      <SocialSideBar />
     </main>
   );
 }

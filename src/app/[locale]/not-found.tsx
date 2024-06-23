@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ROUTE_PATH } from "@/constants/routes";
 import { Link } from "@/navigation";
-import NotFoundImage from "@/statics/images/notfound.jpg";
+import NotFoundImage from "@/statics/images/notfound.png";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -9,8 +9,8 @@ export default function NotFound() {
   const t = useTranslations("page.notFound");
 
   return (
-    <section className="flex h-screen w-full flex-col items-center justify-center gap-y-4 sm:gap-y-6 md:gap-y-10">
-      <div className="relative h-[300px] w-full">
+    <section className="flex h-[75vh] w-full flex-col items-center justify-center gap-y-4 sm:gap-y-6 md:gap-y-10">
+      <div className="relative h-[300px] w-full md:h-[400px] lg:h-[500px]">
         <Image
           src={NotFoundImage}
           alt="not-found-image"
@@ -28,7 +28,7 @@ export default function NotFound() {
       <Link href={ROUTE_PATH.HOME}>
         <Button
           type="button"
-          className="lg:text-2x2 md:text-l1 text-base font-medium md:py-1.5 lg:px-4 lg:py-2"
+          className="text-base font-medium md:py-1.5 md:text-lg lg:px-4 lg:py-2 lg:text-2xl"
         >
           {t("button")}
         </Button>

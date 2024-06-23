@@ -15,6 +15,19 @@
     "headerMobile": {
       "title": "Góc của Xơn",
       "description": "những chuyện 'linh tinh'"
+    },
+    "headerMd": {
+      "about": "Về tui",
+      "blog": "Blog tui viết",
+      "experience": "Kinh nghiệm",
+      "resume": "Tải CV của tui ở đây",
+      "contact": "Liên hệ"
+    },
+    "social": {
+      "fb": "Theo dõi tui trên Facebook",
+      "ins": "Hoặc theo dõi Instagram của tui",
+      "github": "Còn đây là Github của tui",
+      "linkedin": "Ngoài ra tui còn có LinkedIn"
     }
   },
   "page": {
@@ -22,6 +35,39 @@
       "title": "Không tìm thấy trang mà bạn tìm kiếm",
       "description": "Có lẽ trang mà bạn tìm kiếm không tồn tại hoặc bạn không có quyền để truy cập",
       "button": "Trở lại màn hình chính"
+    },
+    "home": {
+      "banner1": {
+        "title1": "Hí! Tui là Sơn",
+        "title2": "một 'Sóp we đe ve lốp pơ'",
+        "title3": ""
+      },
+      "banner2": {
+        "title1": "Hmm...",
+        "title2": "Tui sẽ chia sẻ những",
+        "title3": "câu chuyện linh tinh ở đây"
+      },
+      "banner3": {
+        "title1": "Ngoài ra tui cũng là",
+        "title2": "một Freelancer 'pát time'",
+        "title3": "hehe"
+      },
+      "banner4": {
+        "title1": "Có gì muốn nói với tui",
+        "title2": "Thì cứ hỏi ở đây nghen.",
+        "title3": ""
+      },
+      "banner5": {
+        "title1": "Liên hệ tui qua email:",
+        "title2": "hoangson242002@gmail.com",
+        "title3": ""
+      }
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Góc nhỏ - Hoàng Xơn",
+      "description": "Trang này là một vài thông tin cơ bản về tui"
     }
   }
 }

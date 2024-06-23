@@ -14,7 +14,7 @@ export default function SwitchLanguage() {
   };
 
   return (
-    <div className="mt-10 flex h-5 items-center space-x-4 text-sm">
+    <div className="flex h-5 items-center space-x-4 text-sm">
       <Link href="/" locale={locales[0]}>
         <p
           className={cn(

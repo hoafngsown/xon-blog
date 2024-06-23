@@ -13,8 +13,21 @@
       "resume": "download my resume here"
     },
     "headerMobile": {
-      "title": "Daniel Space",
+      "title": "Xơn Space",
       "description": "My bullshit stories"
+    },
+    "headerMd": {
+      "about": "About Me",
+      "blog": "My Blogs",
+      "experience": "Experiences",
+      "resume": "Download Resume",
+      "contact": "Contact"
+    },
+    "social": {
+      "fb": "Follow me on Facebook",
+      "ins": "Or follow me on Instagram",
+      "github": "This is my Github",
+      "linkedin": "I also have LinkedIn"
     }
   },
   "page": {
@@ -22,6 +35,39 @@
       "title": "Page not found",
       "description": "Either this page doesn't exist or you don't have permission to access it",
       "button": "Back to home page"
+    },
+    "home": {
+      "banner1": {
+        "title1": "Hi! I'm Sơn",
+        "title2": "a 'Software Developer'",
+        "title3": ""
+      },
+      "banner2": {
+        "title1": "Hmm...",
+        "title2": "I will share",
+        "title3": "random stories here"
+      },
+      "banner3": {
+        "title1": "Besides, I am also",
+        "title2": "a 'part-time' Freelancer",
+        "title3": "hehe"
+      },
+      "banner4": {
+        "title1": "If you have",
+        "title2": "something to say to me",
+        "title3": "just ask here, okay?"
+      },
+      "banner5": {
+        "title1": "Contact me by email:",
+        "title2": "hoangson242002@gmail.com",
+        "title3": ""
+      }
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "My Space - Hoàng Xơn",
+      "description": "This page just introduce myself abit"
     }
   }
 }

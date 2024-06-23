@@ -36,13 +36,13 @@ export default function NavigationDrawer() {
         url: ROUTE_PATH.EXPERIENCES,
       },
       {
+        label: t("contact"),
+        url: ROUTE_PATH.CONTACT,
+      },
+      {
         label: t("resume"),
         url: "",
         icon: IconDownload,
-      },
-      {
-        label: t("contact"),
-        url: ROUTE_PATH.CONTACT,
       },
     ];
   }, [t]);
@@ -58,7 +58,7 @@ export default function NavigationDrawer() {
         <IconMenu />
       </DrawerTrigger>
       <DrawerContent className="h-full w-full">
-        <div className="relative mx-auto flex h-full w-full max-w-sm">
+        <nav className="relative mx-auto flex h-full w-full max-w-sm">
           <DrawerClose asChild className="absolute right-0 top-0">
             <IconClose width={28} height={28} />
           </DrawerClose>
@@ -83,9 +83,12 @@ export default function NavigationDrawer() {
                 </li>
               );
             })}
-            <SwitchLanguage />
+
+            <li className="mt-10">
+              <SwitchLanguage />
+            </li>
           </ul>
-        </div>
+        </nav>
       </DrawerContent>
     </Drawer>
   );

@@ -13,51 +13,30 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/logo.png" }],
 };
 
-// const Nunito = localFont({
-//   src: [
-//     {
-//       path: "../../../public/fonts/Nunito/Nunito-Regular.ttf",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../../public/fonts/Nunito/Nunito-Italic.ttf",
-//       weight: "400",
-//       style: "italic",
-//     },
-//     {
-//       path: "../../../public/fonts/Nunito/Nunito-Medium.ttf",
-//       weight: "500",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../../public/fonts/Nunito/Nunito-Bold.ttf",
-//       weight: "700",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../../public/fonts/Nunito/Nunito-BoldItalic.ttf",
-//       weight: "700",
-//       style: "italic",
-//     },
-//   ],
-//   variable: "--font-nunito",
-// });
-
-const Courier = localFont({
+const Mali = localFont({
   src: [
     {
-      path: "../../../public/fonts/Courier/Courier-Regular.ttf",
+      path: "../../../public/fonts/Mali/Mali-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Courier/Courier-BoldRegular.ttf",
+      path: "../../../public/fonts/Mali/Mali-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../../public/fonts/Mali/Mali-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Mali/Mali-Bold.ttf",
       weight: "700",
       style: "normal",
     },
   ],
-  variable: "--font-courier",
+  variable: "--font-mali",
 });
 
 export function generateStaticParams() {
@@ -72,8 +51,7 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
-  // Providing all messages to the client
-  // side is the easiest way to get started
+
   const messages = await getMessages();
 
   return (
@@ -82,7 +60,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={cn(
         "bg-background min-h-screen font-sans antialiased",
-        Courier.variable,
+        Mali.variable,
       )}
     >
       <body>
