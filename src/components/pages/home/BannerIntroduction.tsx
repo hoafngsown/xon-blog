@@ -31,7 +31,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
     <div
       ref={ref}
       className={cn(
-        "absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center sm:bottom-full sm:left-[20%] sm:translate-y-full md:left-full md:-translate-x-full xl:bottom-0",
+        "absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center justify-center sm:bottom-full sm:left-[20%] sm:translate-y-full md:left-full md:-translate-x-full xl:bottom-0",
         {
           "xl:bottom-full xl:left-full ": [1, 4].includes(currentSlide),
           "xl:bottom-1/2": [2, 5].includes(currentSlide),
@@ -66,7 +66,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
 
       <Image
         ref={refAvatar}
-        className="h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
+        className="z-20 h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
         src={Logo}
         alt="logo"
         width={80}
