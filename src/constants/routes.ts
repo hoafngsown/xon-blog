@@ -4,6 +4,7 @@ export const ROUTE_PATH = {
     INDEX: "/blogs",
     DETAIL: "/blogs/:id",
   },
+  ABOUT: "/about",
   CONTACT: "/contacts",
   EXPERIENCES: "/experiences",
 };

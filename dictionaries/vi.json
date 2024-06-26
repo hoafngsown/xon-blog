@@ -7,6 +7,7 @@
     },
     "drawer": {
       "home": "trang chủ",
+      "about": "về tui",
       "blog": "blog tui viết",
       "contact": "liên hệ",
       "experience": "kinh nghiệm làm việc",
@@ -62,12 +63,30 @@
         "title2": "hoangson242002@gmail.com",
         "title3": ""
       }
+    },
+    "about": {
+      "title": "Tui là ai ?",
+      "introduction": "Hí, tui là Sơn",
+      "position1": "Front End Developer",
+      "position2": "Blogger",
+      "quote": "The best way to predict the future is to create it",
+      "description1": "Hiện tại tui đang là một",
+      "description2": ", và cũng đang tập tành để trở thành một",
+      "description3": "Tui bắt đầu tìm hiểu Javascript từ năm 2021, chuyên ngành của tui là CNTT.",
+      "description4": "Cũng may mắn vì vừa năm 2 đại học, tui đã tìm được chỗ thực tập khá tốt. Tui luôn biết ơn những người anh đã nhiệt huyết và tận tâm training cho tui trong suốt quãng thời gian đó.",
+      "description5": "Tui vẫn đang cố gắng hoàn thiện bản thân hơn, những gì tui biết tui đều chia sẻ tận tâm, hi vọng sẽ giúp ích cho mọi người một phần nào đó",
+      "description6": "À, có một câu tui khá tâm đắc, đó là: ",
+      "description7": "Thế nên, cứ làm đi mà đừng sợ nhé mọi người hehe."
     }
   },
   "metadata": {
     "home": {
       "title": "Góc nhỏ - Hoàng Xơn",
-      "description": "Trang này là một vài thông tin cơ bản về tui"
+      "description": "Đây là góc mà tui chia sẻ những câu chuyện linh tinh của mình, như là các blogs, những lần phỏng vấn, mấy cái chuyện ngu ngốc xảy ra với tui, bla bla..."
+    },
+    "about": {
+      "title": "Về tui - Hoàng Xơn",
+      "description": "Đây là những thông tin cơ bản, hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hehe"
     }
   }
 }

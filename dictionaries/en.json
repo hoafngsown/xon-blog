@@ -7,6 +7,7 @@
     },
     "drawer": {
       "home": "home",
+      "about": "about me",
       "blog": "my blogs",
       "contact": "contact me",
       "experience": "my experience",
@@ -62,12 +63,30 @@
         "title2": "hoangson242002@gmail.com",
         "title3": ""
       }
+    },
+    "about": {
+      "title": "Who Am I?",
+      "introduction": "Hi, I’m Sơn.",
+      "position1": "Front End Developer",
+      "position2": "Blogger",
+      "quote": "The best way to predict the future is to create it",
+      "description1": "Currently, I’m a",
+      "description2": ", and also aspiring to become a",
+      "description3": "I started learning JavaScript in 2021, and my major is Information Technology.",
+      "description4": "Luckily, during my second year at university, I found a pretty good internship. I am always grateful to the mentors who passionately and diligently trained me during that time.",
+      "description5": "I am continually striving to improve myself. Everything I know, I share wholeheartedly in the hope that it will be of some help to others.",
+      "description6": "Oh, there’s a quote I really cherish, which is:",
+      "description7": "So, just go for it and don’t be afraid, everyone! Hehe."
     }
   },
   "metadata": {
     "home": {
       "title": "My Space - Hoàng Xơn",
-      "description": "This page just introduce myself abit"
+      "description": "A little corner for my soul, where I share all stupid things of my life."
+    },
+    "about": {
+      "title": "About me - Hoàng Xơn",
+      "description": "Discover more about me on this page dedicated to sharing my personal story."
     }
   }
 }

@@ -2,21 +2,13 @@ import Logo from "@/../public/logo.png";
 import { cn } from "@/libs/utils";
 import FrameChat2 from "@/statics/images/frame-chat-2.png";
 import FrameChat3 from "@/statics/images/frame-chat-3.png";
-import { useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useRef } from "react";
 
-import { motion } from "framer-motion";
 interface Props {
   currentSlide: number;
 }
 export default function BannerIntroduction({ currentSlide }: Props) {
-  const ref = useRef(null);
-  const refAvatar = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const isInViewAvatar = useInView(refAvatar, { once: true });
-
   const t = useTranslations("page.home");
 
   const getFrameChat = () => {
@@ -29,7 +21,6 @@ export default function BannerIntroduction({ currentSlide }: Props) {
 
   return (
     <div
-      ref={ref}
       className={cn(
         "absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center justify-center sm:bottom-full sm:left-[20%] sm:translate-y-full md:left-full md:-translate-x-full xl:bottom-0",
         {
@@ -40,15 +31,10 @@ export default function BannerIntroduction({ currentSlide }: Props) {
         },
       )}
     >
-      <motion.div
+      <div
         className={cn(
-          "relative flex h-[100px] w-[175px] justify-center sm:h-[125px] sm:w-[225px] md:w-[300px]",
+          "relative flex h-[90px] w-[175px] translate-x-[50px] justify-center sm:h-[120px] sm:w-[225px] md:mb-2 md:w-[300px]",
         )}
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.35s ease 0.35s",
-        }}
       >
         <Image
           src={getFrameChat()}
@@ -62,21 +48,15 @@ export default function BannerIntroduction({ currentSlide }: Props) {
           <span>{t(`${translationKey}.title2`)}</span>
           <span>{t(`${translationKey}.title3`)}</span>
         </p>
-      </motion.div>
+      </div>
 
       <Image
-        ref={refAvatar}
         className="z-20 h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
         src={Logo}
         alt="logo"
         width={80}
         height={80}
         objectFit="contain"
-        style={{
-          transform: isInViewAvatar ? "none" : "translateX(200px)",
-          opacity: isInViewAvatar ? 1 : 0,
-          transition: "all 0.35s ease 0.35s",
-        }}
       />
     </div>
   );

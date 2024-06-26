@@ -33,11 +33,14 @@ export default function HomePage() {
   }, [api]);
 
   return (
-    <main className="min-h-[80vh] lg:pt-20">
+    <main className="min-h-[70vh] sm:pt-6 md:pt-20">
       <section className="relative h-[550px] sm:h-[650px]">
         <Carousel
           className="relative w-full"
           setApi={setApi}
+          opts={{
+            loop: true,
+          }}
           plugins={[
             Autoplay({
               delay: 5000,
