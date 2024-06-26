@@ -28,6 +28,10 @@ export default function NavigationDrawer() {
         url: ROUTE_PATH.HOME,
       },
       {
+        label: t("about"),
+        url: ROUTE_PATH.ABOUT,
+      },
+      {
         label: t("blog"),
         url: ROUTE_PATH.BLOG.INDEX,
       },
@@ -57,7 +61,7 @@ export default function NavigationDrawer() {
       <DrawerTrigger asChild>
         <IconMenu />
       </DrawerTrigger>
-      <DrawerContent className="h-full w-full">
+      <DrawerContent className="z-[1000] h-full w-full">
         <nav className="relative mx-auto flex h-full w-full max-w-sm">
           <DrawerClose asChild className="absolute right-0 top-0">
             <IconClose width={28} height={28} />

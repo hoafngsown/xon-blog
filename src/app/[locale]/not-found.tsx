@@ -8,6 +8,8 @@ import Image from "next/image";
 export default function NotFound() {
   const t = useTranslations("page.notFound");
 
+  console.log("hehe");
+
   return (
     <section className="flex h-[75vh] w-full flex-col items-center justify-center gap-y-4 sm:gap-y-6 md:gap-y-10">
       <div className="relative h-[300px] w-full md:h-[400px] lg:h-[500px]">
