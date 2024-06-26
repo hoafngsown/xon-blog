@@ -15,7 +15,7 @@ export default function DefaultLayout({
 }) {
   return (
     <main className="bg-background relative h-full">
-      <section className="flex h-full flex-col">
+      <section className="flex min-h-full flex-col pb-[50px] md:pb-0">
         <div className="hidden md:block">
           <Header />
         </div>
