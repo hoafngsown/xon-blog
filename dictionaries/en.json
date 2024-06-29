@@ -38,7 +38,7 @@
     "home": {
       "banner1": {
         "title1": "Hi! I'm Sơn",
-        "title2": "a 'Software Developer'",
+        "title2": "a 'Frontend Engineer'",
         "title3": ""
       },
       "banner2": {
@@ -49,7 +49,7 @@
       "banner3": {
         "title1": "Besides, I am also",
         "title2": "a 'part-time' Freelancer",
-        "title3": "hehe"
+        "title3": ""
       },
       "banner4": {
         "title1": "If you have",
@@ -64,31 +64,55 @@
     },
     "about": {
       "title": "Who Am I ?",
-      "introduction": "Hello! I'm Sơn.",
-      "position1": "Front End Developer",
+      "introduction": "Hi, I'm Sơn",
+      "position1": "Front End Engineer",
       "position2": "Blogger",
       "description1": "Currently, I am a",
-      "description2": ", and I am also learning to become a",
-      "description3": "I am proud to be an IT student at DUT, and I was fortunate to find an internship in my second year of university. This opportunity allowed me to learn, challenge myself, and grow my skills.",
-      "description4": "I am deeply grateful to the mentors who have devoted their time to help me develop and refine myself.",
-      "description5": "I am continually striving to improve and I share everything I know with complete sincerity, hoping to help others in some way.",
-      "description6": "Also, this place is where I write down my knowledge, personal experiences, and various stories. If you're interested, feel free to drop by and check out my blog—looking forward to seeing you here!"
+      "description2": ", and I am also trying to become a",
+      "description3": "I'm also an IT student at DUT. Luckily, in my second year of university, I found an internship to learn, test my skills, and improve.",
+      "description4": "I am always grateful to the mentors who have dedicatedly helped me in my development and self-improvement.",
+      "description5": "I am still trying to better myself. Whatever I know, I share wholeheartedly, hoping to be of help to others in some way.",
+      "description6": "Oh, this place is where I write down my knowledge, personal experiences, and various stories. If you're interested, feel free to drop by."
+    },
+    "contacts": {
+      "title1": "Support Me",
+      "title2": "Contact Me",
+      "introduction1": "You can contact me",
+      "introduction2": " here!",
+      "description1": "Hi, if you find my blogs interesting, you could buy me 'a coffee'.",
+      "description2": "Your support is both funding and motivation for me to write more interesting blogs.",
+      "description3": "Thank you everyone! <3",
+      "form": {
+        "email": "Email",
+        "phone": "Phone Number",
+        "name": "Your Name",
+        "message": "Message",
+        "button": "Send Here!"
+      }
     }
   },
   "metadata": {
     "home": {
-      "title": "My Space - Hoàng Xơn",
+      "title": "My space - Hoàng Xơn",
       "description": "A little corner for my soul, where I share all stupid things of my life."
     },
     "about": {
       "title": "About me - Hoàng Xơn",
       "description": "Discover more about me on this page dedicated to sharing my personal story."
+    },
+    "contacts": {
+      "title": "Contact me - Hoàng Xơn",
+      "description": "Everything you need to get in touch with me."
     }
   },
   "breadcrumbs": {
     "about": {
       "home": "Home",
       "about": "About me"
+    },
+    "contacts": {
+      "home": "Home",
+      "contacts": "Contact me"
     }
   }
 }
