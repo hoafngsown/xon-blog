@@ -38,7 +38,7 @@
     "home": {
       "banner1": {
         "title1": "Hí! Tui là Sơn",
-        "title2": "một 'Sóp we đe ve lốp pơ'",
+        "title2": "một 'Phờ-rôn-en ên gi nia'",
         "title3": ""
       },
       "banner2": {
@@ -49,7 +49,7 @@
       "banner3": {
         "title1": "Ngoài ra tui cũng là",
         "title2": "một Freelancer 'pát time'",
-        "title3": "hehe"
+        "title3": ""
       },
       "banner4": {
         "title1": "Có gì muốn nói với tui",
@@ -65,14 +65,30 @@
     "about": {
       "title": "Tui là ai ?",
       "introduction": "Hí, tui là Sơn",
-      "position1": "Front End Developer",
+      "position1": "Front End Engineer",
       "position2": "Blogger",
       "description1": "Hiện tại tui đang là một",
       "description2": ", và cũng đang tập tành để trở thành một",
       "description3": "Tui cũng là một IT DUT-er, may mắn khi vừa năm 2 đại học, tui đã tìm được chỗ thực tập để học hỏi, thử sức và trau dồi.",
       "description4": "Tui luôn biết ơn những người anh đã tận tâm giúp đỡ tui trong quá trình phát triển và hoàn thiện bản thân mình.",
       "description5": "Tui vẫn đang cố gắng hoàn thiện bản thân hơn, những gì tui biết tui đều chia sẻ tận tâm, hi vọng sẽ giúp ích cho mọi người một phần nào đó.",
-      "description6": "À, nơi này là nơi tui viết lại những kiến thức, trải nghiệm cá nhân và những câu chuyện linh tinh của tui, nếu mọi người có quan tâm tới tui thì cứ ghé vào đây nghen hehe"
+      "description6": "À, nơi này là nơi tui viết lại những kiến thức, trải nghiệm cá nhân và những câu chuyện linh tinh của tui, nếu mọi người có quan tâm tới tui thì cứ ghé vào đây nghen hehe."
+    },
+    "contacts": {
+      "title1": "Ủng hộ tui",
+      "title2": "Liên hệ tui",
+      "introduction1": "Mọi người liên hệ tui",
+      "introduction2": "ở đây nghen !",
+      "description1": "Hí, nếu như mọi người cảm thấy những blog của tui hay thì có thể tặng tui '1 ly cà phê' nhé.",
+      "description2": "Sự ủng hộ của mọi người là kinh phí và động lực để tui có thể viết nhiều blog hay hơn.",
+      "description3": "Cảm ơn mọi người ! <3",
+      "form": {
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "name": "Tên của bạn",
+        "message": "Nội dung",
+        "button": "Gửi ở đây nè !"
+      }
     }
   },
   "metadata": {
@@ -82,13 +98,21 @@
     },
     "about": {
       "title": "Về tui - Hoàng Xơn",
-      "description": "Đây là những thông tin cơ bản, hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hehe"
+      "description": "Đây là những thông tin cơ bản, hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hehe."
+    },
+    "contacts": {
+      "title": "Liên hệ tui - Hoàng Xơn",
+      "description": "Đây là trang mà mọi người có thể tìm kiếm thông tin để có thể liên hệ tui nghen."
     }
   },
   "breadcrumbs": {
     "about": {
       "home": "Trang chủ",
       "about": "Về tui"
+    },
+    "contacts": {
+      "home": "Trang chủ",
+      "contacts": "Liên hệ tui"
     }
   }
 }

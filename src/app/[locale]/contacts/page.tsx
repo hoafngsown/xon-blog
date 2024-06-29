@@ -1,13 +1,12 @@
-import AboutPageComponents from "@/components/pages/about/AboutPage";
+import ContactComponents from "@/components/pages/contacts/ContactPage";
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-
 export async function generateMetadata({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
-  const t = await getTranslations({ locale, namespace: "metadata.about" });
+  const t = await getTranslations({ locale, namespace: "metadata.contacts" });
 
   return {
     title: t("title"),
@@ -17,5 +16,5 @@ export async function generateMetadata({
 }
 
 export default async function AboutPage() {
-  return <AboutPageComponents />;
+  return <ContactComponents />;
 }
