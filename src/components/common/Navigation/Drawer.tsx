@@ -7,17 +7,18 @@ import {
 } from "@/components/ui/drawer";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
-import { Link } from "@/navigation";
+import { Link, usePathname } from "@/navigation";
 import { type LinkType } from "@/types/common";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import IconClose from "../../icons/IconClose";
-import IconDownload from "../../icons/IconDownload";
 import IconMenu from "../../icons/IconMenu";
 import SwitchLanguage from "./SwitchLanguage";
 
 export default function NavigationDrawer() {
   const t = useTranslations("common.drawer");
+
+  const pathname = usePathname();
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -43,11 +44,6 @@ export default function NavigationDrawer() {
         label: t("contact"),
         url: ROUTE_PATH.CONTACT,
       },
-      {
-        label: t("resume"),
-        url: "",
-        icon: IconDownload,
-      },
     ];
   }, [t]);
 
@@ -68,6 +64,10 @@ export default function NavigationDrawer() {
           </DrawerClose>
           <ul className="flex h-full w-full flex-col items-center justify-center gap-y-8">
             {DRAWER_LINK.map((item, index) => {
+              const isActive =
+                item.url === ROUTE_PATH.HOME
+                  ? pathname === ROUTE_PATH.HOME
+                  : item.url && pathname.startsWith(item.url);
               return (
                 <li key={item.label + "_" + index}>
                   <Link
@@ -78,6 +78,7 @@ export default function NavigationDrawer() {
                     <h3
                       className={cn(
                         "text-title text-xl font-medium capitalize",
+                        isActive && "text-primary",
                       )}
                     >
                       {item.label}

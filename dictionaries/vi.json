@@ -10,8 +10,7 @@
       "about": "về tui",
       "blog": "blog tui viết",
       "contact": "liên hệ",
-      "experience": "kinh nghiệm làm việc",
-      "resume": "Tải CV của tui ở đây"
+      "experience": "kinh nghiệm làm việc"
     },
     "headerMobile": {
       "title": "Góc của Xơn",
@@ -21,7 +20,6 @@
       "about": "Về tui",
       "blog": "Blog tui viết",
       "experience": "Kinh nghiệm",
-      "resume": "Tải CV của tui ở đây",
       "contact": "Liên hệ"
     },
     "social": {
@@ -69,14 +67,12 @@
       "introduction": "Hí, tui là Sơn",
       "position1": "Front End Developer",
       "position2": "Blogger",
-      "quote": "The best way to predict the future is to create it",
       "description1": "Hiện tại tui đang là một",
       "description2": ", và cũng đang tập tành để trở thành một",
-      "description3": "Tui bắt đầu tìm hiểu Javascript từ năm 2021, chuyên ngành của tui là CNTT.",
-      "description4": "Cũng may mắn vì vừa năm 2 đại học, tui đã tìm được chỗ thực tập khá tốt. Tui luôn biết ơn những người anh đã nhiệt huyết và tận tâm training cho tui trong suốt quãng thời gian đó.",
-      "description5": "Tui vẫn đang cố gắng hoàn thiện bản thân hơn, những gì tui biết tui đều chia sẻ tận tâm, hi vọng sẽ giúp ích cho mọi người một phần nào đó",
-      "description6": "À, có một câu tui khá tâm đắc, đó là: ",
-      "description7": "Thế nên, cứ làm đi mà đừng sợ nhé mọi người hehe."
+      "description3": "Tui cũng là một IT DUT-er, may mắn khi vừa năm 2 đại học, tui đã tìm được chỗ thực tập để học hỏi, thử sức và trau dồi.",
+      "description4": "Tui luôn biết ơn những người anh đã tận tâm giúp đỡ tui trong quá trình phát triển và hoàn thiện bản thân mình.",
+      "description5": "Tui vẫn đang cố gắng hoàn thiện bản thân hơn, những gì tui biết tui đều chia sẻ tận tâm, hi vọng sẽ giúp ích cho mọi người một phần nào đó.",
+      "description6": "À, nơi này là nơi tui viết lại những kiến thức, trải nghiệm cá nhân và những câu chuyện linh tinh của tui, nếu mọi người có quan tâm tới tui thì cứ ghé vào đây nghen hehe"
     }
   },
   "metadata": {
@@ -87,6 +83,12 @@
     "about": {
       "title": "Về tui - Hoàng Xơn",
       "description": "Đây là những thông tin cơ bản, hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hehe"
+    }
+  },
+  "breadcrumbs": {
+    "about": {
+      "home": "Trang chủ",
+      "about": "Về tui"
     }
   }
 }
