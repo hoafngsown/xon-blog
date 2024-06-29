@@ -59,7 +59,7 @@ export default async function LocaleLayout({
       lang={locale}
       suppressHydrationWarning
       className={cn(
-        "bg-background h-screen font-sans antialiased",
+        "bg-background h-screen overflow-x-hidden font-sans antialiased",
         Mali.variable,
       )}
     >

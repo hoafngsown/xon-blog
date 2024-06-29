@@ -10,8 +10,7 @@
       "about": "about me",
       "blog": "my blogs",
       "contact": "contact me",
-      "experience": "my experience",
-      "resume": "download my resume here"
+      "experience": "my experience"
     },
     "headerMobile": {
       "title": "Xơn Space",
@@ -21,7 +20,6 @@
       "about": "About Me",
       "blog": "My Blogs",
       "experience": "Experiences",
-      "resume": "Download Resume",
       "contact": "Contact"
     },
     "social": {
@@ -65,18 +63,16 @@
       }
     },
     "about": {
-      "title": "Who Am I?",
-      "introduction": "Hi, I’m Sơn.",
+      "title": "Who Am I ?",
+      "introduction": "Hello! I'm Sơn.",
       "position1": "Front End Developer",
       "position2": "Blogger",
-      "quote": "The best way to predict the future is to create it",
-      "description1": "Currently, I’m a",
-      "description2": ", and also aspiring to become a",
-      "description3": "I started learning JavaScript in 2021, and my major is Information Technology.",
-      "description4": "Luckily, during my second year at university, I found a pretty good internship. I am always grateful to the mentors who passionately and diligently trained me during that time.",
-      "description5": "I am continually striving to improve myself. Everything I know, I share wholeheartedly in the hope that it will be of some help to others.",
-      "description6": "Oh, there’s a quote I really cherish, which is:",
-      "description7": "So, just go for it and don’t be afraid, everyone! Hehe."
+      "description1": "Currently, I am a",
+      "description2": ", and I am also learning to become a",
+      "description3": "I am proud to be an IT student at DUT, and I was fortunate to find an internship in my second year of university. This opportunity allowed me to learn, challenge myself, and grow my skills.",
+      "description4": "I am deeply grateful to the mentors who have devoted their time to help me develop and refine myself.",
+      "description5": "I am continually striving to improve and I share everything I know with complete sincerity, hoping to help others in some way.",
+      "description6": "Also, this place is where I write down my knowledge, personal experiences, and various stories. If you're interested, feel free to drop by and check out my blog—looking forward to seeing you here!"
     }
   },
   "metadata": {
@@ -87,6 +83,12 @@
     "about": {
       "title": "About me - Hoàng Xơn",
       "description": "Discover more about me on this page dedicated to sharing my personal story."
+    }
+  },
+  "breadcrumbs": {
+    "about": {
+      "home": "Home",
+      "about": "About me"
     }
   }
 }

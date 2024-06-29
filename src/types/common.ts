@@ -3,3 +3,9 @@ export type LinkType = {
   label: string;
   icon?: any;
 };
+
+export type BreadcrumbType = {
+  label: string;
+  url: string;
+  icon?: any;
+};

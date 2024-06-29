@@ -11,19 +11,18 @@ import Banner1 from "@/statics/images/banner1.png";
 import Banner2 from "@/statics/images/banner2.png";
 import Banner3 from "@/statics/images/banner3.png";
 import Banner4 from "@/statics/images/banner4.png";
-import { useEffect, useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import { LegacyRef, useEffect, useRef, useState } from "react";
 import BannerCarousel from "./BannerCarousel";
 import BannerIntroduction from "./BannerIntroduction";
-import Autoplay from "embla-carousel-autoplay";
 
 export default function HomePage() {
+  const containerRef = useRef<LegacyRef<HTMLElement> | undefined>();
   const [api, setApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCurrentSlide(api.selectedScrollSnap() + 1);
 
@@ -31,6 +30,30 @@ export default function HomePage() {
       setCurrentSlide(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const keyPressEvent = (key: KeyboardEvent) => {
+      if (key.code === "ArrowRight") {
+        const slide = currentSlide === 5 ? 1 : currentSlide + 1;
+        setCurrentSlide(slide);
+        api.scrollTo(slide - 1);
+      }
+
+      if (key.code === "ArrowLeft") {
+        const slide = currentSlide === 1 ? 5 : currentSlide - 1;
+        setCurrentSlide(slide);
+        api.scrollTo(slide - 1);
+      }
+    };
+
+    window.addEventListener("keydown", keyPressEvent);
+
+    return () => {
+      window.removeEventListener("keydown", keyPressEvent);
+    };
+  });
 
   return (
     <main className="min-h-[70vh] sm:pt-6 md:pt-20">

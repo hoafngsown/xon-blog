@@ -49,7 +49,7 @@ export default async function SocialSideBar() {
 
   return (
     <aside className="hidden md:fixed md:left-6 md:top-1/2 md:flex md:-translate-y-1/2 md:flex-col md:gap-y-4">
-      <p className="text-title text-center text-sm font-medium xl:text-base">
+      <p className="text-center text-sm font-medium text-title xl:text-base">
         <span>.....</span>
         <br />
         <span>H</span>
@@ -82,14 +82,14 @@ export default async function SocialSideBar() {
                 type="button"
                 href={item.url}
                 className={cn(
-                  "bg-title hover:bg-primary group rounded-[10px] border border-[#ccc] p-2 outline-none transition-all hover:shadow-md",
+                  "group rounded-[10px] border border-[#ccc] bg-title p-2 outline-none transition-all hover:bg-primary hover:shadow-md",
                   index === 0 && "bg-primary",
                 )}
               >
                 <item.icon
                   fill="white"
                   stroke="#75787e"
-                  className="group-hover:stroke-title group-hover:fill-white md:h-4 md:w-4 xl:h-5 xl:w-5"
+                  className="group-hover:fill-white group-hover:stroke-title md:h-4 md:w-4 xl:h-5 xl:w-5"
                 />
               </a>
             </TooltipTrigger>

@@ -8,7 +8,6 @@ import { Link, usePathname } from "@/navigation";
 import Logo from "@/statics/images/full-logo.png";
 import { type LinkType } from "@/types/common";
 import { useTranslations } from "next-intl";
-import IconDownload from "../icons/IconDownload";
 import NavigationDrawer from "./Navigation/Drawer";
 import SwitchLanguage from "./Navigation/SwitchLanguage";
 
@@ -32,11 +31,6 @@ export default function Header() {
     {
       label: t("contact"),
       url: ROUTE_PATH.CONTACT,
-    },
-    {
-      label: t("resume"),
-      url: "",
-      icon: IconDownload,
     },
   ];
 

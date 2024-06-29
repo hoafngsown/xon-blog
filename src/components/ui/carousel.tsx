@@ -284,14 +284,15 @@ const CarouselDots = React.forwardRef<
     return (
       <div ref={ref} className={`flex justify-center ${props.className}`}>
         {Array.from({ length: numberOfSlides }, (_, i) => (
-          <Button
+          <p
             key={i}
             className={cn(
-              `mx-1 h-2.5 w-2.5 rounded-full p-0 ${
-                i === currentSlide
-                  ? "bg-primary hover:bg-secondary w-5 scale-125 transform"
-                  : "bg-gray-300 hover:bg-gray-300"
-              }`,
+              `mx-1 h-2.5 w-2.5 rounded-full p-0
+               ${
+                 i === currentSlide
+                   ? "bg-primary hover:bg-secondary w-5 scale-125 transform"
+                   : "bg-gray-300 hover:bg-gray-300"
+               }`,
               i === currentSlide && props.activeClassName,
             )}
             aria-label={`Go to slide ${i + 1}`}
