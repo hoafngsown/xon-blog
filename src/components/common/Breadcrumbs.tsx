@@ -1,4 +1,4 @@
-import { BreadcrumbType } from "@/types/common";
+import type { BreadcrumbType } from "@/types/common";
 
 import {
   Breadcrumb,
@@ -7,12 +7,12 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import { Link } from "@/navigation";
+import { getLocale } from "next-intl/server";
 import { Fragment } from "react";
 import Typography from "./Typography";
-import { getLocale, getTranslations } from "next-intl/server";
-import { locales } from "@/configs/locale";
 
 interface Props {
   breadcrumbs: BreadcrumbType[];
@@ -34,7 +34,7 @@ export default async function Breadcrumbs({
     >
       <Typography
         text={locale === locales[0] ? "Bạn đang xem:" : "You watching:"}
-        className="text-secondary text-base md:text-lg"
+        className="text-base text-secondary md:text-lg"
       />
       <Breadcrumb>
         <BreadcrumbList>
@@ -52,7 +52,7 @@ export default async function Breadcrumbs({
                     <BreadcrumbLink>
                       <span
                         className={cn(
-                          "text-title font-medium italic md:text-base",
+                          "font-medium italic text-title md:text-base",
                           isLastItem
                             ? "text-secondary"
                             : "group-hover:font-medium",

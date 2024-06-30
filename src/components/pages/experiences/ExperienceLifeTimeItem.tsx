@@ -1,4 +1,3 @@
-import BaseAnimation from "@/components/animations/BaseAnimation";
 import Typography from "@/components/common/Typography";
 import { type ExperienceItemType } from "@/types/experiences";
 import ExperienceCompany from "./ExperienceCompany";
