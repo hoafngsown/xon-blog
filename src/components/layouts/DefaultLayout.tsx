@@ -1,5 +1,3 @@
-import BackgroundImage from "@/statics/images/background.png";
-import Image from "next/image";
 import React from "react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
@@ -29,14 +27,6 @@ export default function DefaultLayout({
         </div>
         <Footer />
       </section>
-
-      <Image
-        src={BackgroundImage}
-        alt="background-image"
-        layout="fill"
-        objectFit="cover"
-        className="-z-10"
-      />
 
       <SocialSideBar />
     </main>

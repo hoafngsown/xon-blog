@@ -43,7 +43,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
           layout="fill"
         />
 
-        <p className="text-title mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium md:text-sm lg:text-base">
+        <p className="mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium text-title md:text-sm lg:text-base">
           <span>{t(`${translationKey}.title1`)}</span>
           <span>{t(`${translationKey}.title2`)}</span>
           <span>{t(`${translationKey}.title3`)}</span>

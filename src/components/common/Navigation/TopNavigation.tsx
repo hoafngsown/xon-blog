@@ -47,10 +47,12 @@ export default function TopNavigation() {
             "fixed left-0 top-0 z-30 flex h-[80px] w-full flex-col items-center justify-center gap-y-1 bg-background py-4",
           )}
         >
-          <p className="text-xl font-bold uppercase text-black/70">
+          <p className="text-xl font-bold uppercase text-black/70 dark:text-title">
             {t("title")}
           </p>
-          <p className="font-medium text-black/70">{t("description")}</p>
+          <p className="font-medium text-black/70 dark:text-title">
+            {t("description")}
+          </p>
         </motion.div>
       </AnimatePresence>
     </header>

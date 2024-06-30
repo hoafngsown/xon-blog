@@ -208,5 +208,10 @@
       "home": "Home",
       "experiences": "My experiences"
     }
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

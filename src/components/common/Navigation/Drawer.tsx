@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import IconClose from "../../icons/IconClose";
 import IconMenu from "../../icons/IconMenu";
+import { ModeToggle } from "../ToggleTheme";
 import SwitchLanguage from "./SwitchLanguage";
 
 export default function NavigationDrawer() {
@@ -91,6 +92,10 @@ export default function NavigationDrawer() {
 
             <li className="mt-10">
               <SwitchLanguage />
+            </li>
+
+            <li className="mt-10">
+              <ModeToggle />
             </li>
           </ul>
         </nav>

@@ -1,5 +1,3 @@
-"use server";
-
 import Logo from "@/../public/logo.png";
 import { cn } from "@/libs/utils";
 import FrameChat2 from "@/statics/images/frame-chat-2.png";

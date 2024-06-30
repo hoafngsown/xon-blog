@@ -208,5 +208,10 @@
       "home": "Trang chủ",
       "experiences": "Kinh nghiệm làm việc"
     }
+  },
+  "theme": {
+    "light": "Màu Sáng",
+    "dark": "Màu Tối",
+    "system": "Màu Hệ Thống"
   }
 }

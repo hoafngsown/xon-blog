@@ -24,21 +24,27 @@
     --radius: 0.25rem;
   }
 
-  /* .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .dark {
+    --background: #121212;
+    --foreground: #e0e0e0;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 20%;
+    --card-foreground: 222.2 84% 80%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 20%;
+    --popover-foreground: 222.2 84% 80%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: #1a76d2;
+    --primary-foreground: 210 40% 30%;
 
-    --border: #2a3038;
-  } */
+    --secondary: #dbdbdb;
+    --secondary-foreground: #162240;
+
+    --title: #cacaca;
+
+    --border: #43474e;
+    --radius: 0.25rem;
+  }
 }
 
 @layer base {
@@ -47,6 +53,6 @@
   }
 
   body {
-    @apply bg-background text-foreground m-0 flex h-screen flex-col;
+    @apply m-0 flex h-screen flex-col bg-background text-foreground;
   }
 }

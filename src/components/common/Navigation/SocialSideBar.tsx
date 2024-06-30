@@ -94,7 +94,9 @@ export default async function SocialSideBar() {
               </a>
             </TooltipTrigger>
             <TooltipContent>
-              <p className="text-base lg:text-lg">{item.label}</p>
+              <p className="text-base dark:text-title lg:text-lg">
+                {item.label}
+              </p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

@@ -1,4 +1,5 @@
 import DefaultLayout from "@/components/layouts/DefaultLayout";
+import { ThemeProvider } from "@/components/providers/theme";
 import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
@@ -59,13 +60,20 @@ export default async function LocaleLayout({
       lang={locale}
       suppressHydrationWarning
       className={cn(
-        "bg-background h-screen overflow-x-hidden font-sans antialiased",
+        "h-screen overflow-x-hidden bg-background font-sans antialiased",
         Mali.variable,
       )}
     >
       <body>
         <NextIntlClientProvider messages={messages}>
-          <DefaultLayout params={{ locale }}>{children}</DefaultLayout>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <DefaultLayout params={{ locale }}>{children}</DefaultLayout>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

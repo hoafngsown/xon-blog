@@ -37,8 +37,8 @@ export default function BottomNavigation() {
   }, [t]);
 
   return (
-    <nav className="fixed bottom-3 left-0 z-10 h-[50px] w-full bg-white px-2">
-      <ul className="border-primary flex h-full list-none items-stretch justify-between overflow-hidden rounded-[40px] border border-solid p-1.5">
+    <nav className="fixed bottom-3 left-0 z-10 h-[50px] w-full rounded-[40px] px-2">
+      <ul className="flex h-full list-none items-stretch justify-between overflow-hidden rounded-[40px] border border-solid border-primary bg-white p-1.5 dark:bg-black">
         {MOBILE_LINK.map((item, index) => {
           const isActive = pathname === item.url;
           return (

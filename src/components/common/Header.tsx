@@ -5,11 +5,12 @@ import Image from "next/image";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
 import { Link, usePathname } from "@/navigation";
-import Logo from "@/statics/images/full-logo.png";
+import Logo from "@/statics/icons/logo.svg";
 import { type LinkType } from "@/types/common";
 import { useTranslations } from "next-intl";
 import NavigationDrawer from "./Navigation/Drawer";
 import SwitchLanguage from "./Navigation/SwitchLanguage";
+import { ModeToggle } from "./ToggleTheme";
 
 export default function Header() {
   const t = useTranslations("common.headerMd");
@@ -37,7 +38,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "bg-background fixed left-0 top-0 z-[1000] w-full py-3 shadow-sm transition-all",
+        "fixed left-0 top-0 z-[1000] w-full bg-background py-3 shadow-sm transition-all",
       )}
     >
       <nav className="container mx-auto flex items-center justify-between gap-x-10">
@@ -58,7 +59,7 @@ export default function Header() {
                 >
                   <h3
                     className={cn(
-                      "text-title text-sm font-medium capitalize xl:text-lg",
+                      "text-sm font-medium capitalize text-title xl:text-lg",
                       isActive && "text-primary",
                     )}
                   >
@@ -77,6 +78,8 @@ export default function Header() {
           <li className="flex w-[50px] items-center justify-center md:block lg:hidden">
             <NavigationDrawer />
           </li>
+
+          <ModeToggle />
         </ul>
       </nav>
     </header>
