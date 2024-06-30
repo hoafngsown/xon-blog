@@ -22,7 +22,7 @@ export default function ExperienceProject({ item }: Props) {
       <TimelineItem>
         <TimelineConnector />
         <TimelineHeader>
-          <TimelineTime className="hidden w-[100px] pl-4 lg:block lg:pl-4">
+          <TimelineTime className="hidden w-24 break-words pl-4 lg:block lg:pl-4">
             {item.time}
           </TimelineTime>
           <TimelineIcon />
