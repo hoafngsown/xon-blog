@@ -77,7 +77,7 @@ export default function NavigationDrawer() {
                   >
                     <h3
                       className={cn(
-                        "text-title text-xl font-medium capitalize",
+                        "text-xl font-medium capitalize text-title",
                         isActive && "text-primary",
                       )}
                     >

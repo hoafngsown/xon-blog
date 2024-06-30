@@ -14,7 +14,7 @@ export default function DefaultLayout({
   params: { locale: string };
 }) {
   return (
-    <main className="bg-background relative h-full">
+    <main className="relative h-full bg-background">
       <section className="flex min-h-full flex-col pb-[50px] md:pb-0">
         <div className="hidden md:block">
           <Header />
@@ -24,7 +24,9 @@ export default function DefaultLayout({
           <BottomNavigation />
         </div>
 
-        <div className="container mx-auto mt-20 md:mt-[110px]">{children}</div>
+        <div className="container mx-auto mt-20 md:mt-[110px] md:px-20">
+          {children}
+        </div>
         <Footer />
       </section>
 

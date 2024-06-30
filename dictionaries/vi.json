@@ -79,15 +79,101 @@
       "title2": "Liên hệ tui",
       "introduction1": "Mọi người liên hệ tui",
       "introduction2": "ở đây nghen !",
-      "description1": "Hí, nếu như mọi người cảm thấy những blog của tui hay thì có thể tặng tui '1 ly cà phê' nhé.",
-      "description2": "Sự ủng hộ của mọi người là kinh phí và động lực để tui có thể viết nhiều blog hay hơn.",
-      "description3": "Cảm ơn mọi người ! <3",
+      "description1": "Hí, Tui cũng khá ngại khi để số tài khoản ở đây",
+      "description2": "Tuy nhiên nếu như mọi người cảm thấy blog và những kiến thức tui share thú vị, thì mọi người có thể gửi tặng '1 ly cà phê' nhé",
+      "description3": "Sự ủng hộ của mọi người là một phần kinh phí duy trì và cũng là một phần động lực để tui có thể viết nhiều blog hay hơn",
+      "description4": "Cảm ơn mọi người ! <3",
       "form": {
         "email": "Email",
         "phone": "Số điện thoại",
         "name": "Tên của bạn",
         "message": "Nội dung",
         "button": "Gửi ở đây nè !"
+      }
+    },
+    "experiences": {
+      "title1": "Kinh nghiệm làm việc",
+      "introduction1": "Đây là những gì tui",
+      "introduction2": "đã học và làm !",
+      "description1": "Những gì tui đã học và làm, đều được tóm tắt ở đây !",
+      "description2": "Mọi người có thể xem chi tiết ở phía bên dưới nhé.",
+      "list": {
+        "overview": {
+          "title": "Kinh nghiệm/Kiến thức",
+          "description1": "Mình có hơn 2 năm kinh nghiệm về xây dựng và phát triển Websites hoặc Web based applications.",
+          "description2": "Mình có kinh nghiệm, làm việc và sử dụng những công nghệ/ngôn ngữ như ReactJS, NextJS, React Native, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, v.v",
+          "description3": "Mình có kinh nghiệm trong việc xử lí bố cục websites, sử dụng các tools như Figma, v.v",
+          "description4": "Ngoài ra, mình cũng đã từng sử dụng và làm việc với các công nghệ/ngôn ngữ Backend như ExpressJS, NestJS.",
+          "description5": "Mình có kinh nghiệm sử dụng Github, Gitlab.",
+          "description6": "Về ngoại ngữ, mình có thể sử dụng tiếng Anh trong quá trình làm việc, đọc hiểu tài liệu và giao tiếp bằng tiếng Anh."
+        },
+        "edu": {
+          "title": "Học Vấn",
+          "experiences": {
+            "title": "CÔNG NGHỆ THÔNG TIN",
+            "subTitle": "ĐẠI HỌC BÁCH KHOA ĐÀ NẴNG",
+            "description": "",
+            "time": "2020 - 2024",
+            "projects": []
+          }
+        },
+        "work": {
+          "title": "Kinh Nghiệm Làm Việc",
+          "kozo": {
+            "title": "KOZOCOM",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "01/2024 - Hiện tại",
+            "projects": {
+              "mld": {
+                "title": "Mullion",
+                "subTitle": "WEB APP",
+                "description": "Xây dựng ứng dụng gồm hai hệ thống: một hệ thống quản lý các chức năng như người dùng, khách hàng, cổ phiếu, thống kê, đầu tư, chi tiêu, v.v; Hệ thống còn lại cho phép người dùng mua cổ phiếu đầu tư, xây dựng quỹ đầu tư riêng, quản lý cổ phiếu mua/bán và v.v",
+                "time": "01/2024 - Hiện tại"
+              }
+            }
+          },
+          "dipro": {
+            "title": "DIRPO",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "07/2022 - 01/2024",
+            "projects": {
+              "umex": {
+                "title": "Diamond - UMEX",
+                "subTitle": "WEB APP",
+                "description": "Xây dựng ứng dụng gồm hai hệ thống: một hệ thống quản lý các chức năng như người dùng, khách hàng, cổ phiếu, thống kê, đầu tư, chi tiêu, v.v; Hệ thống còn lại cho phép người dùng mua cổ phiếu đầu tư, xây dựng quỹ đầu tư riêng, quản lý cổ phiếu mua/bán và v.v",
+                "time": "07/2023 - 01/2024"
+              },
+              "step": {
+                "title": "Step Travel",
+                "subTitle": "WEB APP",
+                "description": "Xây dựng ứng dụng gồm hai hệ thống: một hế thống quản lý các chức năng về người dùng, khách hàng, quản lý những tour du lịch, booking, các dịch vụ cung cấp, hoá đơn, thanh toán, v.v; Hệ thống còn lại cho phép người dùng booking các tour du lịch, sử dụng dịch vụ của hệ thống, thanh toán và hàng loạt các dịch vụ khác.",
+                "time": "06/2022 - 01/2024"
+              },
+              "hp": {
+                "title": "Dipro Tech",
+                "subTitle": "WEB APP",
+                "description": "Xây dựng ứng dụng 'Landing Page' cho doanh nghiệp, giúp tối ưu các chiến dịch quảng cáo và cải thiện tỷ lệ chuyển đổi khách hàng, quảng bá các dịch vụ và sản phẩm của công ty đến với nguồn khách hàng tiềm năng.",
+                "time": "11/2022"
+              }
+            }
+          },
+          "freelancer": {
+            "title": "FREELANCER",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "09/2022",
+            "projects": {
+              "face": {
+                "title": "Face Analysis",
+                "subTitle": "WEB APP",
+                "description": "Xây dựng hệ thống phân tích khuôn mặt giúp các phòng khám thẩm mỹ quản lý thông tin người dùng, phân tích và so sánh hình ảnh trước và sau phẫu thuật, cũng như vẽ các đường trên khuôn mặt để mô tả kết quả sau phẫu thuật và những chức năng thẩm mỹ khác,v.v",
+                "time": "03/2023 - 07/2023"
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -103,6 +189,10 @@
     "contacts": {
       "title": "Liên hệ tui - Hoàng Xơn",
       "description": "Đây là trang mà mọi người có thể tìm kiếm thông tin để có thể liên hệ tui nghen."
+    },
+    "experiences": {
+      "title": "Kinh nghiệm làm việc - Hoàng Xơn",
+      "description": "Đây là một bản tóm tắt về quá trình làm việc của tui"
     }
   },
   "breadcrumbs": {
@@ -113,6 +203,10 @@
     "contacts": {
       "home": "Trang chủ",
       "contacts": "Liên hệ tui"
+    },
+    "experiences": {
+      "home": "Trang chủ",
+      "experiences": "Kinh nghiệm làm việc"
     }
   }
 }

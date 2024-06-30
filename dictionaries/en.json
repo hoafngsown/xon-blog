@@ -78,16 +78,102 @@
       "title1": "Support Me",
       "title2": "Contact Me",
       "introduction1": "You can contact me",
-      "introduction2": " here!",
-      "description1": "Hi, if you find my blogs interesting, you could buy me 'a coffee'.",
-      "description2": "Your support is both funding and motivation for me to write more interesting blogs.",
-      "description3": "Thank you everyone! <3",
+      "introduction2": "right here!",
+      "description1": "Hi, I'm a bit hesitant to leave my bank account information here,",
+      "description2": "However, if you find my blogs and the knowledge I share interesting, feel free to send me 'a cup of coffee'.",
+      "description3": "Your support is both funding to maintain this and motivation for me to write more interesting blogs.",
+      "description4": "Thank you, everyone! <3",
       "form": {
         "email": "Email",
         "phone": "Phone Number",
         "name": "Your Name",
         "message": "Message",
         "button": "Send Here!"
+      }
+    },
+    "experiences": {
+      "title1": "My Experience",
+      "introduction1": "Here is what i",
+      "introduction2": "have learned and done!",
+      "description1": "Everything I have learned and done is summarized here!",
+      "description2": "Details can be viewed below.",
+      "list": {
+        "overview": {
+          "title": "TECHNICAL PROFILE",
+          "description1": "I have over 2 years of experience in building and developing Websites or Web-based applications.",
+          "description2": "I have experience working with technologies/languages such as ReactJS, NextJS, React Native, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, etc.",
+          "description3": "I have experience in responsive layouts, cross-browser and design layout using Figma, etc.",
+          "description4": "I have also used and worked with Backend technologies/languages such as ExpressJS, NestJS.",
+          "description5": "I have experience using Github, Gitlab.",
+          "description6": "In terms of foreign languages, I can use English in the workplace, understand documents and communicate in English."
+        },
+        "edu": {
+          "title": "Education",
+          "experiences": {
+            "title": "INFORMATION TECHNOLOGY",
+            "subTitle": "DANANG UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+            "description": "",
+            "time": "2020 - 2024",
+            "projects": []
+          }
+        },
+        "work": {
+          "title": "Work Experience",
+          "kozo": {
+            "title": "KOZOCOM",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "Jan 2024 - Present",
+            "projects": {
+              "mld": {
+                "title": "Mullion",
+                "subTitle": "WEB APP",
+                "description": "Developed an application consisting of two systems: one system manages functions such as users, customers, stocks, statistics, investments, expenditures, etc.; the other system allows users to buy investment stocks, build their own investment funds, manage the purchase/sale of stocks, etc.",
+                "time": "Jan 2024 - Present"
+              }
+            }
+          },
+          "dipro": {
+            "title": "DIRPO",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "June 2022 - Jan 2024",
+            "projects": {
+              "umex": {
+                "title": "Diamond - UMEX",
+                "subTitle": "WEB APP",
+                "description": "Developed an application consisting of two systems: one system manages functions such as users, customers, stocks, statistics, investments, expenditures, etc.; the other system allows users to buy investment stocks, build their own investment funds, manage the purchase/sale of stocks, etc.",
+                "time": "July 2023 - Jan 2024"
+              },
+              "step": {
+                "title": "Step Travel",
+                "subTitle": "WEB APP",
+                "description": "Developed an application consisting of two systems: one system manages functions such as users, customers, managing tours, booking, service provision, billing, payments, etc.; the other system allows users to book tours, use the system's services, make payments and a host of other services.",
+                "time": "June 2022 - Jane 2024"
+              },
+              "hp": {
+                "title": "Dipro Tech",
+                "subTitle": "WEB APP",
+                "description": "Developed a 'Landing Page' application for businesses, helping to optimize advertising campaigns and improve customer conversion rates, promoting the company's services and products to potential customers.",
+                "time": "Nov 2022"
+              }
+            }
+          },
+          "freelancer": {
+            "title": "FREELANCER",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "",
+            "time": "Sep 2022",
+            "projects": {
+              "face": {
+                "title": "Face Analysis",
+                "subTitle": "WEB APP",
+                "description": "Developed a face analysis system that helps aesthetic clinics manage user information, analyze and compare images before and after surgery, as well as draw lines on the face to depict post-surgery results and other aesthetic functions, etc.",
+                "time": "Mar 2023 - July 2023"
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -103,6 +189,10 @@
     "contacts": {
       "title": "Contact me - Hoàng Xơn",
       "description": "Everything you need to get in touch with me."
+    },
+    "experiences": {
+      "title": "My Experience - Hoàng Xơn",
+      "description": "This is a summary of my work process"
     }
   },
   "breadcrumbs": {
@@ -113,6 +203,10 @@
     "contacts": {
       "home": "Home",
       "contacts": "Contact me"
+    },
+    "experiences": {
+      "home": "Home",
+      "experiences": "My experiences"
     }
   }
 }

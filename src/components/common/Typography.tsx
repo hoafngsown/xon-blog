@@ -1,5 +1,5 @@
 import { cn } from "@/libs/utils";
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 interface Props
   extends DetailedHTMLProps<
@@ -13,7 +13,10 @@ export default function Typography({ text, ...others }: Props) {
   return (
     <h2
       {...others}
-      className={cn("text-primary text-lg font-bold", others?.className)}
+      className={cn(
+        "text-base font-bold text-primary md:text-lg",
+        others?.className,
+      )}
     >
       {text}
     </h2>

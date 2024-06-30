@@ -35,7 +35,7 @@ export default async function ContactInfo() {
         <li>
           <TextGenerateEffect
             words="Techcombank: HOANGXOWN - (Phạm Hoàng Sơn)"
-            wordClassName="text-base"
+            wordClassName="text-base text-center"
           />
         </li>
 
@@ -49,9 +49,12 @@ export default async function ContactInfo() {
         <li>
           <p className="text-center">{t("page.contacts.description3")}</p>
         </li>
+        <li>
+          <p className="text-center">{t("page.contacts.description4")}</p>
+        </li>
       </ul>
 
-      <div className="relative h-[150px] w-[150px] md:mt-6 md:h-[200px] md:w-[200px]">
+      <div className="relative h-[150px] w-[150px] md:mt-6 md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px]">
         <Image
           src={SendMoneyImage}
           alt="chill"
