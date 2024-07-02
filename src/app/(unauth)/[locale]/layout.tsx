@@ -17,22 +17,22 @@ export const metadata: Metadata = {
 const Mali = localFont({
   src: [
     {
-      path: "../../../public/fonts/Mali/Mali-Regular.ttf",
+      path: "../../../../public/fonts/Mali/Mali-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Mali/Mali-Italic.ttf",
+      path: "../../../../public/fonts/Mali/Mali-Italic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../../../public/fonts/Mali/Mali-Medium.ttf",
+      path: "../../../../public/fonts/Mali/Mali-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Mali/Mali-Bold.ttf",
+      path: "../../../../public/fonts/Mali/Mali-Bold.ttf",
       weight: "700",
       style: "normal",
     },
@@ -56,26 +56,26 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      suppressHydrationWarning
-      className={cn(
-        "h-screen overflow-x-hidden bg-background font-sans antialiased",
-        Mali.variable,
-      )}
-    >
-      <body>
-        <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <html
+        lang={locale}
+        suppressHydrationWarning
+        className={cn(
+          "h-screen overflow-x-hidden bg-background font-sans antialiased",
+          Mali.variable,
+        )}
+      >
+        <body>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <DefaultLayout params={{ locale }}>{children}</DefaultLayout>
+            <DefaultLayout>{children}</DefaultLayout>
           </ThemeProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </NextIntlClientProvider>
   );
 }

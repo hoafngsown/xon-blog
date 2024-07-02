@@ -10,7 +10,7 @@ const intlMiddleware = createMiddleware({
   defaultLocale: "vi",
 });
 
-const isProtectedRoute = createRouteMatcher(["/:locale/dashboard(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/(auth)(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) auth().protect();
