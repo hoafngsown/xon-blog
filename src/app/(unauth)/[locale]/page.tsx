@@ -1,6 +1,7 @@
 import HomePageComponent from "@/components/pages/home/HomePage";
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+
 export async function generateMetadata({
   params: { locale },
 }: {

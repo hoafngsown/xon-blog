@@ -7,7 +7,7 @@ import { type ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Admin của Sơn",
-  description: "This site is my management space",
+  description: "Trang admin của Sơn, dùng để quản lý tài nguyên hệ thống.",
   icons: [{ rel: "icon", url: "/logo.png" }],
 };
 
@@ -57,7 +57,7 @@ export default function AdminLayoutRoot({ children }: { children: ReactNode }) {
       }}
     >
       <html
-        lang="en"
+        lang="vi"
         suppressHydrationWarning
         className={cn(
           "h-screen overflow-x-hidden bg-background font-sans antialiased",
