@@ -9,7 +9,6 @@ export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
   return (
     <main className="relative h-full bg-background">
