@@ -9,12 +9,95 @@ datasource db {
     directUrl         = env("DIRECT_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Category {
+  id                Int    @id @default(autoincrement())
+  name              String
+  description       String
+  slug              String
+  thumbnail         String?
+  posts              Post[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
-    @@index([name])
+  @@map("category")
 }
 
+model Tag {
+  id                Int    @id @default(autoincrement())
+  name              String
+  description       String
+  slug              String
+  thumbnail         String?
+
+  postTags          PostTag[]    
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("tag")
+}
+
+model PostTag {
+   id                Int    @id @default(autoincrement())
+   postId            Int
+   post              Post   @relation(fields: [postId] , references: [id])
+   tagId             Int
+   tag               Tag    @relation(fields: [tagId] , references: [id])   
+
+   createdAt       DateTime @default(now())
+   updatedAt       DateTime @updatedAt
+
+   @@map("post_tag")
+}
+
+
+
+model Post {
+    id              Int      @id @default(autoincrement())
+    title           String   
+    description     String
+    content         String
+    thumbnail       String
+    slug            String   @unique
+
+    status          EPostStatus @default(Draft)
+    publishAt       DateTime 
+
+    categoryId      Int
+    category        Category @relation(fields: [categoryId], references: [id])
+
+    tags            PostTag[]    
+
+    comments        Comment[]
+
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+
+    @@map("post")
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  name      String   
+  email     String      
+  content   String   
+  website   String?
+
+  replyToId Int?     
+  replyTo   Comment? @relation(name: "CommentReplies", fields: [replyToId], references: [id])
+  replies   Comment[] @relation(name: "CommentReplies")
+
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id])
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("comment")
+}
+
+
+enum EPostStatus {
+    Draft
+    Publish
+}

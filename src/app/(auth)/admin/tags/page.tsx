@@ -1,6 +1,6 @@
 import { DataTable } from "@/components/common/Table/DataTable";
 import Typography from "@/components/common/Typography";
-import { ColumnDef } from "@tanstack/react-table";
+import type { ColumnDef } from "@tanstack/react-table";
 
 type Payment = {
   id: string;

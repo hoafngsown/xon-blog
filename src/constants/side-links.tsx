@@ -1,6 +1,5 @@
-import IconComment from "@/components/icons/IconComment";
+import IconCategory from "@/components/icons/IconCategory";
 import IconDashboard from "@/components/icons/IconDashboard";
-import IconNote from "@/components/icons/IconNote";
 import IconTag from "@/components/icons/IconTag";
 import { ROUTE_PATH } from "./routes";
 
@@ -21,6 +20,12 @@ export const sidelinks: SideLink[] = [
     label: "",
     href: ROUTE_PATH.ADMIN.INDEX,
     icon: <IconDashboard />,
+  },
+  {
+    title: "Categories",
+    label: "",
+    href: ROUTE_PATH.ADMIN.CATEGORIES.INDEX,
+    icon: <IconCategory />,
   },
   {
     title: "Tags",

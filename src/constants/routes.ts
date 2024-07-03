@@ -18,9 +18,21 @@ export const ROUTE_PATH = {
     TAGS: {
       INDEX: "/admin/tags",
     },
+    CATEGORIES: {
+      INDEX: "/admin/categories",
+      CREATE: "/admin/categories/create",
+      EDIT: "/admin/categories/:id/edit",
+    },
   },
   AUTH: {
     SIGNIN: "/sign-in",
     SIGNUP: "/sign-up",
+  },
+};
+
+export const API_ROUTE_PATH = {
+  CATEGORIES: {
+    INDEX: "/api/admin/categories",
+    DETAIL: "/api/admin/categories/:id",
   },
 };
