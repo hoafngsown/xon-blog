@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.hoangson.space
+
+# Sitemaps
+Sitemap: https://www.hoangson.space/sitemap.xml

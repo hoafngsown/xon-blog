@@ -15,8 +15,8 @@ import {
   type AddEditPostTypeRequest,
 } from "@/libs/schema/post.schema";
 import { UploadButton } from "@/libs/uploadthing";
-import { categoryServices } from "@/services/categories.service";
-import { postServices } from "@/services/posts.service";
+import { categoryServices } from "@/services/client/categories.service";
+import { postServices } from "@/services/client/posts.service";
 import type { OptionType } from "@/types/common";
 import { convertTitleToSlug } from "@/utils/common";
 import { zodResolver } from "@hookform/resolvers/zod";

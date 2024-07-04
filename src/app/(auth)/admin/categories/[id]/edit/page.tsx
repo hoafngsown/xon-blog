@@ -5,7 +5,7 @@ import FormAddEditCategory from "@/components/pages/admin/categories/FormAddEdit
 import { useToast } from "@/components/ui/use-toast";
 import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
-import { categoryServices } from "@/services/categories.service";
+import { categoryServices } from "@/services/client/categories.service";
 import type { CategoryType } from "@/types/categories";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

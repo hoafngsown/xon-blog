@@ -12,7 +12,7 @@ import {
   type AddEditCategoryType,
 } from "@/libs/schema/category.schema";
 import { UploadButton } from "@/libs/uploadthing";
-import { categoryServices } from "@/services/categories.service";
+import { categoryServices } from "@/services/client/categories.service";
 import type { CategoryType } from "@/types/categories";
 import { convertTitleToSlug } from "@/utils/common";
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -13,7 +13,7 @@
       "experience": "kinh nghiệm làm việc"
     },
     "headerMobile": {
-      "title": "Góc của Xơn",
+      "title": "Góc của Sơn",
       "description": "những chuyện 'linh tinh'"
     },
     "headerMd": {
@@ -179,20 +179,24 @@
   },
   "metadata": {
     "home": {
-      "title": "Góc nhỏ - Hoàng Xơn",
+      "title": "Góc nhỏ - Hoàng Sơn",
       "description": "Đây là góc mà tui chia sẻ những câu chuyện linh tinh của mình, như là các blogs, những lần phỏng vấn, mấy cái chuyện ngu ngốc xảy ra với tui, bla bla..."
     },
     "about": {
-      "title": "Về tui - Hoàng Xơn",
-      "description": "Đây là những thông tin cơ bản, hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hehe."
+      "title": "Về tui - Hoàng Sơn",
+      "description": "Hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hơn!"
     },
     "contacts": {
-      "title": "Liên hệ tui - Hoàng Xơn",
-      "description": "Đây là trang mà mọi người có thể tìm kiếm thông tin để có thể liên hệ tui nghen."
+      "title": "Liên hệ tui - Hoàng Sơn",
+      "description": "mọi người có thể tìm kiếm thông tin liên hệ tui ở đây nghen!"
     },
     "experiences": {
-      "title": "Kinh nghiệm làm việc - Hoàng Xơn",
-      "description": "Đây là một bản tóm tắt về quá trình làm việc của tui"
+      "title": "Kinh nghiệm làm việc - Hoàng Sơn",
+      "description": "Bản tóm tắt về quá trình làm việc của tui"
+    },
+    "blogs": {
+      "title": "Blog của tui - Hoàng Sơn",
+      "description": "Những bài viết chất lượng liên quan đến công nghệ, kinh nghiệm làm việc, phỏng vấn và những chuyện linh tinh tui đều share hết ở đây nhé mọi người."
     }
   },
   "breadcrumbs": {
