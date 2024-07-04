@@ -5,7 +5,7 @@ import FormAddEditPost from "@/components/pages/admin/posts/FormAddEditPost";
 import { useToast } from "@/components/ui/use-toast";
 import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
-import { postServices } from "@/services/posts.service";
+import { postServices } from "@/services/client/posts.service";
 import type { PostType } from "@/types/post";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

@@ -13,7 +13,7 @@ import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/components/ui/use-toast";
 import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
-import { postServices } from "@/services/posts.service";
+import { postServices } from "@/services/client/posts.service";
 import type { PostType } from "@/types/post";
 import { formateDate } from "@/utils/date";
 import { r } from "@/utils/route";

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
-import { categoryServices } from "@/services/categories.service";
+import { categoryServices } from "@/services/client/categories.service";
 import type { CategoryType } from "@/types/categories";
 import { formateDate } from "@/utils/date";
 import { r } from "@/utils/route";

@@ -4,6 +4,7 @@
  */
 await import("./src/env.js");
 import nextIntl from "next-intl/plugin";
+import withMDX from "@next/mdx";
 
 const withNextIntl = nextIntl();
 
@@ -19,6 +20,9 @@ const nextConfig = {
       },
     ],
   },
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
-export default withNextIntl(nextConfig);
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+export default withNextIntl(withMDX(nextConfig));
