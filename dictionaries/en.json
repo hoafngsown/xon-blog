@@ -179,20 +179,24 @@
   },
   "metadata": {
     "home": {
-      "title": "A little space - Hoàng Xơn",
-      "description": "A little corner for my soul, where I share all stupid things of my life."
+      "title": "My Corner - Hoàng Sơn",
+      "description": "This is my corner where I share my random stories, such as blogs, interview experiences, silly things that happen to me, bla bla..."
     },
     "about": {
-      "title": "About me - Hoàng Xơn",
-      "description": "Discover more about me on this page dedicated to sharing my personal story."
+      "title": "About Me - Hoàng Sơn",
+      "description": "Hope this helps everyone learn a little more about me!"
     },
     "contacts": {
-      "title": "Contact me - Hoàng Xơn",
-      "description": "Everything you need to get in touch with me."
+      "title": "Contact Me - Hoàng Sơn",
+      "description": "You can find my contact information here!"
     },
     "experiences": {
-      "title": "Experience - Hoàng Xơn",
-      "description": "This is a summary of my work process"
+      "title": "Work Experience - Hoàng Sơn",
+      "description": "A summary of my work experience."
+    },
+    "blogs": {
+      "title": "My Blog - Hoàng Sơn",
+      "description": "High-quality posts related to technology, work experiences, interviews, and random topics are all shared here for everyone."
     }
   },
   "breadcrumbs": {
@@ -201,12 +205,12 @@
       "about": "About me"
     },
     "contacts": {
-      "home": "Home",
+      "home": "Contact me - Hoàng Sơn",
       "contacts": "Contact me"
     },
     "experiences": {
-      "home": "Home",
-      "experiences": "My experiences"
+      "home": "Experiences - Hoàng Sơn",
+      "experiences": "My experienceØ"
     }
   },
   "theme": {

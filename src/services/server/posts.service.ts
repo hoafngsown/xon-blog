@@ -1,16 +1,62 @@
-import { BASE_CLIENT_FETCH_OPTIONS } from "@/constants/common";
-import { API_ROUTE_PATH } from "@/constants/routes";
-import http from "@/libs/http";
-import type { AddEditPostTypeRequest } from "@/libs/schema/post.schema";
+import { getCompileMDX } from "@/libs/mdx";
+import { db } from "@/server/db";
+import { EPostStatus, type Post } from "@prisma/client";
 
 export const postServerServices = {
-  async create(values: AddEditPostTypeRequest) {
-    const response = await http.post<AddEditPostTypeRequest>(
-      API_ROUTE_PATH.POSTS.INDEX,
-      values,
-      BASE_CLIENT_FETCH_OPTIONS,
-    );
+  async getAllPostMeta() {
+    try {
+      const posts: Post[] = await db.post.findMany({
+        where: {
+          status: EPostStatus.Publish,
+        },
+        include: {
+          categories: {
+            include: {
+              category: {
+                select: {
+                  name: true,
+                  id: true,
+                },
+              },
+            },
+          },
+        },
+        orderBy: {
+          priority: "asc",
+        },
+      });
 
-    return response.payload;
+      const formattedPosts = [];
+
+      for (const post of posts) {
+        const formattedBlog = await formattedPost(post);
+        if (post) {
+          formattedPosts.push(formattedBlog);
+        }
+      }
+
+      return formattedPosts;
+    } catch (error) {
+      console.log("Some thing went wrong");
+    }
   },
 };
+
+export async function formattedPost(post: any) {
+  const response = await fetch(post.content);
+
+  const source = await response.text();
+
+  const { content } = await getCompileMDX(source);
+
+  return {
+    meta: {
+      title: post.title,
+      description: post.description,
+      publishAt: post.publishAt,
+      tags: post.tags,
+      categories: post.categories,
+    },
+    content,
+  };
+}
