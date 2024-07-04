@@ -9,12 +9,9 @@ export default function AdminLayoutChildren({
 }: {
   children: ReactNode;
 }) {
-  const { isLoaded, userId, isSignedIn } = useAuth();
+  const { isLoaded, isSignedIn } = useAuth();
 
-  // In case the user signs out while on the page.
-  if (!isLoaded || !userId || !isSignedIn) {
-    return null;
-  }
+  if (!isLoaded || !isSignedIn) return null;
 
   return <AdminLayout>{children}</AdminLayout>;
 }

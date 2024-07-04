@@ -12,8 +12,10 @@ export const ROUTE_PATH = {
     COMMENTS: {
       INDEX: "/admin/comments",
     },
-    BLOGS: {
-      INDEX: "/admin/blogs",
+    POSTS: {
+      INDEX: "/admin/posts",
+      CREATE: "/admin/posts/create",
+      EDIT: "/admin/posts/:id/edit",
     },
     TAGS: {
       INDEX: "/admin/tags",
@@ -34,5 +36,10 @@ export const API_ROUTE_PATH = {
   CATEGORIES: {
     INDEX: "/api/admin/categories",
     DETAIL: "/api/admin/categories/:id",
+  },
+  POSTS: {
+    INDEX: "/api/admin/posts",
+    DETAIL: "/api/admin/posts/:id",
+    CHANGE_STATUS: "/api/admin/posts/:id/change-status",
   },
 };

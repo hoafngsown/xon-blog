@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "post" ADD COLUMN     "priority" INTEGER NOT NULL DEFAULT 0,
+ALTER COLUMN "publishAt" DROP NOT NULL;

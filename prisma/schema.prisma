@@ -15,39 +15,25 @@ model Category {
   description       String
   slug              String
   thumbnail         String?
-  posts              Post[]
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  posts             PostCategory[]
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   @@map("category")
 }
 
-model Tag {
-  id                Int    @id @default(autoincrement())
-  name              String
-  description       String
-  slug              String
-  thumbnail         String?
 
-  postTags          PostTag[]    
-  
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+model PostCategory {
+   id                     Int    @id @default(autoincrement())
+   postId                 Int
+   post                   Post   @relation(fields: [postId] , references: [id])
+   categoryId             Int
+   category               Category    @relation(fields: [categoryId] , references: [id])   
 
-  @@map("tag")
-}
+   createdAt              DateTime @default(now())
+   updatedAt              DateTime @updatedAt
 
-model PostTag {
-   id                Int    @id @default(autoincrement())
-   postId            Int
-   post              Post   @relation(fields: [postId] , references: [id])
-   tagId             Int
-   tag               Tag    @relation(fields: [tagId] , references: [id])   
-
-   createdAt       DateTime @default(now())
-   updatedAt       DateTime @updatedAt
-
-   @@map("post_tag")
+   @@map("post_category")
 }
 
 
@@ -61,12 +47,12 @@ model Post {
     slug            String   @unique
 
     status          EPostStatus @default(Draft)
-    publishAt       DateTime 
+    publishAt       DateTime? 
 
-    categoryId      Int
-    category        Category @relation(fields: [categoryId], references: [id])
+    categories      PostCategory[]
+    tags            String[]
 
-    tags            PostTag[]    
+    priority       Int              @default(0)
 
     comments        Comment[]
 
