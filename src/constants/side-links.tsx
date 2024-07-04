@@ -1,6 +1,6 @@
+import IconBookText from "@/components/icons/IconBookText";
 import IconCategory from "@/components/icons/IconCategory";
 import IconDashboard from "@/components/icons/IconDashboard";
-import IconTag from "@/components/icons/IconTag";
 import { ROUTE_PATH } from "./routes";
 
 export interface NavLink {
@@ -22,16 +22,16 @@ export const sidelinks: SideLink[] = [
     icon: <IconDashboard />,
   },
   {
+    title: "Quản lý bài viết",
+    label: "",
+    href: ROUTE_PATH.ADMIN.POSTS.INDEX,
+    icon: <IconBookText />,
+  },
+  {
     title: "Categories",
     label: "",
     href: ROUTE_PATH.ADMIN.CATEGORIES.INDEX,
     icon: <IconCategory />,
-  },
-  {
-    title: "Tags",
-    label: "",
-    href: ROUTE_PATH.ADMIN.TAGS.INDEX,
-    icon: <IconTag />,
   },
   // {
   //   title: "Comments",

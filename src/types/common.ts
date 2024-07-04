@@ -9,3 +9,9 @@ export type BreadcrumbType = {
   url: string;
   icon?: any;
 };
+
+export type OptionType = {
+  label: string;
+  value: string;
+  icon?: any;
+};
