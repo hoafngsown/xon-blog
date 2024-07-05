@@ -21,7 +21,7 @@ export default function BlogTag(props: Props) {
   const childComponents = (
     <p
       className={cn(
-        "flex w-fit items-center justify-between gap-x-4 rounded-[10px] px-4 py-2 font-bold text-secondary dark:text-title",
+        "flex w-fit items-center justify-between gap-x-4 rounded-[10px] px-4 py-2 font-bold text-secondary hover:border-primary hover:bg-[#2c4da4]/90 hover:text-white dark:text-title",
         active ? "bg-primary text-white" : "border dark:border-primary",
       )}
     >
