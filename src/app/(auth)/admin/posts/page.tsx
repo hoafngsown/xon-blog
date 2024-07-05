@@ -229,6 +229,7 @@ export default function BlogList() {
         },
       },
     ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

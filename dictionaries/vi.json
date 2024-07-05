@@ -180,7 +180,15 @@
       "title1": "Blogs của Hoàng Sơn",
       "title2": "Hi vọng những gì tui share sẽ giúp mọi người 'một phần nào đấy'",
       "introduction1": "Những gì tui viết",
-      "introduction2": "đều ở đây !"
+      "introduction2": "đều ở đây !",
+      "empty": "Không tìm thấy bài viết nào phù hợp hoặc chưa được đăng tải."
+    },
+    "category": {
+      "title1": "Những bài viết về $$",
+      "title2": "Hi vọng những gì tui share sẽ giúp mọi người 'một phần nào đấy'",
+      "introduction1": "Những gì tui viết về",
+      "introduction2": "$$ đều ở đây !",
+      "empty": "Không tìm thấy bài viết nào phù hợp hoặc chưa được đăng tải thuộc danh mục $$."
     }
   },
   "metadata": {
@@ -203,6 +211,10 @@
     "blogs": {
       "title": "Blog của tui - Hoàng Sơn",
       "description": "Những bài viết chất lượng liên quan đến công nghệ, kinh nghiệm làm việc, phỏng vấn và những chuyện linh tinh tui đều share hết ở đây nhé mọi người."
+    },
+    "category": {
+      "title": "Danh mục $$ - Hoàng Sơn",
+      "description": "Những bài viết chất lượng liên quan đến $$ tui đều share hết ở đây nhé mọi người."
     }
   },
   "breadcrumbs": {
@@ -221,6 +233,10 @@
     "blogs": {
       "home": "Trang chủ",
       "index": "Tất cả bài viết"
+    },
+    "category": {
+      "home": "Trang chủ",
+      "index": "Thể loại bài viết"
     }
   },
   "theme": {

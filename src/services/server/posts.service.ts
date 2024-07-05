@@ -1,7 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { getCompileMDX } from "@/libs/mdx";
 import { db } from "@/server/db";
-import type { CategoryMetaType } from "@/types/categories";
-import type { PostMetaType } from "@/types/post";
+import type {
+  CategoryMetaType,
+  CategoryMetadataType,
+  CategoryType,
+} from "@/types/categories";
+import type { PostMetaType, PostMetadataType } from "@/types/post";
 import { formateDate } from "@/utils/date";
 import { EPostStatus } from "@prisma/client";
 
@@ -49,6 +55,7 @@ export const postServerServices = {
         slug: post.slug,
         tags: post.tags,
         publishAt: formateDate(post.publishAt),
+        thumbnail: post.thumbnail,
       };
     });
 
@@ -66,6 +73,119 @@ export const postServerServices = {
     return {
       posts: formattedPosts,
       categories: formattedCategories,
+    };
+  },
+
+  async getPostMeta() {
+    const posts = await db.post.findMany({
+      where: {
+        status: EPostStatus.Publish,
+      },
+    });
+
+    return posts.map((p) => ({
+      title: p.title,
+      description: p.description,
+      slug: p.slug,
+      id: p.id,
+    })) as PostMetadataType[];
+  },
+
+  async getCategoryMeta() {
+    const categories = await db.category.findMany();
+
+    return categories.map((p) => ({
+      name: p.name,
+      description: p.description,
+      slug: p.slug,
+      id: p.id,
+    })) as CategoryMetadataType[];
+  },
+
+  async getCategoryBySlug(slug: string) {
+    const category = await db.category.findFirst({
+      where: { slug },
+    });
+
+    return {
+      name: category?.name,
+      slug: category?.slug,
+      description: category?.description,
+      id: category?.id,
+    } as CategoryMetadataType;
+  },
+
+  async getPostBySlug(slug: string) {
+    const post = await db.post.findFirst({
+      where: {
+        slug,
+      },
+    });
+
+    return post;
+  },
+
+  async getPostsByCategorySlug(slug: string) {
+    const promises = [];
+
+    promises[0] = db.category.findUnique({
+      where: { slug },
+      include: {
+        posts: {
+          include: {
+            post: true,
+          },
+          where: {
+            post: {
+              status: EPostStatus.Publish,
+            },
+          },
+        },
+      },
+    });
+
+    promises[1] = db.category.findMany({
+      include: {
+        posts: true,
+      },
+    });
+
+    const responses = await Promise.all(promises);
+
+    const category = (responses[0] ?? []) as any;
+    const responseCategories = (responses[1] ?? []) as any[];
+
+    const posts = (category ? category.posts : []).map(
+      (postCategory: any) => postCategory.post,
+    );
+
+    const formattedCategories: CategoryMetaType[] = responseCategories?.map(
+      (ct) => {
+        return {
+          id: ct.id,
+          name: ct.name,
+          slug: ct.slug,
+          totalPostCount: ct.posts.length,
+        };
+      },
+    );
+
+    const formattedPosts: PostMetaType[] = posts?.map((post: any) => {
+      return {
+        id: post.id,
+        title: post.title,
+        description: post.description,
+        slug: post.slug,
+        tags: post.tags,
+        publishAt: post.publishAt ? formateDate(post.publishAt) : "",
+        thumbnail: post.thumbnail,
+      };
+    });
+
+    return {
+      posts: formattedPosts,
+      categories: formattedCategories,
+      category: category as CategoryType,
     };
   },
 };

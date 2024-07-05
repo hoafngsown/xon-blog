@@ -1,31 +1,11 @@
 "use client";
 
 import { cn } from "@/libs/utils";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 export default function TopNavigation() {
   const t = useTranslations("common.headerMobile");
-
-  const { scrollYProgress } = useScroll();
-
-  const [isScrollOver, setIsScrollOver] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      if (scrollYProgress.get() < 0.05) {
-        setIsScrollOver(false);
-      } else {
-        setIsScrollOver(true);
-      }
-    }
-  });
 
   return (
     <header>

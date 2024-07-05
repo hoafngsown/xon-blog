@@ -15,9 +15,11 @@ export interface ExperienceItemType {
   description: string;
   logo: string | StaticImageData;
   projects: ExperienceProjectType[];
+  previewLink?: string;
 }
 
 export interface TagItemType {
   title: string;
   icon: any;
+  previewLink?: string;
 }

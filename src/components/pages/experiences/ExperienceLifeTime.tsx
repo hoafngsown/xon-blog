@@ -34,6 +34,7 @@ export default async function ExperienceLifeTime() {
           time: t("edu.experiences.time"),
           projects: [],
           logo: DUTImage,
+          previewLink: "https://dut.udn.vn/",
         },
       ],
     },
@@ -90,6 +91,7 @@ export default async function ExperienceLifeTime() {
             },
           ],
           logo: KozoImage,
+          previewLink: "https://kozocom.vn/",
         },
         {
           title: t("work.dipro.title"),
@@ -227,6 +229,7 @@ export default async function ExperienceLifeTime() {
             },
           ],
           logo: DiproImage,
+          previewLink: "https://www.dipro-tech.com/",
         },
         {
           title: t("work.freelancer.title"),
@@ -278,6 +281,7 @@ export default async function ExperienceLifeTime() {
             },
           ],
           logo: FreelancerImage,
+          previewLink: "",
         },
       ],
     },
