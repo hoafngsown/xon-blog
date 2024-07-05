@@ -15,11 +15,3 @@ export type OptionType = {
   value: string;
   icon?: any;
 };
-
-export type PostMetaType = {
-  id: number;
-  title: string;
-  description: string;
-  publishAt: string;
-  tags: string[];
-};

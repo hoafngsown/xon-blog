@@ -1,44 +1,72 @@
 import { getCompileMDX } from "@/libs/mdx";
 import { db } from "@/server/db";
-import { EPostStatus, type Post } from "@prisma/client";
+import type { CategoryMetaType } from "@/types/categories";
+import type { PostMetaType } from "@/types/post";
+import { formateDate } from "@/utils/date";
+import { EPostStatus } from "@prisma/client";
 
 export const postServerServices = {
-  async getAllPostMeta() {
-    try {
-      const posts: Post[] = await db.post.findMany({
-        where: {
-          status: EPostStatus.Publish,
-        },
-        include: {
-          categories: {
-            include: {
-              category: {
-                select: {
-                  name: true,
-                  id: true,
-                },
+  async getAllPostAndCategories() {
+    const promises = [];
+
+    promises[0] = db.post.findMany({
+      where: {
+        status: EPostStatus.Publish,
+      },
+      include: {
+        categories: {
+          include: {
+            category: {
+              select: {
+                name: true,
+                id: true,
               },
             },
           },
         },
-        orderBy: {
-          priority: "asc",
-        },
-      });
+      },
+      orderBy: {
+        priority: "asc",
+      },
+    });
 
-      const formattedPosts = [];
+    promises[1] = db.category.findMany({
+      include: {
+        posts: true,
+      },
+    });
 
-      for (const post of posts) {
-        const formattedBlog = await formattedPost(post);
-        if (post) {
-          formattedPosts.push(formattedBlog);
-        }
-      }
+    const responses = await Promise.all(promises);
 
-      return formattedPosts;
-    } catch (error) {
-      console.log("Some thing went wrong");
-    }
+    const responsePost = (responses[0] ?? []) as any[];
+    const responseCategories = (responses[1] ?? []) as any[];
+
+    const formattedPosts: PostMetaType[] = responsePost?.map((post) => {
+      return {
+        id: post.id,
+        title: post.title,
+        description: post.description,
+        slug: post.slug,
+        tags: post.tags,
+        publishAt: formateDate(post.publishAt),
+      };
+    });
+
+    const formattedCategories: CategoryMetaType[] = responseCategories?.map(
+      (ct) => {
+        return {
+          id: ct.id,
+          name: ct.name,
+          slug: ct.slug,
+          totalPostCount: ct.posts.length,
+        };
+      },
+    );
+
+    return {
+      posts: formattedPosts,
+      categories: formattedCategories,
+    };
   },
 };
 

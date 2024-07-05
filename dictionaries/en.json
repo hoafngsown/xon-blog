@@ -175,6 +175,12 @@
           }
         }
       }
+    },
+    "blogs": {
+      "title1": "Hoàng Sơn's Blogs",
+      "title2": "I hope what I share will help everyone 'in some way'",
+      "introduction1": "Everything I've written",
+      "introduction2": "is here!"
     }
   },
   "metadata": {
@@ -205,12 +211,16 @@
       "about": "About me"
     },
     "contacts": {
-      "home": "Contact me - Hoàng Sơn",
+      "home": "Home",
       "contacts": "Contact me"
     },
     "experiences": {
-      "home": "Experiences - Hoàng Sơn",
-      "experiences": "My experienceØ"
+      "home": "Home",
+      "experiences": "My experience"
+    },
+    "blogs": {
+      "home": "Home",
+      "index": "All blogs"
     }
   },
   "theme": {

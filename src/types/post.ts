@@ -22,3 +22,12 @@ export interface PostType {
   updatedAt: Date;
   priority: number;
 }
+
+export interface PostMetaType {
+  id: number;
+  title: string;
+  description: string;
+  slug: string;
+  tags: string[];
+  publishAt: string;
+}

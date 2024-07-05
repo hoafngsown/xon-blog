@@ -4,6 +4,9 @@ export const ROUTE_PATH = {
     INDEX: "/blogs",
     DETAIL: "/blogs/:id",
   },
+  CATEGORY: {
+    INDEX: "/category",
+  },
   ABOUT: "/about",
   CONTACT: "/contacts",
   EXPERIENCES: "/experiences",

@@ -7,3 +7,10 @@ export interface CategoryType {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface CategoryMetaType {
+  id: number;
+  name: string;
+  slug: string;
+  totalPostCount: number;
+}

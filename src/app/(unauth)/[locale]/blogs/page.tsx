@@ -1,9 +1,6 @@
-import { postServerServices } from "@/services/server/posts.service";
-import type { Metadata } from "next";
+import BlogComponents from "@/components/pages/blogs/BlogsPage";
+import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-
-export const revalidate = 86400;
-
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -19,11 +16,5 @@ export async function generateMetadata({
 }
 
 export default async function BlogPage() {
-  const posts = await postServerServices.getAllPostMeta();
-
-  return (
-    <div>
-      <article>{posts?.[0]?.content}</article>
-    </div>
-  );
+  return <BlogComponents />;
 }
