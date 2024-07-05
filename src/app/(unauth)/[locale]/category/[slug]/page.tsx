@@ -1,0 +1,42 @@
+import CategoryComponents from "@/components/pages/category/CategoryPage";
+import { postServerServices } from "@/services/server/posts.service";
+import type { CategoryMetadataType } from "@/types/categories";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateStaticParams() {
+  const categories = await postServerServices.getCategoryMeta();
+
+  return (
+    categories.map((ct) => ({
+      slug: ct.slug,
+    })) ?? []
+  );
+}
+
+export async function generateMetadata({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: string };
+}) {
+  const t = await getTranslations({ locale, namespace: "metadata.category" });
+
+  const category: CategoryMetadataType =
+    await postServerServices.getCategoryBySlug(slug);
+
+  return {
+    title: t("title").replace("$$", category.name),
+    description: t("description").replace("$$", category.name),
+    icons: [{ rel: "icon", url: "/logo.png" }],
+  } as Metadata;
+}
+
+export default async function CategoryDetailPage({ params: { slug } }: Props) {
+  return <CategoryComponents slug={slug} />;
+}

@@ -1,26 +1,30 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
-import Empty from "@/components/common/Empty";
 import { ROUTE_PATH } from "@/constants/routes";
 import { postServerServices } from "@/services/server/posts.service";
-import { type BreadcrumbType } from "@/types/common";
+import type { BreadcrumbType } from "@/types/common";
 import { getTranslations } from "next-intl/server";
-import BlogsInfo from "./BlogInfo";
-import BlogListPost from "./BlogListPost";
-import BlogsCategories from "./BlogsCategories";
+import BlogListPost from "../blogs/BlogListPost";
+import BlogsCategories from "../blogs/BlogsCategories";
+import CategoryInfo from "./CategoryInfo";
+import Empty from "@/components/common/Empty";
 
-export default async function BlogsPage() {
-  const { posts, categories } =
-    await postServerServices.getAllPostAndCategories();
+export default async function CategoryPage({ slug }: { slug: string }) {
+  const { posts, categories, category } =
+    await postServerServices.getPostsByCategorySlug(slug);
 
   const t = await getTranslations();
 
   const BREAD_CRUMBS: BreadcrumbType[] = [
     {
-      label: t("breadcrumbs.blogs.home"),
+      label: t("breadcrumbs.category.home"),
       url: ROUTE_PATH.HOME,
     },
     {
-      label: t("breadcrumbs.blogs.index"),
+      label: t("breadcrumbs.category.index"),
+      url: ROUTE_PATH.ABOUT,
+    },
+    {
+      label: category.name,
       url: "",
     },
   ];
@@ -33,14 +37,18 @@ export default async function BlogsPage() {
           containerClassName="pb-28 md:pb-12"
         />
 
-        <BlogsInfo />
+        <CategoryInfo category={category} />
 
         <div className="my-4 h-[1px] w-[50%] rounded-lg bg-[#ddd]/50 md:mb-5 md:mt-10" />
 
         <div className="mt-4 flex flex-col gap-y-4 sm:mt-8 sm:gap-y-8 lg:mt-10">
           <BlogsCategories categories={categories} />
           <BlogListPost posts={posts} />
-          {posts.length === 0 && <Empty message={t("page.blogs.empty")} />}
+          {posts.length === 0 && (
+            <Empty
+              message={t("page.category.empty").replace("$$", category.name)}
+            />
+          )}
         </div>
       </div>
     </section>

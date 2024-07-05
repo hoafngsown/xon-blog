@@ -180,7 +180,15 @@
       "title1": "Hoàng Sơn's Blogs",
       "title2": "I hope what I share will help everyone 'in some way'",
       "introduction1": "Everything I've written",
-      "introduction2": "is here!"
+      "introduction2": "is here!",
+      "empty": "No suitable posts found or not yet published."
+    },
+    "category": {
+      "title1": "Posts about $$",
+      "title2": "I hope what I share will help everyone 'in some way'",
+      "introduction1": "Everything I've written about",
+      "introduction2": "$$ is here!",
+      "empty": "No suitable posts found or not yet published under the category $$."
     }
   },
   "metadata": {
@@ -203,6 +211,10 @@
     "blogs": {
       "title": "My Blog - Hoàng Sơn",
       "description": "High-quality posts related to technology, work experiences, interviews, and random topics are all shared here for everyone."
+    },
+    "category": {
+      "title": "Category $$ - Hoàng Sơn",
+      "description": "High-quality posts related to $$ are all shared here for everyone."
     }
   },
   "breadcrumbs": {
@@ -221,6 +233,10 @@
     "blogs": {
       "home": "Home",
       "index": "All blogs"
+    },
+    "category": {
+      "home": "Home",
+      "index": "Category"
     }
   },
   "theme": {

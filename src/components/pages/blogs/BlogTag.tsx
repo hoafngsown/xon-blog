@@ -14,14 +14,18 @@ interface Props {
 export default function BlogTag(props: Props) {
   const pathname = usePathname();
 
-  const category = pathname.replace(`${ROUTE_PATH.BLOG.INDEX}/`, "");
+  const category = pathname
+    .replace(`${ROUTE_PATH.BLOG.INDEX}/`, "")
+    .replace(`${ROUTE_PATH.CATEGORY.INDEX}/`, "");
 
-  const active = category === props.slug || props.slug === "";
+  const active =
+    category === props.slug ||
+    (pathname === ROUTE_PATH.BLOG.INDEX && props.slug === "");
 
   const childComponents = (
     <p
       className={cn(
-        "flex w-fit items-center justify-between gap-x-4 rounded-[10px] px-4 py-2 font-bold text-secondary hover:border-primary hover:bg-[#2c4da4]/90 hover:text-white dark:text-title",
+        "flex w-fit items-center justify-between gap-x-4 rounded-[10px] px-4 py-2 font-bold text-secondary hover:border-primary hover:bg-[#2c4da4]/80 hover:text-white dark:text-title",
         active ? "bg-primary text-white" : "border dark:border-primary",
       )}
     >

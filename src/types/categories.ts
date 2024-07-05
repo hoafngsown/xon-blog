@@ -14,3 +14,8 @@ export interface CategoryMetaType {
   slug: string;
   totalPostCount: number;
 }
+
+export type CategoryMetadataType = Pick<
+  CategoryType,
+  "name" | "description" | "slug" | "id"
+>;

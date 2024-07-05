@@ -23,11 +23,14 @@ export interface PostType {
   priority: number;
 }
 
-export interface PostMetaType {
-  id: number;
-  title: string;
-  description: string;
-  slug: string;
-  tags: string[];
+export type PostMetaType = Pick<
+  PostType,
+  "title" | "description" | "slug" | "id" | "tags" | "thumbnail"
+> & {
   publishAt: string;
-}
+};
+
+export type PostMetadataType = Pick<
+  PostType,
+  "title" | "description" | "slug" | "id"
+>;

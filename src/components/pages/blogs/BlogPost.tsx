@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import BaseAnimation from "@/components/animations/BaseAnimation";
-import { LinkPreview } from "@/components/animations/LinkPreview";
 import Tag from "@/components/common/Tag";
 import IconChevronRight from "@/components/icons/IconChevronRight";
 import {
@@ -13,7 +12,6 @@ import {
   TimelineTime,
   TimelineTitle,
 } from "@/components/ui/timeline";
-import envConfig from "@/configs/env";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
 import { Link } from "@/navigation";
@@ -23,15 +21,16 @@ import { r } from "@/utils/route";
 interface Props {
   item: PostMetaType;
   isLast: boolean;
-  locale: string;
 }
 
-export default function BlogPost({ item, isLast, locale }: Props) {
+export default function BlogPost({ item, isLast }: Props) {
   return (
     <BaseAnimation>
-      <TimelineItem className={cn("w-full pb-8 md:pb-12", isLast && "!pb-0")}>
+      <TimelineItem
+        className={cn("group w-full pb-8 md:pb-12", isLast && "!pb-0")}
+      >
         <TimelineConnector className="hidden sm:block" />
-        <TimelineHeader>
+        <TimelineHeader className="group-hover:bg-red5">
           <TimelineTime className="hidden w-24 break-words pl-4 lg:block lg:pl-4">
             {item.publishAt}
           </TimelineTime>
@@ -42,13 +41,9 @@ export default function BlogPost({ item, isLast, locale }: Props) {
                 {item.publishAt}
               </span>
 
-              <LinkPreview
-                url={`${envConfig.SITE_URL}/${locale}${r(ROUTE_PATH.BLOG.DETAIL, { id: item.slug })}`}
-              >
-                <p className="flex items-center gap-x-2 text-base text-primary md:text-xl">
-                  <span>{item.title}</span>
-                </p>
-              </LinkPreview>
+              <p className="flex items-center gap-x-2 text-base text-primary md:text-xl">
+                <span>{item.title}</span>
+              </p>
             </div>
           </TimelineTitle>
         </TimelineHeader>
