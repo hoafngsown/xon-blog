@@ -45,7 +45,7 @@ export default async function Breadcrumbs({
                 <BreadcrumbItem
                   className={cn(
                     "group",
-                    isLastItem ? "pointer-events-none" : "hover:underline",
+                    isLastItem ? "pointer-events-none" : "underline",
                   )}
                 >
                   <Link href={item.url} legacyBehavior>

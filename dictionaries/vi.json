@@ -175,6 +175,12 @@
           }
         }
       }
+    },
+    "blogs": {
+      "title1": "Blogs của Hoàng Sơn",
+      "title2": "Hi vọng những gì tui share sẽ giúp mọi người 'một phần nào đấy'",
+      "introduction1": "Những gì tui viết",
+      "introduction2": "đều ở đây !"
     }
   },
   "metadata": {
@@ -211,6 +217,10 @@
     "experiences": {
       "home": "Trang chủ",
       "experiences": "Kinh nghiệm làm việc"
+    },
+    "blogs": {
+      "home": "Trang chủ",
+      "index": "Tất cả bài viết"
     }
   },
   "theme": {

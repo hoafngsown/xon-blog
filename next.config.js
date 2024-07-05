@@ -17,6 +17,12 @@ const nextConfig = {
         port: "",
         pathname: "/f/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],

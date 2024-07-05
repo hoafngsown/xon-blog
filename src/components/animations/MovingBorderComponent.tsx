@@ -60,7 +60,7 @@ export function MovingBorderComponent({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center bg-white text-sm text-white antialiased backdrop-blur-xl",
+          "relative flex h-full w-full items-center justify-center text-sm text-white antialiased backdrop-blur-xl",
           className,
         )}
         style={{
