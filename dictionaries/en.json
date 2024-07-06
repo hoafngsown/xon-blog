@@ -27,7 +27,9 @@
       "ins": "Or follow me on Instagram",
       "github": "This is my Github",
       "linkedin": "I also have LinkedIn"
-    }
+    },
+    "breadcrumbs": "You watching",
+    "toc": "Table of contentsØ"
   },
   "page": {
     "notFound": {
@@ -189,6 +191,9 @@
       "introduction1": "Everything I've written about",
       "introduction2": "$$ is here!",
       "empty": "No suitable posts found or not yet published under the category $$."
+    },
+    "blogsDetail": {
+      "back": "Back"
     }
   },
   "metadata": {
@@ -237,6 +242,10 @@
     "category": {
       "home": "Home",
       "index": "Category"
+    },
+    "blogsDetail": {
+      "home": "Home",
+      "index": "All blogs"
     }
   },
   "theme": {

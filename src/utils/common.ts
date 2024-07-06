@@ -1,11 +1,6 @@
-export const convertTitleToSlug = (title?: string) => {
-  if (!title) return "";
+import GithubSlugger from "github-slugger";
 
-  return title
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-};
+export function convertTitleToSlug(title: string) {
+  const slugger = new GithubSlugger();
+  return slugger.slug(title);
+}

@@ -61,7 +61,7 @@ export default async function LocaleLayout({
         lang={locale}
         suppressHydrationWarning
         className={cn(
-          "h-screen overflow-x-hidden bg-background font-sans antialiased",
+          "h-screen scroll-pt-[3.5rem] overflow-x-hidden bg-background font-sans antialiased",
           Mali.variable,
         )}
       >

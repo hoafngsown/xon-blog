@@ -1,15 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { getCompileMDX } from "@/libs/mdx";
+import { getCompileMDX, getHeadings } from "@/libs/mdx";
 import { db } from "@/server/db";
 import type {
   CategoryMetaType,
   CategoryMetadataType,
   CategoryType,
 } from "@/types/categories";
-import type { PostMetaType, PostMetadataType } from "@/types/post";
+import type {
+  HeadingType,
+  PostMetaType,
+  PostMetadataType,
+  PostType,
+} from "@/types/post";
 import { formateDate } from "@/utils/date";
 import { EPostStatus } from "@prisma/client";
+import matter from "gray-matter";
 
 export const postServerServices = {
   async getAllPostAndCategories() {
@@ -125,6 +131,18 @@ export const postServerServices = {
     return post;
   },
 
+  async getPostBySlugAndExtractHeading(slug: string) {
+    const post = await db.post.findFirst({
+      where: {
+        slug,
+      },
+    });
+
+    const formattedPost = formatPost(post);
+
+    return formattedPost;
+  },
+
   async getPostsByCategorySlug(slug: string) {
     const promises = [];
 
@@ -190,21 +208,22 @@ export const postServerServices = {
   },
 };
 
-export async function formattedPost(post: any) {
+export async function formatPost(post: any) {
   const response = await fetch(post.content);
 
   const source = await response.text();
 
   const { content } = await getCompileMDX(source);
 
+  const { content: contentForHeading } = matter(source);
+  const headings = getHeadings(contentForHeading);
+
   return {
-    meta: {
-      title: post.title,
-      description: post.description,
-      publishAt: post.publishAt,
-      tags: post.tags,
-      categories: post.categories,
-    },
+    ...post,
     content,
+    headings,
+  } as Omit<PostType, "content"> & {
+    content: any;
+    headings: HeadingType[];
   };
 }

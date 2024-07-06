@@ -34,3 +34,9 @@ export type PostMetadataType = Pick<
   PostType,
   "title" | "description" | "slug" | "id"
 >;
+
+export type HeadingType = {
+  level: number;
+  text: string;
+  slug: string;
+};
