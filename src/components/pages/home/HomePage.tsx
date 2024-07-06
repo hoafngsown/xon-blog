@@ -10,7 +10,7 @@ import Banner from "@/statics/images/banner.png";
 import Banner1 from "@/statics/images/banner1.png";
 import Banner2 from "@/statics/images/banner2.png";
 import Banner3 from "@/statics/images/banner3.png";
-import Banner4 from "@/statics/images/banner5.png";
+import Banner4 from "@/statics/images/banner4.png";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import BannerCarousel from "./BannerCarousel";
