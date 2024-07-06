@@ -1,4 +1,6 @@
+import BlogDetailPage from "@/components/pages/blogs-detail/BlogDetailPage";
 import { postServerServices } from "@/services/server/posts.service";
+import "@/styles/prism-dracula.css";
 import type { PostType } from "@/types/post";
 import type { Metadata } from "next";
 
@@ -34,5 +36,5 @@ export async function generateMetadata({
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function BlogDetail({ params: { slug } }: Props) {
-  return <div>detail blog</div>;
+  return <BlogDetailPage slug={slug} />;
 }

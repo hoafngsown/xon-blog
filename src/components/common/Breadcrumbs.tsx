@@ -7,10 +7,9 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import { Link } from "@/navigation";
-import { getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Fragment } from "react";
 import Typography from "./Typography";
 
@@ -23,7 +22,7 @@ export default async function Breadcrumbs({
   breadcrumbs,
   containerClassName = "",
 }: Props) {
-  const locale = await getLocale();
+  const t = await getTranslations("common");
 
   return (
     <div
@@ -33,11 +32,11 @@ export default async function Breadcrumbs({
       )}
     >
       <Typography
-        text={locale === locales[0] ? "Bạn đang xem:" : "You watching:"}
-        className="text-base text-secondary md:text-lg"
+        text={t("breadcrumbs")}
+        className="text-lg text-secondary md:text-xl"
       />
       <Breadcrumb>
-        <BreadcrumbList>
+        <BreadcrumbList className="flex items-center justify-center">
           {breadcrumbs.map((item, index) => {
             const isLastItem = index === breadcrumbs.length - 1;
             return (
@@ -52,10 +51,10 @@ export default async function Breadcrumbs({
                     <BreadcrumbLink>
                       <span
                         className={cn(
-                          "font-medium italic text-title md:text-base",
+                          "inline-block text-center text-base font-medium italic text-title",
                           isLastItem
                             ? "text-secondary"
-                            : "group-hover:font-medium",
+                            : "italic underline group-hover:font-medium",
                         )}
                       >
                         {item.label}

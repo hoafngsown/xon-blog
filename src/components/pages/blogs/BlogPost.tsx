@@ -41,9 +41,11 @@ export default function BlogPost({ item, isLast }: Props) {
                 {item.publishAt}
               </span>
 
-              <p className="flex items-center gap-x-2 text-base text-primary md:text-xl">
-                <span>{item.title}</span>
-              </p>
+              <Link href={r(ROUTE_PATH.BLOG.DETAIL, { id: item.slug })}>
+                <p className="flex items-center gap-x-2 text-base text-primary md:text-xl">
+                  <span>{item.title}</span>
+                </p>
+              </Link>
             </div>
           </TimelineTitle>
         </TimelineHeader>

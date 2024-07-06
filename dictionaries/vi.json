@@ -27,7 +27,9 @@
       "ins": "Hoặc theo dõi Instagram của tui",
       "github": "Còn đây là Github của tui",
       "linkedin": "Ngoài ra tui còn có LinkedIn"
-    }
+    },
+    "breadcrumbs": "Bạn đang xem",
+    "toc": "Các mục bài viết"
   },
   "page": {
     "notFound": {
@@ -189,6 +191,9 @@
       "introduction1": "Những gì tui viết về",
       "introduction2": "$$ đều ở đây !",
       "empty": "Không tìm thấy bài viết nào phù hợp hoặc chưa được đăng tải thuộc danh mục $$."
+    },
+    "blogsDetail": {
+      "back": "Quay lại"
     }
   },
   "metadata": {
@@ -237,6 +242,10 @@
     "category": {
       "home": "Trang chủ",
       "index": "Thể loại bài viết"
+    },
+    "blogsDetail": {
+      "home": "Trang chủ",
+      "index": "Tất cả bài viết"
     }
   },
   "theme": {
