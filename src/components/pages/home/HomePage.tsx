@@ -10,7 +10,6 @@ import Banner from "@/statics/images/banner.png";
 import Banner1 from "@/statics/images/banner1.png";
 import Banner2 from "@/statics/images/banner2.png";
 import Banner3 from "@/statics/images/banner3.png";
-import Banner4 from "@/statics/images/banner4.png";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import BannerCarousel from "./BannerCarousel";
@@ -35,13 +34,13 @@ export default function HomePage() {
 
     const keyPressEvent = (key: KeyboardEvent) => {
       if (key.code === "ArrowRight") {
-        const slide = currentSlide === 5 ? 1 : currentSlide + 1;
+        const slide = currentSlide === 4 ? 1 : currentSlide + 1;
         setCurrentSlide(slide);
         api.scrollTo(slide - 1);
       }
 
       if (key.code === "ArrowLeft") {
-        const slide = currentSlide === 1 ? 5 : currentSlide - 1;
+        const slide = currentSlide === 1 ? 4 : currentSlide - 1;
         setCurrentSlide(slide);
         api.scrollTo(slide - 1);
       }
@@ -70,11 +69,9 @@ export default function HomePage() {
           ]}
         >
           <CarouselContent>
-            {[Banner, Banner1, Banner2, Banner3, Banner4].map(
-              (banner, index) => (
-                <BannerCarousel banner={banner} key={index} />
-              ),
-            )}
+            {[Banner, Banner1, Banner2, Banner3].map((banner, index) => (
+              <BannerCarousel banner={banner} key={index} />
+            ))}
           </CarouselContent>
 
           <div className="fixed left-[10px] top-1/2 md:relative">

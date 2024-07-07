@@ -52,7 +52,7 @@ export default async function AboutPage() {
                 className: "text-2xl sm:text-3xl md:text-4xl",
               }))}
           />
-          <ul className="my-6 flex list-disc flex-col gap-y-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
+          <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-0 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>
                 {t("page.about.description1")}

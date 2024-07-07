@@ -40,28 +40,23 @@
     "home": {
       "banner1": {
         "title1": "Hí! Tui là Sơn",
-        "title2": "một 'Phờ-rôn-en ên gi nia'",
+        "title2": "một 'Phờ-rôn-en engineer'",
         "title3": ""
       },
       "banner2": {
-        "title1": "Hmm...",
-        "title2": "Tui sẽ chia sẻ những",
-        "title3": "câu chuyện linh tinh ở đây"
+        "title1": "Tui sẽ chia sẻ",
+        "title2": "kiến thức và những câu",
+        "title3": "chuyện linh tinh ở đây"
       },
       "banner3": {
-        "title1": "Ngoài ra tui cũng là",
-        "title2": "một Freelancer 'pát time'",
-        "title3": ""
+        "title1": "Hi vọng sẽ giúp",
+        "title2": "mọi người 'một chút gì đó'",
+        "title3": "khi đến đây"
       },
       "banner4": {
-        "title1": "Có gì muốn nói với tui",
-        "title2": "Thì cứ hỏi ở đây nghen.",
-        "title3": ""
-      },
-      "banner5": {
-        "title1": "Liên hệ tui qua email:",
-        "title2": "hoangson242002@gmail.com",
-        "title3": ""
+        "title1": "Có gì muốn nói với",
+        "title2": "tui thì cứ hỏi ở đây nhe",
+        "title3": "Cảm ơn mọi người <3"
       }
     },
     "about": {

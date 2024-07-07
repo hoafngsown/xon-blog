@@ -21,7 +21,7 @@ export default function DefaultLayout({
           <BottomNavigation />
         </div>
 
-        <div className="container mx-auto mt-20 md:mt-[110px] md:px-20">
+        <div className="mx-auto mt-20 w-full px-4 md:container md:mt-[110px] md:px-20">
           {children}
         </div>
         <Footer />

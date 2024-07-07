@@ -39,29 +39,24 @@
     },
     "home": {
       "banner1": {
-        "title1": "Hi! I'm Sơn",
-        "title2": "a 'Frontend Engineer'",
+        "title1": "Hi! I'm Son",
+        "title2": "a 'Front-end engineer'",
         "title3": ""
       },
       "banner2": {
-        "title1": "Hmm...",
-        "title2": "I will share",
-        "title3": "random stories here"
+        "title1": "I'll be sharing",
+        "title2": "knowledge and various",
+        "title3": "stories right here"
       },
       "banner3": {
-        "title1": "Besides, I am also",
-        "title2": "a 'part-time' Freelancer",
-        "title3": ""
+        "title1": "I hope to help",
+        "title2": "everyone with 'something'",
+        "title3": "when you are here"
       },
       "banner4": {
-        "title1": "If you have",
-        "title2": "something to say to me",
-        "title3": "just ask here, okay?"
-      },
-      "banner5": {
-        "title1": "Contact me by email:",
-        "title2": "hoangson242002@gmail.com",
-        "title3": ""
+        "title1": "If you want to",
+        "title2": "reach out, feel free to",
+        "title3": "ask here, thank you <3"
       }
     },
     "about": {
