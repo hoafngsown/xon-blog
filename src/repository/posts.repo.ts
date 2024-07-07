@@ -281,7 +281,7 @@ export class PostRepository {
   static async getComments(id: string) {
     try {
       const comments = await db.comment.findMany({
-        where: { postId: parseInt(id), status: ECommentStatus.NotApprove },
+        where: { postId: parseInt(id), status: ECommentStatus.Approved },
         include: {
           replies: true,
         },
