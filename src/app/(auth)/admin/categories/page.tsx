@@ -11,7 +11,7 @@ import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
 import { categoryServices } from "@/services/client/categories.service";
 import type { CategoryType } from "@/types/categories";
-import { formateDate } from "@/utils/date";
+import { formatDate } from "@/utils/date";
 import { r } from "@/utils/route";
 import type { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
@@ -119,7 +119,7 @@ export default function CategoryList() {
         cell: ({ row }) => {
           return (
             <p className="max-w-[200px] break-words">
-              {formateDate(row.getValue("updatedAt"))}
+              {formatDate(row.getValue("updatedAt"))}
             </p>
           );
         },

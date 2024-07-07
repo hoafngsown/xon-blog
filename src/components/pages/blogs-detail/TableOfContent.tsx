@@ -53,7 +53,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[10px] border border-[#ddd] bg-transparent lg:sticky lg:top-32",
+        "border-ddd relative overflow-hidden rounded-[10px] border bg-transparent shadow-sm lg:sticky lg:top-32",
         isExpanded ? "pb-6" : "pb-12 md:pb-6",
       )}
     >

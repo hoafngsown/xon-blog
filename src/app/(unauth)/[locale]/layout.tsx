@@ -1,5 +1,6 @@
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import { ThemeProvider } from "@/components/providers/theme";
+import { Toaster } from "@/components/ui/toaster";
 import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
             <DefaultLayout>{children}</DefaultLayout>
           </ThemeProvider>
         </body>

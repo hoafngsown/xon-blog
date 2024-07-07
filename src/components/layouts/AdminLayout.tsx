@@ -18,7 +18,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         className={`overflow-x-hidden pt-16 transition-[margin] md:overflow-y-hidden md:pt-0 ${isCollapsed ? "md:ml-14" : "md:ml-64"} h-full`}
       >
         <Layout>
-          <Layout.Header className="mt-5 border-b border-b-[#ddd] md:mt-0">
+          <Layout.Header className="border-b-ddd mt-5 border-b md:mt-0">
             <UserButton
               afterSignOutUrl={ROUTE_PATH.AUTH.SIGNIN}
               appearance={{

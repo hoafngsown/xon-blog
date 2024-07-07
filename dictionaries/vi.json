@@ -29,7 +29,7 @@
       "linkedin": "Ngoài ra tui còn có LinkedIn"
     },
     "breadcrumbs": "Bạn đang xem",
-    "toc": "Các mục bài viết"
+    "toc": "Danh mục bài viết"
   },
   "page": {
     "notFound": {
@@ -188,7 +188,39 @@
       "empty": "Không tìm thấy bài viết nào phù hợp hoặc chưa được đăng tải thuộc danh mục $$."
     },
     "blogsDetail": {
-      "back": "Quay lại"
+      "back": "Quay lại",
+      "category": "Danh mục",
+      "publishAt": "Đăng ngày",
+      "view": "lượt xem",
+      "form": {
+        "label": {
+          "content": "Nội dung",
+          "name": "Tên của bạn",
+          "email": "Email",
+          "website": "Địa chỉ website"
+        },
+        "placeholder": {
+          "content": "Hãy nhập bình luận của bạn ở đây...",
+          "name": "Hãy nhập tên của bạn ở đây...",
+          "email": "Hãy nhập email của bạn ở đây...",
+          "website": "Hãy nhập địa chỉ trang web của bạn..."
+        },
+        "content": "Hãy nhập nội dung.",
+        "name": "Hãy nhập tên của bạn.",
+        "email": "Hãy nhập email của bạn.",
+        "success": "Bình luận đã được đăng tải thành công, nhưng vì một vài vấn đề, mình cần duyệt qua bình luận này nữa nhé. Cảm ơn bạn.",
+        "error": "Đã có lỗi xảy ra.",
+        "total": "Có $$ bình luận ở bài viết này",
+        "reply1": "Bình luận",
+        "reply2": "Trả lời bình luận của $$",
+        "button": "Trả lời",
+        "reply3": "đã viết",
+        "reply4": "Email của bạn sẽ không được hiển thị công khai. Các trường có dấu",
+        "reply5": "là bắt buộc.",
+        "buttonSubmit": "Gửi bình luận <3",
+        "close": "Đóng",
+        "invalidEmail": "Định dạng email không hợp lệ."
+      }
     }
   },
   "metadata": {

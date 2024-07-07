@@ -32,13 +32,13 @@ export default function Sidebar({
   return (
     <aside
       className={cn(
-        `fixed left-0 right-0 top-0 z-50 w-full border-b border-b-[#ddd] transition-[width] md:bottom-0 md:right-auto md:h-svh md:border-b-0 md:border-r md:border-r-[#ddd] ${isCollapsed ? "md:w-14" : "md:w-64"}`,
+        `border-b-ddd md:border-r-ddd fixed left-0 right-0 top-0 z-50 w-full border-b transition-[width] md:bottom-0 md:right-auto md:h-svh md:border-b-0 md:border-r ${isCollapsed ? "md:w-14" : "md:w-64"}`,
         className,
       )}
     >
       <div
         onClick={() => setNavOpened(false)}
-        className={`absolute inset-0 transition-[opacity] delay-100 duration-700 ${navOpened ? "h-svh opacity-50" : "h-0 opacity-0"} w-full bg-[#ddd] md:hidden`}
+        className={`absolute inset-0 transition-[opacity] delay-100 duration-700 ${navOpened ? "h-svh opacity-50" : "h-0 opacity-0"} bg-ddd w-full md:hidden`}
       />
 
       <Layout fixed className={navOpened ? "h-svh" : ""}>

@@ -15,3 +15,5 @@ export type OptionType = {
   value: string;
   icon?: any;
 };
+
+export type LocaleType = "vi" | "en";

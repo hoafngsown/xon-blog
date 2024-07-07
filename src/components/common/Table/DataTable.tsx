@@ -80,11 +80,11 @@ export function DataTable<TData, TValue>({
         )}
       </div>
 
-      <div className="rounded-md border border-[#ddd] text-title">
+      <div className="border-ddd rounded-md border text-title">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="border-[#ddd]">
+              <TableRow key={headerGroup.id} className="border-ddd">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id} className="font-bold">
@@ -106,7 +106,7 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="border-[#ddd] font-bold"
+                  className="border-ddd font-bold"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>

@@ -3,12 +3,13 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 import { ROUTE_PATH } from "@/constants/routes";
 import { Link } from "@/navigation";
 import { postServerServices } from "@/services/server/posts.service";
-import type { BreadcrumbType } from "@/types/common";
-import { formateDate } from "@/utils/date";
+import type { BreadcrumbType, LocaleType } from "@/types/common";
+import { formatDate } from "@/utils/date";
 import { r } from "@/utils/route";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import BlogAuthorInfo from "./BlogAuthorInfo";
+import BlogCommentList from "./BlogCommentList";
 import ButtonBack from "./ButtonBack";
 import { TableOfContents } from "./TableOfContent";
 
@@ -16,6 +17,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
   const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
 
   const t = await getTranslations();
+  const locale = (await getLocale()) as LocaleType;
 
   const BREAD_CRUMBS: BreadcrumbType[] = [
     {
@@ -63,7 +65,9 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                     Hoàng Sơn
                   </span>
                   <span className="block text-sm font-bold text-title lg:text-base">
-                    Đăng ngày: {formateDate(post.publishAt)} - 20 lượt xem
+                    {t("page.blogsDetail.publishAt")}:{" "}
+                    {formatDate(post.publishAt, locale)} - 20{" "}
+                    {t("page.blogsDetail.view")}
                   </span>
                 </p>
               </div>
@@ -99,8 +103,8 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                 </div>
               </article>
 
-              <div className="mb-6 flex gap-x-4 border-y border-solid border-y-[#ddd] py-4 font-bold text-title sm:pb-6 md:mb-10">
-                Danh mục:{" "}
+              <div className="border-y-ddd mb-6 flex gap-x-4 border-y border-solid py-4 font-bold text-title sm:pb-6 md:mb-10">
+                {t("page.blogsDetail.category")}:{" "}
                 <p className="flex items-center gap-x-2">
                   {post.categories.map((x: any, index) => (
                     <Link
@@ -118,6 +122,13 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
               </div>
 
               <BlogAuthorInfo />
+            </div>
+          </div>
+
+          <div className="mt-6 grid w-full grid-cols-12 lg:mt-8 lg:gap-x-8">
+            <div className="col-span-12 hidden lg:col-span-4 lg:block xl:col-span-3" />
+            <div className="col-span-12 w-full lg:col-span-8 xl:col-span-9">
+              <BlogCommentList postId={post.id} />
             </div>
           </div>
         </div>

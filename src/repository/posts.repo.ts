@@ -1,6 +1,7 @@
 import type { AddEditPostTypeRequest } from "@/libs/schema/post.schema";
 import { db } from "@/server/db";
-import { EPostStatus } from "@prisma/client";
+import type { CommentBodyType } from "@/types/comment";
+import { ECommentStatus, EPostStatus } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 export class PostRepository {
@@ -269,6 +270,66 @@ export class PostRepository {
       });
 
       return updatedPost;
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 },
+      );
+    }
+  }
+
+  static async getComments(id: string) {
+    try {
+      const comments = await db.comment.findMany({
+        where: { postId: parseInt(id), status: ECommentStatus.NotApprove },
+        include: {
+          replies: true,
+        },
+        orderBy: {
+          createdAt: "asc",
+        },
+      });
+
+      function organizeComments(comments: any[], parentId = null): any {
+        return comments
+          .filter(
+            (comment: { replyToId: null }) => comment.replyToId === parentId,
+          )
+          .map((comment: { id: null | undefined }) => ({
+            ...comment,
+            replies: organizeComments(comments, comment.id),
+          }));
+      }
+
+      const organizedComments: any = organizeComments(comments);
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      return organizedComments;
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 },
+      );
+    }
+  }
+
+  static async createComment(postId: string, body: CommentBodyType) {
+    const { name, email, content, website, replyToId, status } = body;
+
+    try {
+      const newComment = await db.comment.create({
+        data: {
+          name,
+          email,
+          content,
+          website,
+          replyToId: replyToId ? parseInt(replyToId + "") : null,
+          postId: parseInt(postId),
+          status,
+        },
+      });
+
+      return newComment;
     } catch (error) {
       return NextResponse.json(
         { error: "Internal server error" },

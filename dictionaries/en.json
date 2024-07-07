@@ -29,7 +29,7 @@
       "linkedin": "I also have LinkedIn"
     },
     "breadcrumbs": "You watching",
-    "toc": "Table of contentsØ"
+    "toc": "Table of contents"
   },
   "page": {
     "notFound": {
@@ -188,7 +188,39 @@
       "empty": "No suitable posts found or not yet published under the category $$."
     },
     "blogsDetail": {
-      "back": "Back"
+      "back": "Back",
+      "category": "Categories",
+      "publishAt": "published at",
+      "view": "view",
+      "form": {
+        "label": {
+          "content": "Content",
+          "name": "Your Name",
+          "email": "Email",
+          "website": "Website"
+        },
+        "placeholder": {
+          "content": "Please enter your comment here...",
+          "name": "Please enter your name here...",
+          "email": "Please enter your email here...",
+          "website": "Please enter your website address..."
+        },
+        "content": "Please enter the content.",
+        "name": "Please enter your name.",
+        "email": "Please enter your email.",
+        "success": "The comment has been successfully posted, but due to some issues, I need to review this comment as well. Thank you.",
+        "error": "An error occurred.",
+        "total": "There are $$ comments on this post",
+        "reply1": "Comment",
+        "reply2": "Reply to $$'s comment",
+        "button": "Reply",
+        "reply3": "wrote",
+        "reply4": "Your email address will not be published. Required fields are marked",
+        "reply5": "are required.",
+        "buttonSubmit": "Send comment <3",
+        "close": "Hide",
+        "invalidEmail": "Invalid email format."
+      }
     }
   },
   "metadata": {

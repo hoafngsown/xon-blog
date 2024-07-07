@@ -44,6 +44,12 @@ export const API_ROUTE_PATH = {
   POSTS: {
     INDEX: "/api/admin/posts",
     DETAIL: "/api/admin/posts/:id",
+    COMMENTS: "/api/admin/posts/:id/comments",
     CHANGE_STATUS: "/api/admin/posts/:id/change-status",
+  },
+  USER: {
+    COMMENTS: {
+      INDEX: "/api/user/comments",
+    },
   },
 };

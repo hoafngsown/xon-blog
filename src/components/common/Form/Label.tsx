@@ -15,7 +15,7 @@ export default function Label({
 }: Props) {
   return (
     <label
-      className={cn("text-sm font-bold text-secondary md:text-base", className)}
+      className={cn("text-base font-bold text-secondary md:text-lg", className)}
     >
       {text}
       {required && <span className="ml-1 text-red-500 sm:ml-2">(*)</span>}

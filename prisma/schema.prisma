@@ -69,6 +69,8 @@ model Comment {
   content   String   
   website   String?
 
+  status    ECommentStatus @default(NotApprove)
+
   replyToId Int?     
   replyTo   Comment? @relation(name: "CommentReplies", fields: [replyToId], references: [id])
   replies   Comment[] @relation(name: "CommentReplies")
@@ -87,3 +89,10 @@ enum EPostStatus {
     Draft
     Publish
 }
+
+
+enum ECommentStatus {
+    NotApprove
+    Approved
+}
+

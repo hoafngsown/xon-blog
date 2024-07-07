@@ -86,7 +86,7 @@ export default function FormAddEditCategory({
       <Typography text="Tạo category mới" className="!text-2xl" />
 
       <form
-        className="mt-6 flex w-full max-w-[700px] flex-col gap-y-6 rounded-[10px] border border-[#ddd] px-8 py-4"
+        className="border-ddd mt-6 flex w-full max-w-[700px] flex-col gap-y-6 rounded-[10px] border px-8 py-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col gap-y-1.5">
@@ -154,7 +154,7 @@ export default function FormAddEditCategory({
           <Button
             type="button"
             variant="ghost"
-            className="rounded-[10px] border border-[#ddd] text-title"
+            className="border-ddd rounded-[10px] border text-title"
             onClick={handleReset}
           >
             Xoá dữ liệu

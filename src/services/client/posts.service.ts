@@ -2,6 +2,7 @@ import { BASE_CLIENT_FETCH_OPTIONS } from "@/constants/common";
 import { API_ROUTE_PATH } from "@/constants/routes";
 import http from "@/libs/http";
 import type { AddEditPostTypeRequest } from "@/libs/schema/post.schema";
+import type { CommentBodyType } from "@/types/comment";
 import type { PostType } from "@/types/post";
 import { r } from "@/utils/route";
 import type { EPostStatus } from "@prisma/client";
@@ -55,6 +56,23 @@ export const postServices = {
     const response = await http.patch<PostType>(
       r(API_ROUTE_PATH.POSTS.CHANGE_STATUS, { id }),
       { status },
+      BASE_CLIENT_FETCH_OPTIONS,
+    );
+    return response.payload;
+  },
+
+  async getComments(id: number) {
+    const response = await http.get<PostType>(
+      r(API_ROUTE_PATH.POSTS.COMMENTS, { id }),
+      BASE_CLIENT_FETCH_OPTIONS,
+    );
+    return response.payload;
+  },
+
+  async createComment(id: number, body: CommentBodyType) {
+    const response = await http.post<PostType>(
+      r(API_ROUTE_PATH.POSTS.COMMENTS, { id }),
+      body,
       BASE_CLIENT_FETCH_OPTIONS,
     );
     return response.payload;

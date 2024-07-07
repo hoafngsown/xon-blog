@@ -12,7 +12,7 @@ export function ModeToggle() {
     <Button
       variant="outline"
       size="icon"
-      className="rounded-[10px] border-[#ddd] focus:ring-0"
+      className="border-ddd rounded-[10px]  focus:ring-0"
       onClick={() =>
         theme === "system" || theme === "light"
           ? setTheme("dark")

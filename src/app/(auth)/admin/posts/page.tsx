@@ -15,7 +15,7 @@ import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
 import { postServices } from "@/services/client/posts.service";
 import type { PostType } from "@/types/post";
-import { formateDate } from "@/utils/date";
+import { formatDate } from "@/utils/date";
 import { r } from "@/utils/route";
 import { EPostStatus } from "@prisma/client";
 import type { ColumnDef } from "@tanstack/react-table";
@@ -175,7 +175,7 @@ export default function BlogList() {
           return (
             <p>
               {row.getValue("publishAt")
-                ? formateDate(row.getValue("publishAt"))
+                ? formatDate(row.getValue("publishAt"))
                 : ""}
             </p>
           );

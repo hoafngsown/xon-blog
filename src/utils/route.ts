@@ -1,4 +1,5 @@
 import queryString from "query-string";
+import { stringify } from "querystring";
 
 interface IObtainDynamicRouteOption {
   queryObject?: object;
@@ -25,3 +26,8 @@ export const obtainDynamicRoute = (
 };
 
 export const r = obtainDynamicRoute;
+
+export const convertToUrl = (data?: any) => {
+  if (!data) return "";
+  return stringify(data);
+};

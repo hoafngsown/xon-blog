@@ -24,7 +24,7 @@ export default function AdminChildLayout({
         variant="ghost"
         type="button"
         onClick={handleBack}
-        className="mb-4 rounded-[10px] border border-[#ddd] px-4 py-1 hover:bg-[#ddd]/50"
+        className="border-ddd mb-4 rounded-[10px] border px-4 py-1 hover:bg-[#ddd]/50"
       >
         Quay lại
       </Button>
