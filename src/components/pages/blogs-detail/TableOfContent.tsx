@@ -24,8 +24,8 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
       const visibleHeadings: any[] = headingElements.filter((el) =>
         isElementInViewport(el),
       );
-      if (visibleHeadings.length > 0) {
-        setActive(visibleHeadings?.[0].id);
+      if (visibleHeadings.length > 0 && visibleHeadings?.[0]?.id) {
+        setActive(visibleHeadings?.[0]?.id);
       }
     };
 
@@ -54,13 +54,13 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
     <div
       className={cn(
         "relative overflow-hidden rounded-[10px] border border-[#ddd] bg-transparent lg:sticky lg:top-32",
-        isExpanded ? "pb-6" : "pb-12",
+        isExpanded ? "pb-6" : "pb-12 md:pb-6",
       )}
     >
       <div
         className={cn(
-          "flex flex-col gap-y-4 overflow-hidden px-4 pb-8 pt-6 transition-all lg:px-6",
-          isExpanded ? "h-auto" : "h-[200px]",
+          "flex flex-col gap-y-4 overflow-hidden px-4 pb-8 pt-6 transition-all md:pb-0 lg:px-6",
+          isExpanded ? "h-auto md:h-auto" : "h-[225px] md:h-auto",
         )}
       >
         <p className="text-xl font-bold text-primary">{t("toc")}</p>
@@ -70,19 +70,34 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
             <Link
               className={cn("text-base font-bold text-title", {
                 "pl-4": heading.level === 3,
-                "text-primary underline": active === heading.slug,
               })}
               key={heading.text}
               href={`#${heading.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById(heading.slug)!
+                  .scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
             >
-              {heading.text}
+              <p
+                className={cn(
+                  "w-fit border-b-0 border-transparent transition-all",
+                  {
+                    "w-fit rounded-[6px] border-b-2 border-primary pb-1 text-primary ease-linear":
+                      active === heading.slug,
+                  },
+                )}
+              >
+                {heading.text}
+              </p>
             </Link>
           );
         })}
       </div>
 
       <p
-        className="absolute bottom-0 left-1/2 my-4 flex h-fit w-fit -translate-x-1/2 cursor-pointer items-center gap-x-2 font-bold text-title transition-all"
+        className="absolute bottom-0 left-1/2 my-4 flex h-fit w-fit -translate-x-1/2 cursor-pointer items-center gap-x-2 font-bold text-title transition-all md:hidden"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {isExpanded ? "Thu gọn" : "Mở rộng"}

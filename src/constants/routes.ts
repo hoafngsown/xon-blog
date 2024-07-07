@@ -6,6 +6,7 @@ export const ROUTE_PATH = {
   },
   CATEGORY: {
     INDEX: "/category",
+    SLUG: "/category/:slug",
   },
   ABOUT: "/about",
   CONTACT: "/contacts",

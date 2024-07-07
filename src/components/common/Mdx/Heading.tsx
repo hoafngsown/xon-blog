@@ -10,7 +10,7 @@ export default function MdxHeading({
   const getTitleSize = () => {
     const level = Number(As.replace("h", ""));
 
-    const size = 2 - level * 0.25;
+    const size = 2.25 - level * 0.25;
 
     return size;
   };

@@ -136,6 +136,19 @@ export const postServerServices = {
       where: {
         slug,
       },
+      include: {
+        categories: {
+          include: {
+            category: {
+              select: {
+                name: true,
+                id: true,
+                slug: true,
+              },
+            },
+          },
+        },
+      },
     });
 
     const formattedPost = formatPost(post);

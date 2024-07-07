@@ -9,6 +9,8 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import BlogAuthorInfo from "./BlogAuthorInfo";
 import { TableOfContents } from "./TableOfContent";
+import { Link } from "@/navigation";
+import { r } from "@/utils/route";
 
 export default async function BlogDetailPage({ slug }: { slug: string }) {
   const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
@@ -33,9 +35,9 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
   return (
     <section className="relative mt-4 min-h-screen lg:mt-8">
       <div className="relative flex flex-col items-center justify-center pb-10 pt-6 md:pb-20">
-        <p className="absolute -top-0 left-0 flex w-fit cursor-pointer items-center gap-x-2">
-          <ChevronLeftIcon />
-          <span className="text-sm font-bold text-secondary">
+        <p className="absolute -top-0 left-0 flex w-fit cursor-pointer items-center gap-x-2 sm:text-base md:text-lg">
+          <ChevronLeftIcon className="stroke-secondary sm:h-6 sm:w-6" />
+          <span className="font-bold text-secondary">
             {t("page.blogsDetail.back")}
           </span>
         </p>
@@ -86,10 +88,39 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
 
               <article
                 id="blog-detail-section"
-                className="break-words text-lg leading-[2.25rem]"
+                className="break-words pb-6 text-lg leading-[2.25rem] sm:pb-10"
               >
                 {post.content}
+
+                <div className="flex items-center gap-x-4">
+                  {post.tags.map((x, index) => (
+                    <p
+                      key={index}
+                      className="cursor-pointer rounded-[10px] bg-primary px-2 py-1 text-sm font-bold text-white hover:bg-secondary"
+                    >
+                      {x}
+                    </p>
+                  ))}
+                </div>
               </article>
+
+              <div className="mb-6 flex gap-x-4 border-y border-solid border-y-[#ddd] py-4 font-bold text-title sm:pb-6 md:mb-10">
+                Danh mục:{" "}
+                <p className="flex items-center gap-x-2">
+                  {post.categories.map((x: any, index) => (
+                    <Link
+                      key={index}
+                      href={r(ROUTE_PATH.CATEGORY.SLUG, {
+                        slug: x.category.slug,
+                      })}
+                      className="font-bold text-primary"
+                    >
+                      {x.category.name}{" "}
+                      {post.categories.length - 1 !== index && ","}
+                    </Link>
+                  ))}
+                </p>
+              </div>
 
               <BlogAuthorInfo />
             </div>
