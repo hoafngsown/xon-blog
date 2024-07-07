@@ -1,16 +1,16 @@
 import Logo from "@/../public/logo.png";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import { ROUTE_PATH } from "@/constants/routes";
+import { Link } from "@/navigation";
 import { postServerServices } from "@/services/server/posts.service";
 import type { BreadcrumbType } from "@/types/common";
 import { formateDate } from "@/utils/date";
-import { ChevronLeftIcon } from "@radix-ui/react-icons";
+import { r } from "@/utils/route";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import BlogAuthorInfo from "./BlogAuthorInfo";
+import ButtonBack from "./ButtonBack";
 import { TableOfContents } from "./TableOfContent";
-import { Link } from "@/navigation";
-import { r } from "@/utils/route";
 
 export default async function BlogDetailPage({ slug }: { slug: string }) {
   const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
@@ -35,12 +35,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
   return (
     <section className="relative mt-4 min-h-screen lg:mt-8">
       <div className="relative flex flex-col items-center justify-center pb-10 pt-6 md:pb-20">
-        <p className="absolute -top-0 left-0 flex w-fit cursor-pointer items-center gap-x-2 sm:text-base md:text-lg">
-          <ChevronLeftIcon className="stroke-secondary sm:h-6 sm:w-6" />
-          <span className="font-bold text-secondary">
-            {t("page.blogsDetail.back")}
-          </span>
-        </p>
+        <ButtonBack />
 
         <div className="flex flex-col items-center justify-center pt-2">
           <Breadcrumbs breadcrumbs={BREAD_CRUMBS} containerClassName="pb-6" />

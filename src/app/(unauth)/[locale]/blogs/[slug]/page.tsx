@@ -3,6 +3,7 @@ import { postServerServices } from "@/services/server/posts.service";
 import "@/styles/prism-dracula.css";
 import type { PostType } from "@/types/post";
 import type { Metadata } from "next";
+import { useRouter } from "next/router";
 
 type Props = {
   params: {

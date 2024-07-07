@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import Empty from "@/components/common/Empty";
 import { ROUTE_PATH } from "@/constants/routes";
 import { postServerServices } from "@/services/server/posts.service";
 import type { BreadcrumbType } from "@/types/common";
@@ -6,7 +7,6 @@ import { getTranslations } from "next-intl/server";
 import BlogListPost from "../blogs/BlogListPost";
 import BlogsCategories from "../blogs/BlogsCategories";
 import CategoryInfo from "./CategoryInfo";
-import Empty from "@/components/common/Empty";
 
 export default async function CategoryPage({ slug }: { slug: string }) {
   const { posts, categories, category } =
@@ -21,7 +21,7 @@ export default async function CategoryPage({ slug }: { slug: string }) {
     },
     {
       label: t("breadcrumbs.category.index"),
-      url: ROUTE_PATH.ABOUT,
+      url: "",
     },
     {
       label: category.name,
