@@ -82,7 +82,7 @@ export default function FormComment({
 
   return (
     <div className="relative flex flex-col gap-y-2 rounded-[10px] bg-[#ddd]/30 p-6 dark:bg-[#ddd]/10 md:p-10">
-      <p className="flex items-center justify-between text-2xl font-bold text-primary">
+      <p className="flex items-center justify-between text-lg font-bold text-primary sm:text-xl md:text-2xl">
         {title}
 
         {setOpen && (

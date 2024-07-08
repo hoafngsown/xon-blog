@@ -6,12 +6,13 @@ import Image from "next/image";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
 import { Link, usePathname } from "@/navigation";
-import Logo from "@/statics/icons/logo.svg";
+import Logo from "@/../public/logo.png";
 import { type LinkType } from "@/types/common";
 import { useTranslations } from "next-intl";
 import NavigationDrawer from "./Navigation/Drawer";
 import SwitchLanguage from "./Navigation/SwitchLanguage";
 import { ModeToggle } from "./ToggleTheme";
+import IconArrowHeader from "../icons/IconArrowHeader";
 
 export default function Header() {
   const t = useTranslations("common.headerMd");
@@ -43,8 +44,16 @@ export default function Header() {
       )}
     >
       <nav className="container mx-auto flex items-center justify-between gap-x-10">
-        <Link href={ROUTE_PATH.HOME}>
-          <Image src={Logo} alt="full-logo" width={224} height={80} />
+        <Link href={ROUTE_PATH.HOME} className="flex">
+          <div className="relative h-[70px] w-[70px] rounded-full bg-white">
+            <Image src={Logo} alt="full-logo" layout="fill" objectFit="cover" />
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <IconArrowHeader className="w-10" />
+            <p className="ml-7 font-bold text-primary dark:text-secondary">
+              Đây là Sơn
+            </p>
+          </div>
         </Link>
 
         <ul className="flex list-none items-center gap-x-10 transition-all">

@@ -13,7 +13,6 @@ import type {
   PostMetadataType,
   PostType,
 } from "@/types/post";
-import { formatDate } from "@/utils/date";
 import { EPostStatus } from "@prisma/client";
 import matter from "gray-matter";
 
@@ -60,7 +59,7 @@ export const postServerServices = {
         description: post.description,
         slug: post.slug,
         tags: post.tags,
-        publishAt: formatDate(post.publishAt),
+        publishAt: post.publishAt,
         thumbnail: post.thumbnail,
       };
     });
@@ -208,7 +207,7 @@ export const postServerServices = {
         description: post.description,
         slug: post.slug,
         tags: post.tags,
-        publishAt: post.publishAt ? formatDate(post.publishAt) : "",
+        publishAt: post.publishAt ?? "",
         thumbnail: post.thumbnail,
       };
     });
