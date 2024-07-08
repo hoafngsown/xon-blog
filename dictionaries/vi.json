@@ -82,11 +82,31 @@
       "description3": "Sự ủng hộ của mọi người là một phần kinh phí duy trì và cũng là một phần động lực để tui có thể viết nhiều blog hay hơn",
       "description4": "Cảm ơn mọi người ! <3",
       "form": {
-        "email": "Email",
-        "phone": "Số điện thoại",
-        "name": "Tên của bạn",
-        "message": "Nội dung",
-        "button": "Gửi ở đây nè !"
+        "button": "Gửi ở đây nè !",
+        "label": {
+          "content": "Nội dung",
+          "email": "Email",
+          "phone": "Số điện thoại",
+          "name": "Tên của bạn"
+        },
+        "placeholder": {
+          "content": "Hãy nhập tin nhắn của bạn ở đây...",
+          "name": "Hãy nhập tên của bạn ở đây...",
+          "email": "Hãy nhập email của bạn ở đây...",
+          "phone": "Hãy nhập số điện thoại của bạn ở đây...",
+          "phoneHelper": "Hãy nhập ít nhất 6 chữ số và tối đa là 11 chữ số"
+        },
+        "error": {
+          "name": "Hãy nhập tên của bạn.",
+          "email": "Hãy nhập email của bạn.",
+          "phone": "Hãy nhập số điện thoại của bạn.",
+          "invalidEmail": "Email không hợp lệ...",
+          "invalidPhone": "Số điện thoại không hợp lệ..."
+        },
+        "message": {
+          "success": "Tin nhắn đã được gửi thành công, Cảm ơn bạn nhen.",
+          "error": "Đã có lỗi xảy ra."
+        }
       }
     },
     "experiences": {
@@ -220,7 +240,8 @@
         "reply5": "là bắt buộc.",
         "buttonSubmit": "Gửi bình luận <3",
         "close": "Đóng",
-        "invalidEmail": "Định dạng email không hợp lệ."
+        "invalidEmail": "Định dạng email không hợp lệ.",
+        "invalidUrl": "Định dạng URL không hợp lệ."
       }
     }
   },

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import Logo from "@/../public/logo.png";
+import ImageWithFallback from "@/components/common/FallbackImage";
+import { getAvatarUrl } from "@/libs/utils";
 import type { CommentBodyType, CommentType } from "@/types/comment";
 import type { LocaleType } from "@/types/common";
 import { formatDate } from "@/utils/date";
-import Image from "next/image";
 import { useState } from "react";
 import FormComment from "./FormComment";
 
@@ -25,16 +25,24 @@ export default function BlogCommentItem({
     <div className="flex flex-col gap-y-4">
       <div className="relative flex flex-col gap-x-2 rounded-[10px] bg-[#ddd]/30 p-4 dark:bg-[#ddd]/10 md:flex-row md:gap-x-4">
         <div className="relative h-[65px] w-[65px] flex-shrink-0 rounded-full bg-white">
-          <Image src={Logo} alt="logo" layout="fill" objectFit="cover" />
+          <ImageWithFallback
+            src={getAvatarUrl(comment.email!)}
+            alt="logo"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-full"
+          />
         </div>
 
         <div className="mt-3 flex flex-col gap-y-2 md:mt-0">
-          <p className="text-base font-bold text-primary md:text-lg">
-            {comment.name ?? ""}
-            <span className="ml-2 inline-block text-sm font-medium text-title md:text-base">
-              {t("reply3")}:
-            </span>
-          </p>
+          <a href={comment.website ?? "#"} target="_blank">
+            <p className="text-base font-bold text-primary md:text-lg">
+              {comment.name ?? ""}
+              <span className="ml-2 inline-block text-sm font-medium text-title md:text-base">
+                {t("reply3")}:
+              </span>
+            </p>
+          </a>
           <p className="text-base font-medium text-secondary md:text-lg">
             {comment.content ?? ""}
           </p>

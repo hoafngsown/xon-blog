@@ -16,6 +16,9 @@ export const ROUTE_PATH = {
     COMMENTS: {
       INDEX: "/admin/comments",
     },
+    CONTACTS: {
+      INDEX: "/admin/contacts",
+    },
     POSTS: {
       INDEX: "/admin/posts",
       CREATE: "/admin/posts/create",
@@ -40,6 +43,9 @@ export const API_ROUTE_PATH = {
   CATEGORIES: {
     INDEX: "/api/admin/categories",
     DETAIL: "/api/admin/categories/:id",
+  },
+  CONTACTS: {
+    INDEX: "/api/admin/contacts",
   },
   POSTS: {
     INDEX: "/api/admin/posts",

@@ -55,7 +55,20 @@ export default function FormComment({
           });
         }
       }),
-    website: z.string().nullish(),
+    website: z
+      .string()
+      .superRefine((data, ctx) => {
+        if (!data) return;
+
+        if (!REGEX.URL.test(data)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.invalid_string,
+            message: t("invalidUrl"),
+            validation: "regex",
+          });
+        }
+      })
+      .nullish(),
   });
 
   const {
@@ -138,6 +151,7 @@ export default function FormComment({
           className="placeholder:text-title"
           placeholder={t("placeholder.website")}
         />
+        <ErrorMessage message={errors.website?.message} />
       </div>
 
       <Button

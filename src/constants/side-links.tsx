@@ -2,6 +2,7 @@ import IconBookText from "@/components/icons/IconBookText";
 import IconCategory from "@/components/icons/IconCategory";
 import IconComment from "@/components/icons/IconComment";
 import IconDashboard from "@/components/icons/IconDashboard";
+import IconNote from "@/components/icons/IconNote";
 import { ROUTE_PATH } from "./routes";
 
 export interface NavLink {
@@ -39,6 +40,12 @@ export const sidelinks: SideLink[] = [
     label: "",
     href: ROUTE_PATH.ADMIN.COMMENTS.INDEX,
     icon: <IconComment />,
+  },
+  {
+    title: "Quản lý contacts",
+    label: "",
+    href: ROUTE_PATH.ADMIN.CONTACTS.INDEX,
+    icon: <IconNote />,
   },
   // {
   //   title: "Comments",

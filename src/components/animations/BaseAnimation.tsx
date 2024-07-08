@@ -14,7 +14,7 @@ export default function BaseAnimation({
   return (
     <motion.div
       key={pathname}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
       transition={{
         type: "tween",
         ease: [0.25, 0.25, 0.5, 0.75],

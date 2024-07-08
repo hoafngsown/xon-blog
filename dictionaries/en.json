@@ -82,11 +82,31 @@
       "description3": "Your support is both funding to maintain this and motivation for me to write more interesting blogs.",
       "description4": "Thank you, everyone! <3",
       "form": {
-        "email": "Email",
-        "phone": "Phone Number",
-        "name": "Your Name",
-        "message": "Message",
-        "button": "Send Here!"
+        "button": "Submit here!",
+        "label": {
+          "content": "Content",
+          "email": "Email",
+          "phone": "Phone Number",
+          "name": "Your Name"
+        },
+        "placeholder": {
+          "content": "Please enter your message here...",
+          "name": "Please enter your name here...",
+          "email": "Please enter your email here...",
+          "phone": "Please enter your phone number here...",
+          "phoneHelper": "Please enter as least 6 characters and max 11 characters"
+        },
+        "error": {
+          "name": "Please enter your name.",
+          "email": "Please enter your email.",
+          "phone": "Please enter your phone number.",
+          "invalidEmail": "Invalid email format.",
+          "invalidPhone": "Invalid phone format."
+        },
+        "message": {
+          "success": "Your message has been successfully sent, thank you!",
+          "error": "An error occurred."
+        }
       }
     },
     "experiences": {
@@ -220,7 +240,8 @@
         "reply5": "are required.",
         "buttonSubmit": "Send comment <3",
         "close": "Hide",
-        "invalidEmail": "Invalid email format."
+        "invalidEmail": "Invalid email format.",
+        "invalidUrl": "Invalid URL format."
       }
     }
   },
