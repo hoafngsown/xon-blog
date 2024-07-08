@@ -6,3 +6,7 @@ export async function GET() {
 
   return NextResponse.json(comments, { status: 200 });
 }
+
+export async function POST(_: Request) {
+  return NextResponse.json({ message: "Test hehe" }, { status: 200 });
+}
