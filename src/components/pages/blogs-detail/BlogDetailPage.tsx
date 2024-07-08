@@ -11,7 +11,9 @@ import Image from "next/image";
 import BlogAuthorInfo from "./BlogAuthorInfo";
 import BlogCommentList from "./BlogCommentList";
 import ButtonBack from "./ButtonBack";
+import IncreaseView from "./IncreaseView";
 import { TableOfContents } from "./TableOfContent";
+import BlogView from "./BlogView";
 
 export default async function BlogDetailPage({ slug }: { slug: string }) {
   const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
@@ -66,8 +68,8 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                   </span>
                   <span className="block text-sm font-bold text-title lg:text-base">
                     {t("page.blogsDetail.publishAt")}:{" "}
-                    {formatDate(post.publishAt, locale)} - 20{" "}
-                    {t("page.blogsDetail.view")}
+                    {formatDate(post.publishAt, locale)} -{" "}
+                    <BlogView postId={post.id} /> {t("page.blogsDetail.view")}
                   </span>
                 </p>
               </div>
@@ -131,6 +133,8 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
               <BlogCommentList postId={post.id} />
             </div>
           </div>
+
+          <IncreaseView postId={post.id} />
         </div>
       </div>
     </section>

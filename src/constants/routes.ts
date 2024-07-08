@@ -46,6 +46,12 @@ export const API_ROUTE_PATH = {
     DETAIL: "/api/admin/posts/:id",
     COMMENTS: "/api/admin/posts/:id/comments",
     CHANGE_STATUS: "/api/admin/posts/:id/change-status",
+    VIEW: "/api/admin/posts/:id/view",
+  },
+  COMMENTS: {
+    INDEX: "/api/admin/comments",
+    DETAIL: "/api/admin/comments/:id",
+    CHANGE_STATUS: "/api/admin/comments/:id/change-status",
   },
   USER: {
     COMMENTS: {

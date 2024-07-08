@@ -38,7 +38,7 @@ export default function BlogCommentItem({
           <p className="text-base font-medium text-secondary md:text-lg">
             {comment.content ?? ""}
           </p>
-          <p className="text-sm font-medium text-secondary md:text-base">
+          <p className="text-sm font-medium text-title md:text-base">
             {formatDate(comment.createdAt as any, locale)}
           </p>
         </div>

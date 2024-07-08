@@ -1,5 +1,5 @@
 import { Timeline } from "@/components/ui/timeline";
-import { LocaleType } from "@/types/common";
+import type { LocaleType } from "@/types/common";
 import type { PostMetaType } from "@/types/post";
 import { getLocale, getTranslations } from "next-intl/server";
 import BlogPost from "./BlogPost";

@@ -21,6 +21,8 @@ export interface PostType {
   createdAt: Date;
   updatedAt: Date;
   priority: number;
+
+  view: number;
 }
 
 export type PostMetaType = Pick<

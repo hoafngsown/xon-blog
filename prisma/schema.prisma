@@ -59,6 +59,8 @@ model Post {
     createdAt       DateTime @default(now())
     updatedAt       DateTime @updatedAt
 
+    view            Int @default(0)
+
     @@map("post")
 }
 

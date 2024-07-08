@@ -337,4 +337,62 @@ export class PostRepository {
       );
     }
   }
+
+  static async inCreaseView(id: string) {
+    try {
+      if (!id) {
+        return NextResponse.json(
+          { error: "Invalid ID or status" },
+          { status: 400 },
+        );
+      }
+
+      const existingPost = await db.post.findUnique({
+        where: { id: parseInt(id) },
+      });
+
+      if (!existingPost) {
+        return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      }
+
+      const updatedPost = await db.post.update({
+        where: { id: parseInt(id) },
+        data: {
+          view: {
+            increment: 1,
+          },
+        },
+      });
+
+      return updatedPost;
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 },
+      );
+    }
+  }
+
+  static async getView(id: string) {
+    try {
+      if (!id) {
+        return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+      }
+
+      const post = await db.post.findFirst({
+        where: { id: parseInt(id) },
+        select: {
+          view: true,
+        },
+      });
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      return post?.view ?? 0;
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 },
+      );
+    }
+  }
 }

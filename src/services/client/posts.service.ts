@@ -77,4 +77,21 @@ export const postServices = {
     );
     return response.payload;
   },
+
+  async increaseView(id: number) {
+    const response = await http.patch<PostType>(
+      r(API_ROUTE_PATH.POSTS.VIEW, { id }),
+      {},
+      BASE_CLIENT_FETCH_OPTIONS,
+    );
+    return response.payload;
+  },
+
+  async getView(id: number) {
+    const response = await http.get<number>(
+      r(API_ROUTE_PATH.POSTS.VIEW, { id }),
+      BASE_CLIENT_FETCH_OPTIONS,
+    );
+    return response.payload;
+  },
 };

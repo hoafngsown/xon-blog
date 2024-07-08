@@ -169,6 +169,13 @@ export default function BlogList() {
         },
       },
       {
+        accessorKey: "view",
+        header: "Lượt xem",
+        cell: ({ row }) => {
+          return <p>{row.getValue("view") as string}</p>;
+        },
+      },
+      {
         accessorKey: "publishAt",
         header: "Ngày đăng",
         cell: ({ row }) => {

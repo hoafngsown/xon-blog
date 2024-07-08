@@ -1,5 +1,6 @@
 import IconBookText from "@/components/icons/IconBookText";
 import IconCategory from "@/components/icons/IconCategory";
+import IconComment from "@/components/icons/IconComment";
 import IconDashboard from "@/components/icons/IconDashboard";
 import { ROUTE_PATH } from "./routes";
 
@@ -32,6 +33,12 @@ export const sidelinks: SideLink[] = [
     label: "",
     href: ROUTE_PATH.ADMIN.CATEGORIES.INDEX,
     icon: <IconCategory />,
+  },
+  {
+    title: "Quản lý comments",
+    label: "",
+    href: ROUTE_PATH.ADMIN.COMMENTS.INDEX,
+    icon: <IconComment />,
   },
   // {
   //   title: "Comments",
