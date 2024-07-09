@@ -6,7 +6,6 @@ import type { HeadingType } from "@/types/post";
 import { convertTitleToSlug } from "@/utils/common";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
@@ -101,6 +100,18 @@ export async function getCompileMDX(source: string) {
           />
         </CopyToClipboard>
       ),
+      em: (props) => (
+        <em {...props} className={cn(props.className, "font-bold")} />
+      ),
+      a: (props) => (
+        <a
+          {...props}
+          className={cn(
+            props.className,
+            "rounded-[6px] border-b-2 border-primary font-bold italic text-secondary hover:border-b-[3px] hover:text-primary",
+          )}
+        />
+      ),
       code: (props) => {
         return (
           <code
@@ -119,21 +130,7 @@ export async function getCompileMDX(source: string) {
       parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [],
-        rehypePlugins: [
-          rehypeSlug,
-          rehypePrism,
-          rehypeCodeTitles,
-          [
-            rehypeAutolinkHeadings as any,
-            {
-              behavior: "wrap",
-              properties: {
-                className: ["subheading-anchor"],
-                ariaLabel: "Link to section",
-              },
-            },
-          ],
-        ],
+        rehypePlugins: [rehypeSlug, rehypePrism, rehypeCodeTitles],
       },
     },
   });
