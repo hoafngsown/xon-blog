@@ -101,7 +101,6 @@ export const postServerServices = {
 
     return categories.map((p) => ({
       name: p.name,
-      description: p.description,
       slug: p.slug,
       id: p.id,
     })) as CategoryMetadataType[];
@@ -115,7 +114,6 @@ export const postServerServices = {
     return {
       name: category?.name,
       slug: category?.slug,
-      description: category?.description,
       id: category?.id,
     } as CategoryMetadataType;
   },

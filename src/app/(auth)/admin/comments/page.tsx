@@ -132,8 +132,8 @@ export default function CommentListPage() {
         },
       },
       {
-        accessorKey: "Thuộc bài viết",
-        header: "Thể loại",
+        accessorKey: "",
+        header: "Bài viết",
         cell: ({ row }) => {
           const title = (row.original as any)?.post?.title ?? "";
           return <p>{title}</p>;

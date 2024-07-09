@@ -14,7 +14,6 @@ import type { CategoryType } from "@/types/categories";
 import { formatDate } from "@/utils/date";
 import { r } from "@/utils/route";
 import type { ColumnDef } from "@tanstack/react-table";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -78,38 +77,11 @@ export default function CategoryList() {
         },
       },
       {
-        accessorKey: "description",
-        header: "Description",
-        cell: ({ row }) => {
-          return (
-            <p className="break-word max-w-[700px] text-right font-medium">
-              {row.getValue("description")}
-            </p>
-          );
-        },
-      },
-      {
         accessorKey: "slug",
         header: "Slug",
         cell: ({ row }) => {
           return (
             <p className="max-w-[200px] break-words">{row.getValue("slug")}</p>
-          );
-        },
-      },
-      {
-        accessorKey: "thumbnail",
-        header: "thumbnail",
-        cell: ({ row }) => {
-          return (
-            <Image
-              src={row.getValue("thumbnail")}
-              width={100}
-              height={100}
-              objectFit="cover"
-              className="rounded-[10px]"
-              alt="thumbnail"
-            />
           );
         },
       },

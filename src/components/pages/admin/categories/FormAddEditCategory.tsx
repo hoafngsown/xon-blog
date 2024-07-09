@@ -11,12 +11,10 @@ import {
   AddEditCategorySchema,
   type AddEditCategoryType,
 } from "@/libs/schema/category.schema";
-import { UploadButton } from "@/libs/uploadthing";
 import { categoryServices } from "@/services/client/categories.service";
 import type { CategoryType } from "@/types/categories";
 import { convertTitleToSlug } from "@/utils/common";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 interface Props {
@@ -41,8 +39,6 @@ export default function FormAddEditCategory({
     defaultValues: defaultValues ?? {
       name: "",
       slug: "",
-      description: "",
-      thumbnail: "",
     },
     resolver: zodResolver(AddEditCategorySchema),
   });
@@ -77,8 +73,6 @@ export default function FormAddEditCategory({
   const handleReset = () => {
     setValue("name", "");
     setValue("slug", "");
-    setValue("description", "");
-    setValue("thumbnail", "");
   };
 
   return (
@@ -105,49 +99,9 @@ export default function FormAddEditCategory({
         </div>
 
         <div className="flex flex-col gap-y-1.5">
-          <Label text="Mô tả cụ thể" required />
-          <Input
-            placeholder="Nhập description của category"
-            {...register("description")}
-          />
-          <ErrorMessage message={errors.description?.message} />
-        </div>
-
-        <div className="flex flex-col gap-y-1.5">
           <Label text="Slug" required />
           <Input placeholder="Nhập slug" {...register("slug")} />
           <ErrorMessage message={errors.slug?.message} />
-        </div>
-
-        <div className="flex flex-col gap-y-1.5">
-          <Label text="Ảnh của category" required />
-          <div className="flex">
-            <UploadButton
-              endpoint="imageUploader"
-              onClientUploadComplete={(res: any) => {
-                toast({
-                  title: "Đã upload ảnh thành công",
-                });
-
-                setValue("thumbnail", res?.[0]?.url);
-              }}
-              onUploadError={() => {
-                toast({
-                  title: "Đã upload ảnh thành công",
-                  variant: "destructive",
-                });
-              }}
-            />
-          </div>
-          {watch("thumbnail") && (
-            <Image
-              src={watch("thumbnail")}
-              alt="thumbnail"
-              height={100}
-              width={100}
-            />
-          )}
-          <ErrorMessage message={errors.thumbnail?.message} />
         </div>
 
         <div className="flex items-center justify-center gap-x-3">

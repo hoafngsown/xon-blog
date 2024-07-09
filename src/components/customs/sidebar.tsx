@@ -2,6 +2,7 @@
 
 import { sidelinks } from "@/constants/side-links";
 import { cn } from "@/libs/utils";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import IconArrowLeft from "../icons/IconArrowLeft";
 import IconArrowRight from "../icons/IconArrowRight";
@@ -76,12 +77,13 @@ export default function Sidebar({
                 strokeWidth="16"
               />
             </svg>
-            <div
+            <Link
+              href={"/vi"}
               className={`flex flex-col justify-end truncate ${isCollapsed ? "invisible w-0" : "visible w-auto"}`}
             >
               <span className="text-lg font-bold text-secondary">Hé lu</span>
               <span className="text-2xl font-bold text-primary">Hoàng Sơn</span>
-            </div>
+            </Link>
           </div>
 
           <Button

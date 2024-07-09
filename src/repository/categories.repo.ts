@@ -5,14 +5,12 @@ import { NextResponse } from "next/server";
 export class CategoryRepository {
   static async createNew(data: AddEditCategoryType) {
     try {
-      const { name, description, slug, thumbnail } = data;
+      const { name, slug } = data;
 
       const category = await db.category.create({
         data: {
           name,
-          description,
           slug,
-          thumbnail,
         },
       });
 
@@ -56,9 +54,7 @@ export class CategoryRepository {
     try {
       const data = {
         name: body.name,
-        description: body.description,
         slug: body.slug,
-        thumbnail: body.thumbnail,
       };
 
       const category = await db.category.update({
