@@ -81,13 +81,10 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
               }}
             >
               <p
-                className={cn(
-                  "w-fit border-b-0 border-transparent transition-all",
-                  {
-                    "w-fit rounded-[6px] border-b-2 border-primary pb-1 text-primary ease-linear":
-                      active === heading.slug,
-                  },
-                )}
+                className={cn("transition-all ease-linear", {
+                  "rounded-[10px] bg-[#ddd]/30 px-4 py-2 text-primary dark:text-secondary":
+                    active === heading.slug,
+                })}
               >
                 {heading.text}
               </p>

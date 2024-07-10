@@ -127,7 +127,7 @@ export async function getCompileMDX(source: string) {
               "bg-gradient-to-r from-purple-300 to-sky-500 bg-clip-text font-bold italic text-transparent",
             )}
           >
-            &apos;{props.children}&apos;
+            {props.children}
           </code>
         );
       },
