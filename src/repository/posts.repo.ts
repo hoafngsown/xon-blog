@@ -218,6 +218,10 @@ export class PostRepository {
           where: { postId: parseInt(id) },
         });
 
+        await tx.comment.deleteMany({
+          where: { postId: parseInt(id) },
+        });
+
         // Xóa bài viết
         return await tx.post.delete({
           where: { id: parseInt(id) },

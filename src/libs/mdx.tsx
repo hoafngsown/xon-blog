@@ -26,7 +26,7 @@ export async function getCompileMDX(source: string) {
           {...props}
           className={cn(
             props.className,
-            "my-[1.5rem] font-medium text-secondary",
+            "my-2 font-medium text-secondary md:my-4 lg:my-5 xl:my-6",
           )}
         />
       ),
@@ -35,7 +35,7 @@ export async function getCompileMDX(source: string) {
           {...props}
           className={cn(
             props.className,
-            "my-[1.5rem] font-medium text-secondary",
+            "my-2 font-medium text-secondary md:my-4 lg:my-5 xl:my-6",
           )}
         />
       ),
@@ -44,20 +44,26 @@ export async function getCompileMDX(source: string) {
           {...props}
           className={cn(
             props.className,
-            "my-[1.5rem] font-medium text-secondary",
+            "my-2 list-disc font-medium text-secondary md:my-4 lg:my-5 xl:my-6",
           )}
         />
       ),
       figure: (props) => (
         <figure
           {...props}
-          className={cn(props.className, "my-[1.5rem] font-medium")}
+          className={cn(
+            props.className,
+            "my-2 font-medium md:my-4 lg:my-5 xl:my-6",
+          )}
         />
       ),
       li: (props) => (
         <li
           {...props}
-          className={cn(props.className, "my-[1.5rem] font-medium")}
+          className={cn(
+            props.className,
+            "my-2 ml-12 font-medium md:my-4 lg:my-5 xl:my-6",
+          )}
         />
       ),
       blockquote: (props) => (
@@ -87,7 +93,7 @@ export async function getCompileMDX(source: string) {
           alt="hehe"
           className={cn(
             props.className,
-            "mx-auto my-[1.5rem] h-auto w-full rounded-[10px] shadow-sm",
+            "mx-auto my-2 h-auto w-full rounded-[10px] shadow-sm md:my-4 lg:my-5 xl:my-6",
           )}
           objectFit="cover"
         />
