@@ -43,7 +43,7 @@ export class PostRepository {
             slug,
             status,
             tags,
-            publishAt: null,
+            publishAt: status === EPostStatus.Publish ? new Date() : null,
             priority,
             categories: {
               create: categories.map((categoryId: string) => ({
