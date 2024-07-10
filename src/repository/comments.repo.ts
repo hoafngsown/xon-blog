@@ -94,4 +94,37 @@ export class CommentRepository {
       );
     }
   }
+
+  static async changeOwner(id: string, isOwner: boolean) {
+    try {
+      if (!id) {
+        return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+      }
+
+      const existingComment = await db.comment.findUnique({
+        where: { id: parseInt(id) },
+      });
+
+      if (!existingComment) {
+        return NextResponse.json(
+          { error: "Comment not found" },
+          { status: 404 },
+        );
+      }
+
+      const updatedComment = await db.comment.update({
+        where: { id: parseInt(id) },
+        data: {
+          isOwner,
+        },
+      });
+
+      return updatedComment;
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 },
+      );
+    }
+  }
 }

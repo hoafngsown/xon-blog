@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+import Logo from "@/../public/logo.png";
 import ImageWithFallback from "@/components/common/FallbackImage";
 import { getAvatarUrl } from "@/libs/utils";
 import type { CommentBodyType, CommentType } from "@/types/comment";
@@ -6,7 +7,6 @@ import type { LocaleType } from "@/types/common";
 import { formatDate } from "@/utils/date";
 import { useState } from "react";
 import FormComment from "./FormComment";
-
 export default function BlogCommentItem({
   comment,
   onSubmit,
@@ -26,7 +26,7 @@ export default function BlogCommentItem({
       <div className="relative flex flex-col gap-x-2 rounded-[10px] bg-[#ddd]/30 p-4 dark:bg-[#ddd]/10 md:flex-row md:gap-x-4">
         <div className="relative h-[65px] w-[65px] flex-shrink-0 rounded-full bg-white">
           <ImageWithFallback
-            src={getAvatarUrl(comment.email!)}
+            src={comment?.isOwner ? Logo : getAvatarUrl(comment.email!)}
             alt="logo"
             layout="fill"
             objectFit="cover"

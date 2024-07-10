@@ -30,4 +30,13 @@ export const commentServices = {
     );
     return response.payload;
   },
+
+  async changeOwner(id: number, isOwner: boolean) {
+    const response = await http.patch<CommentType>(
+      r(API_ROUTE_PATH.COMMENTS.CHANGE_OWNER, { id }),
+      { isOwner },
+      BASE_CLIENT_FETCH_OPTIONS,
+    );
+    return response.payload;
+  },
 };

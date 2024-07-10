@@ -72,6 +72,8 @@ model Comment {
 
   status    ECommentStatus @default(NotApprove)
 
+
+  isOwner  Boolean? @default(false)
   replyToId Int?     
   replyTo   Comment? @relation(name: "CommentReplies", fields: [replyToId], references: [id])
   replies   Comment[] @relation(name: "CommentReplies")

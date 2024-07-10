@@ -18,6 +18,8 @@ export interface CommentType {
   createdAt: Date;
   updatedAt: Date;
   status: ECommentStatus;
+
+  isOwner: boolean;
 }
 
 export type CommentBodyType = Pick<

@@ -89,6 +89,29 @@ export default function CommentListPage() {
     }
   };
 
+  const handleChangeOwner = async (id: number, status: boolean) => {
+    try {
+      if (!id) return;
+      showLoader(true);
+
+      await commentServices.changeOwner(id, status);
+
+      toast({
+        title: "Đã cập nhật owner comment thành công",
+        variant: "destructive",
+      });
+
+      await fetchCommentList();
+    } catch (error) {
+      toast({
+        title: "Đã cập nhật owner comment thất bại",
+        variant: "destructive",
+      });
+    } finally {
+      showLoader(false);
+    }
+  };
+
   const columns: ColumnDef<CommentType>[] = useMemo(() => {
     return [
       {
@@ -149,6 +172,21 @@ export default function CommentListPage() {
                 ? formatDate(row.getValue("createdAt"))
                 : ""}
             </p>
+          );
+        },
+      },
+      {
+        accessorKey: "isOwner",
+        header: "Owner",
+        cell: ({ row }) => {
+          return (
+            <Switch
+              checked={row.getValue("isOwner")}
+              value={row.getValue("isOwner")}
+              onCheckedChange={(state) =>
+                handleChangeOwner(row.original.id, state)
+              }
+            />
           );
         },
       },

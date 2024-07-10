@@ -10,3 +10,9 @@ export const ChangeStatusCommentSchema = z.object({
 export type ChangeStatusCommentType = z.TypeOf<
   typeof ChangeStatusCommentSchema
 >;
+
+export const ChangeOwnerCommentSchema = z.object({
+  isOwner: z.boolean(),
+});
+
+export type ChangeOwnerCommentType = z.TypeOf<typeof ChangeOwnerCommentSchema>;
