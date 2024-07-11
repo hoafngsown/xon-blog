@@ -1,14 +1,31 @@
 "use client";
 
 import { cn } from "@/libs/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function TopNavigation() {
   const t = useTranslations("common.headerMobile");
 
+  const { scrollY } = useScroll();
+
+  const [isOver, setIsOver] = useState(
+    (scrollY as any)?.current > 100 ? true : false,
+  );
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest >= 100 && !isOver) setIsOver(true);
+    if (latest <= 0 && isOver) setIsOver(false);
+  });
+
   return (
-    <header>
+    <header className="relative z-50 h-20 w-full">
       <AnimatePresence mode="wait">
         <motion.div
           initial={{
@@ -22,7 +39,10 @@ export default function TopNavigation() {
             duration: 0.25,
           }}
           className={cn(
-            "fixed left-0 top-0 z-30 flex h-[80px] w-full flex-col items-center justify-center gap-y-1 bg-background py-4",
+            "flex w-full flex-col items-center justify-center gap-y-1 bg-background py-3",
+            isOver
+              ? "header-scroll border-b border-b-[#ddd]/50 shadow"
+              : "bg-transparent",
           )}
         >
           <p className="text-xl font-bold uppercase text-black/70 dark:text-title">

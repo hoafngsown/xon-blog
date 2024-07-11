@@ -59,4 +59,27 @@
   body {
     @apply m-0 flex h-screen flex-col bg-background text-title;
   }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
+  .header-scroll {
+    animation: fadeInDown 0.7s ease-in-out 0s 1 normal none running;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    transition: all 0.3s linear;
+    padding-top: 0;
+  }
 }
