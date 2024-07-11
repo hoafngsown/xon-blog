@@ -47,10 +47,13 @@ export const postServerServices = {
       },
     });
 
+    promises[2] = db.post.count();
+
     const responses = await Promise.all(promises);
 
     const responsePost = (responses[0] ?? []) as any[];
     const responseCategories = (responses[1] ?? []) as any[];
+    const totalCount = responses[2];
 
     const formattedPosts: PostMetaType[] = responsePost?.map((post) => {
       return {
@@ -78,6 +81,7 @@ export const postServerServices = {
     return {
       posts: formattedPosts,
       categories: formattedCategories,
+      totalCount: totalCount,
     };
   },
 
@@ -178,6 +182,8 @@ export const postServerServices = {
       },
     });
 
+    promises[2] = db.post.count();
+
     const responses = await Promise.all(promises);
 
     const category = (responses[0] ?? []) as any;
@@ -214,6 +220,7 @@ export const postServerServices = {
       posts: formattedPosts,
       categories: formattedCategories,
       category: category as CategoryType,
+      totalCount: responses[2],
     };
   },
 };

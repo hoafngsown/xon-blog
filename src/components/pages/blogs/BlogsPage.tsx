@@ -9,7 +9,7 @@ import BlogListPost from "./BlogListPost";
 import BlogsCategories from "./BlogsCategories";
 
 export default async function BlogsPage() {
-  const { posts, categories } =
+  const { posts, categories, totalCount } =
     await postServerServices.getAllPostAndCategories();
 
   const t = await getTranslations();
@@ -38,7 +38,10 @@ export default async function BlogsPage() {
         <div className="my-4 h-[1px] w-[50%] rounded-lg bg-[#ddd]/50 md:mb-5 md:mt-10" />
 
         <div className="mt-4 flex flex-col gap-y-4 sm:mt-8 sm:gap-y-8 lg:mt-10">
-          <BlogsCategories categories={categories} />
+          <BlogsCategories
+            categories={categories}
+            totalCount={totalCount ? +totalCount : 0}
+          />
           <BlogListPost posts={posts} />
           {posts.length === 0 && <Empty message={t("page.blogs.empty")} />}
         </div>
