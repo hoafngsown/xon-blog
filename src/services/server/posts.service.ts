@@ -53,7 +53,6 @@ export const postServerServices = {
 
     const responsePost = (responses[0] ?? []) as any[];
     const responseCategories = (responses[1] ?? []) as any[];
-    const totalCount = responses[2];
 
     const formattedPosts: PostMetaType[] = responsePost?.map((post) => {
       return {
@@ -81,7 +80,7 @@ export const postServerServices = {
     return {
       posts: formattedPosts,
       categories: formattedCategories,
-      totalCount: totalCount,
+      totalCount: responses[2],
     };
   },
 
