@@ -47,7 +47,7 @@ export const postServerServices = {
       },
     });
 
-    promises[2] = db.post.count();
+    const totalPostCount = await db.post.count();
 
     const responses = await Promise.all(promises);
 
@@ -80,7 +80,7 @@ export const postServerServices = {
     return {
       posts: formattedPosts,
       categories: formattedCategories,
-      totalCount: responses[2],
+      totalCount: totalPostCount,
     };
   },
 
@@ -181,7 +181,7 @@ export const postServerServices = {
       },
     });
 
-    promises[2] = db.post.count();
+    const totalPostCount = await db.post.count();
 
     const responses = await Promise.all(promises);
 
@@ -219,7 +219,7 @@ export const postServerServices = {
       posts: formattedPosts,
       categories: formattedCategories,
       category: category as CategoryType,
-      totalCount: responses[2],
+      totalCount: totalPostCount,
     };
   },
 };
