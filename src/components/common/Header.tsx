@@ -51,7 +51,7 @@ export default function Header() {
   });
 
   return (
-    <header className={cn("relative z-[1000] w-full")}>
+    <header className={cn("relative z-[1000] h-20 w-full")}>
       <div
         className={cn(
           isOver
