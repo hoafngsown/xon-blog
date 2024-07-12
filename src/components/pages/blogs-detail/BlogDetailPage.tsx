@@ -66,11 +66,11 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                   <span className="block text-lg font-bold text-sky-700 lg:text-xl">
                     Hoàng Sơn
                   </span>
-                  <span className="block text-sm font-bold text-title lg:text-base">
-                    {t("page.blogsDetail.publishAt")}:{" "}
-                    {formatDate(post.publishAt, locale)} -{" "}
+                  <p className="flex gap-x-2 text-sm font-bold text-title lg:text-base">
+                    <span>{t("page.blogsDetail.publishAt")}:</span>
+                    <span>{formatDate(post.publishAt, locale)}</span>-{" "}
                     <BlogView postId={post.id} /> {t("page.blogsDetail.view")}
-                  </span>
+                  </p>
                 </p>
               </div>
 
