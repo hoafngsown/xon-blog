@@ -10,10 +10,11 @@ import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import BlogAuthorInfo from "./BlogAuthorInfo";
 import BlogCommentList from "./BlogCommentList";
+import BlogView from "./BlogView";
 import ButtonBack from "./ButtonBack";
+import ButtonScrollTop from "./ButtonScrollTop";
 import IncreaseView from "./IncreaseView";
 import { TableOfContents } from "./TableOfContent";
-import BlogView from "./BlogView";
 
 export default async function BlogDetailPage({ slug }: { slug: string }) {
   const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
@@ -66,7 +67,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                   <span className="block text-lg font-bold text-sky-700 lg:text-xl">
                     Hoàng Sơn
                   </span>
-                  <p className="flex gap-x-2 text-sm font-bold text-title lg:text-base">
+                  <p className="flex flex-wrap gap-x-2 text-sm font-bold text-title lg:text-base">
                     <span>{t("page.blogsDetail.publishAt")}:</span>
                     <span>{formatDate(post.publishAt, locale)}</span>-{" "}
                     <BlogView postId={post.id} /> {t("page.blogsDetail.view")}
@@ -136,6 +137,8 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
 
           <IncreaseView postId={post.id} />
         </div>
+
+        <ButtonScrollTop />
       </div>
     </section>
   );
