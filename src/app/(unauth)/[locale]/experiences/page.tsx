@@ -1,7 +1,7 @@
 import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import ExperienceComponents from "@/components/pages/experiences/ExperiencePage";
 import envConfig from "@/configs/env";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
@@ -27,7 +27,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "/logo.ico",
+          url: "https://utfs.io/f/ed939c2b-a7ac-4f87-9546-a84acb7bd204-h705nv.png",
         },
       ],
     },

@@ -1,4 +1,6 @@
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import CategoryComponents from "@/components/pages/category/CategoryPage";
+import envConfig from "@/configs/env";
 import { postServerServices } from "@/services/server/posts.service";
 import type { CategoryMetadataType } from "@/types/categories";
 import type { Metadata } from "next";
@@ -30,10 +32,30 @@ export async function generateMetadata({
   const category: CategoryMetadataType =
     await postServerServices.getCategoryBySlug(slug);
 
+  const url = `${envConfig.SITE_URL}/${locale}/category/${slug}`;
+
+  const title = t("title").replace("$$", category.name);
+  const description = t("description").replace("$$", category.name);
+
   return {
-    title: t("title").replace("$$", category.name),
-    description: t("description").replace("$$", category.name),
+    title,
+    description,
     icons: [{ rel: "icon", url: "/logo.ico" }],
+    openGraph: {
+      ...baseOpenGraph,
+      title: title,
+      description: description,
+      url,
+      images: [
+        {
+          url: "/logo.ico",
+        },
+      ],
+    },
+    alternates: {
+      ...baseAlternates,
+      canonical: url,
+    },
   } as Metadata;
 }
 

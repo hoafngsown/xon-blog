@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+import envConfig from "@/configs/env";
+import { type Metadata } from "next";
 
 export const baseOpenGraph = {
   locale: "vi_VN",
@@ -14,7 +15,8 @@ export const baseAlternates = {
   },
 };
 
-export const baseMetadata: Partial<Metadata> = {
+export const metadata: Partial<Metadata> = {
+  metadataBase: new URL(envConfig.SITE_URL),
   openGraph: baseOpenGraph,
   alternates: baseAlternates,
 };
