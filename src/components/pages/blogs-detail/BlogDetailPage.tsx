@@ -1,4 +1,4 @@
-import Logo from "@/../public/logo.png";
+import Logo from "@/../public/logo.ico";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import { ROUTE_PATH } from "@/constants/routes";
 import { Link } from "@/navigation";

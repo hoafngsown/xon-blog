@@ -1,7 +1,4 @@
-import {
-  baseAlternates,
-  baseOpenGraph,
-} from "@/app/(unauth)/[locale]/shared-metadata";
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import HomePageComponent from "@/components/pages/home/HomePage";
 import envConfig from "@/configs/env";
 import { type Metadata } from "next";
@@ -17,8 +14,9 @@ export async function generateMetadata({
 
   return {
     title: t("title"),
+    keywords: ["Phạm Hoàng Sơn", "Góc của Sơn", "Hoàng Sơn space"],
     description: t("description"),
-    icons: [{ rel: "icon", url: "/logo.png" }],
+    icons: [{ rel: "icon", url: "/logo.ico" }],
     openGraph: {
       ...baseOpenGraph,
       title: t("title"),
@@ -26,7 +24,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "/logo.png",
+          url: "/logo.ico",
         },
       ],
     },

@@ -30,7 +30,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    icons: [{ rel: "icon", url: "/logo.png" }],
+    icons: [{ rel: "icon", url: "/logo.ico" }],
   } as Metadata;
 }
 

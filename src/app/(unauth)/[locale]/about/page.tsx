@@ -12,7 +12,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    icons: [{ rel: "icon", url: "/logo.png" }],
+    icons: [{ rel: "icon", url: "/logo.ico" }],
   } as Metadata;
 }
 

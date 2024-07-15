@@ -1,7 +1,4 @@
-import {
-  baseAlternates,
-  baseOpenGraph,
-} from "@/app/(unauth)/[locale]/shared-metadata";
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import { ThemeProvider } from "@/components/providers/theme";
 import { Toaster } from "@/components/ui/toaster";
@@ -47,7 +44,7 @@ export const metadata: Metadata = {
   description: "This site is my personal space",
   openGraph: baseOpenGraph,
   alternates: baseAlternates,
-  icons: [{ rel: "icon", url: "/logo.png" }],
+  icons: [{ rel: "icon", url: "/logo.ico" }],
 };
 
 export function generateStaticParams() {

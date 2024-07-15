@@ -13,6 +13,7 @@ export default function BannerCarousel({ banner }: Props) {
           src={banner}
           alt="banner"
           layout="fill"
+          title="banner"
           className="object-cover sm:object-contain"
         />
       </div>

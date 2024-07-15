@@ -13,26 +13,34 @@ export default function SwitchLanguage() {
 
   return (
     <div className="flex h-5 items-center space-x-4 text-sm">
-      <Link href={pathname} locale={locales[0]}>
-        <p
+      <Link
+        href={pathname}
+        locale={locales[0]}
+        title={`Switch to ${locales[0]}`}
+      >
+        <h2
           className={cn(
             "cursor-pointer text-lg font-bold",
             locale === locales[0]! && "text-primary",
           )}
         >
           VI
-        </p>
+        </h2>
       </Link>
       <Separator orientation="vertical" className="h-full w-[2px] bg-[#ccc]" />
-      <Link href={pathname} locale={locales[1]}>
-        <p
+      <Link
+        href={pathname}
+        locale={locales[1]}
+        title={`Switch to ${locales[1]}`}
+      >
+        <h2
           className={cn(
             "cursor-pointer text-lg font-bold",
             locale === locales[1] && "text-primary",
           )}
         >
           EN
-        </p>
+        </h2>
       </Link>
     </div>
   );

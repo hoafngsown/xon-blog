@@ -72,6 +72,7 @@ export default function NavigationDrawer() {
               return (
                 <li key={item.label + "_" + index}>
                   <Link
+                    title={`Go to ${item.url}`}
                     href={item.url}
                     className="flex items-center justify-center gap-x-2"
                     onClick={() => item.url && setOpenDrawer(false)}

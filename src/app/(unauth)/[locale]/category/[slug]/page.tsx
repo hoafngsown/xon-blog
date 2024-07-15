@@ -33,7 +33,7 @@ export async function generateMetadata({
   return {
     title: t("title").replace("$$", category.name),
     description: t("description").replace("$$", category.name),
-    icons: [{ rel: "icon", url: "/logo.png" }],
+    icons: [{ rel: "icon", url: "/logo.ico" }],
   } as Metadata;
 }
 
