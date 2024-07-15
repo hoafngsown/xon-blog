@@ -1,6 +1,9 @@
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import ContactComponents from "@/components/pages/contacts/ContactPage";
+import envConfig from "@/configs/env";
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -8,10 +11,27 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: "metadata.contacts" });
 
+  const url = `${envConfig.SITE_URL}/${locale}/contacts`;
+
   return {
     title: t("title"),
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.png" }],
+    openGraph: {
+      ...baseOpenGraph,
+      title: t("title"),
+      description: t("description"),
+      url,
+      images: [
+        {
+          url: "/OGLogo.png",
+        },
+      ],
+    },
+    alternates: {
+      ...baseAlternates,
+      canonical: url,
+    },
   } as Metadata;
 }
 

@@ -1,6 +1,5 @@
 "use client";
 
-import IconArrowLeft from "@/components/icons/IconArrowLeft";
 import IconChevronDown from "@/components/icons/IconChevronDown";
 import { cn } from "@/libs/utils";
 import { useMotionValueEvent, useScroll } from "framer-motion";

@@ -1,4 +1,6 @@
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import BlogDetailPage from "@/components/pages/blogs-detail/BlogDetailPage";
+import envConfig from "@/configs/env";
 import { postServerServices } from "@/services/server/posts.service";
 import "@/styles/prism-dracula.css";
 import type { PostType } from "@/types/post";
@@ -21,16 +23,35 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { slug },
+  params: { slug, locale },
 }: {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }) {
   const post = (await postServerServices.getPostBySlug(slug)) as PostType;
+
+  const url = `${envConfig.SITE_URL}/${locale}/blogs/${slug}`;
 
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: "Hoàng Sơn", url: envConfig.SITE_URL }],
+    keywords: post.tags,
     icons: [{ rel: "icon", url: "/logo.png" }],
+    openGraph: {
+      ...baseOpenGraph,
+      title: post.title,
+      description: post.description,
+      url,
+      images: [
+        {
+          url: post.thumbnail,
+        },
+      ],
+    },
+    alternates: {
+      ...baseAlternates,
+      canonical: url,
+    },
   } as Metadata;
 }
 

@@ -1,6 +1,8 @@
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import { ThemeProvider } from "@/components/providers/theme";
 import { Toaster } from "@/components/ui/toaster";
+import envConfig from "@/configs/env";
 import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
@@ -8,12 +10,6 @@ import { type Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import localFont from "next/font/local";
-
-export const metadata: Metadata = {
-  title: "Hoàng Xơn space",
-  description: "This site is my personal space",
-  icons: [{ rel: "icon", url: "/logo.png" }],
-};
 
 const Mali = localFont({
   src: [
@@ -40,6 +36,18 @@ const Mali = localFont({
   ],
   variable: "--font-mali",
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(envConfig.SITE_URL),
+  title: {
+    template: "%s - Hoàng Sơn",
+    default: "Frontend Developer",
+  },
+  description: "This site is my personal space",
+  openGraph: baseOpenGraph,
+  alternates: baseAlternates,
+  icons: [{ rel: "icon", url: "/logo.png" }],
+};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

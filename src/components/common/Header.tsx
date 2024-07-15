@@ -64,7 +64,7 @@ export default function Header() {
             "container mx-auto flex items-center justify-between gap-x-10 py-3",
           )}
         >
-          <Link href={ROUTE_PATH.HOME} className="flex">
+          <Link href={ROUTE_PATH.HOME} className="flex" title="Go to main page">
             <div className="relative h-[70px] w-[70px] rounded-full bg-white">
               <Image
                 src={Logo}
@@ -90,19 +90,20 @@ export default function Header() {
                   className="md:hidden lg:block"
                 >
                   <Link
+                    title={`Go to ${item.url}`}
                     href={item.url}
                     className={cn(
                       "relative flex items-center justify-center gap-x-2 transition-all after:w-0",
                     )}
                   >
-                    <h3
+                    <h1
                       className={cn(
                         "text-sm font-medium capitalize text-title xl:text-lg",
                         isActive && "text-primary",
                       )}
                     >
                       {item.label}
-                    </h3>
+                    </h1>
                     {item.icon && <item.icon width={20} height={20} />}
                   </Link>
                 </li>
