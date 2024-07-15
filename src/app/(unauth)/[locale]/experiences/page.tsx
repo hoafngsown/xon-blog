@@ -1,4 +1,7 @@
-import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
+import {
+  getAlternatesMetadata,
+  getOpenGraphMetadata,
+} from "@/app/shared-metadata";
 import ExperienceComponents from "@/components/pages/experiences/ExperiencePage";
 import envConfig from "@/configs/env";
 import type { Metadata } from "next";
@@ -21,7 +24,7 @@ export async function generateMetadata({
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
-      ...baseOpenGraph,
+      ...getOpenGraphMetadata(locale),
       title: t("title"),
       description: t("description"),
       url,
@@ -31,10 +34,7 @@ export async function generateMetadata({
         },
       ],
     },
-    alternates: {
-      ...baseAlternates,
-      canonical: url,
-    },
+    alternates: getAlternatesMetadata(locale),
   } as Metadata;
 }
 

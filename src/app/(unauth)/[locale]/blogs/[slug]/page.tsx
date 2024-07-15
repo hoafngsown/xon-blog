@@ -1,4 +1,7 @@
-import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
+import {
+  getAlternatesMetadata,
+  getOpenGraphMetadata,
+} from "@/app/shared-metadata";
 import BlogDetailPage from "@/components/pages/blogs-detail/BlogDetailPage";
 import envConfig from "@/configs/env";
 import { postServerServices } from "@/services/server/posts.service";
@@ -38,7 +41,7 @@ export async function generateMetadata({
     keywords: post.tags,
     icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
-      ...baseOpenGraph,
+      ...getOpenGraphMetadata(locale),
       title: post.title,
       description: post.description,
       url,
@@ -48,10 +51,7 @@ export async function generateMetadata({
         },
       ],
     },
-    alternates: {
-      ...baseAlternates,
-      canonical: url,
-    },
+    alternates: getAlternatesMetadata(locale),
   } as Metadata;
 }
 

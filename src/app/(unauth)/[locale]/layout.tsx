@@ -1,4 +1,7 @@
-import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
+import {
+  getAlternatesMetadata,
+  getOpenGraphMetadata,
+} from "@/app/shared-metadata";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import { ThemeProvider } from "@/components/providers/theme";
 import { Toaster } from "@/components/ui/toaster";
@@ -44,8 +47,8 @@ export const metadata: Metadata = {
     default: "Frontend Developer",
   },
   description: "This site is my personal space",
-  openGraph: baseOpenGraph,
-  alternates: baseAlternates,
+  openGraph: getOpenGraphMetadata("vi"),
+  alternates: getAlternatesMetadata("vi"),
   icons: [{ rel: "icon", url: "/logo.png" }],
 };
 
