@@ -1,4 +1,6 @@
+import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import ExperienceComponents from "@/components/pages/experiences/ExperiencePage";
+import envConfig from "@/configs/env";
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -12,10 +14,27 @@ export async function generateMetadata({
     namespace: "metadata.experiences",
   });
 
+  const url = `${envConfig.SITE_URL}/${locale}/contacts`;
+
   return {
     title: t("title"),
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.ico" }],
+    openGraph: {
+      ...baseOpenGraph,
+      title: t("title"),
+      description: t("description"),
+      url,
+      images: [
+        {
+          url: "/logo.ico",
+        },
+      ],
+    },
+    alternates: {
+      ...baseAlternates,
+      canonical: url,
+    },
   } as Metadata;
 }
 
