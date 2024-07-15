@@ -27,7 +27,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "https://utfs.io/f/ed939c2b-a7ac-4f87-9546-a84acb7bd204-h705nv.png",
+          url: "/api/og",
         },
       ],
     },
