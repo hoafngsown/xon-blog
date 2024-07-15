@@ -63,15 +63,15 @@ export async function GET(req: NextRequest) {
               }}
             />
             <p>
-              Hí 👋 , {title}{" "}
+              {title}
               <span
                 style={{
                   color: "#1a76d2",
                   display: "flex",
-                  marginLeft: 12,
+                  marginRight: 12,
                 }}
               >
-                Hoàng Sơn
+                👋
               </span>
             </p>
           </div>
