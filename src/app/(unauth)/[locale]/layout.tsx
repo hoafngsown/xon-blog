@@ -2,6 +2,7 @@ import { baseAlternates, baseOpenGraph } from "@/app/shared-metadata";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import { ThemeProvider } from "@/components/providers/theme";
 import { Toaster } from "@/components/ui/toaster";
+import envConfig from "@/configs/env";
 import { locales } from "@/configs/locale";
 import { cn } from "@/libs/utils";
 import "@/styles/globals.css";
@@ -37,6 +38,7 @@ const Mali = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(envConfig.SITE_URL),
   title: {
     template: "%s - Hoàng Sơn",
     default: "Frontend Developer",
