@@ -1,4 +1,9 @@
+import {
+  baseAlternates,
+  baseOpenGraph,
+} from "@/app/(unauth)/[locale]/shared-metadata";
 import HomePageComponent from "@/components/pages/home/HomePage";
+import envConfig from "@/configs/env";
 import { type Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -8,11 +13,27 @@ export async function generateMetadata({
   params: { locale: string };
 }) {
   const t = await getTranslations({ locale, namespace: "metadata.home" });
+  const url = `${envConfig.SITE_URL}/${locale}`;
 
   return {
     title: t("title"),
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.png" }],
+    openGraph: {
+      ...baseOpenGraph,
+      title: t("title"),
+      description: t("description"),
+      url,
+      images: [
+        {
+          url: "/logo.png",
+        },
+      ],
+    },
+    alternates: {
+      ...baseAlternates,
+      canonical: url,
+    },
   } as Metadata;
 }
 
