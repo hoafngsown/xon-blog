@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   description: "This site is my personal space",
   openGraph: baseOpenGraph,
   alternates: baseAlternates,
-  icons: [{ rel: "icon", url: "/logo.ico" }],
+  icons: [{ rel: "icon", url: "/logo.png" }],
 };
 
 export function generateStaticParams() {

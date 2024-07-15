@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "@/../public/logo.ico";
+import Logo from "@/../public/logo.png";
 import { MY_SOCIAL_LINK } from "@/constants/common";
 
 export default function BlogAuthorInfo() {

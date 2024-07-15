@@ -40,7 +40,8 @@ export async function generateMetadata({
   return {
     title,
     description,
-    icons: [{ rel: "icon", url: "/logo.ico" }],
+    keywords: [category.name],
+    icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
       ...baseOpenGraph,
       title: title,
@@ -48,7 +49,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "/logo.ico",
+          url: "/logo.png",
         },
       ],
     },

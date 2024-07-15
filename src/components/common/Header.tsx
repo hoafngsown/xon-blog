@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
 import { Link, usePathname } from "@/navigation";
-import Logo from "@/../public/logo.ico";
+import Logo from "@/../public/logo.png";
 import { type LinkType } from "@/types/common";
 import { useTranslations } from "next-intl";
 import NavigationDrawer from "./Navigation/Drawer";

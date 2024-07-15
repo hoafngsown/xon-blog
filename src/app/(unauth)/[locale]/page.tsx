@@ -16,7 +16,7 @@ export async function generateMetadata({
     title: t("title"),
     keywords: ["Phạm Hoàng Sơn", "Góc của Sơn", "Hoàng Sơn space"],
     description: t("description"),
-    icons: [{ rel: "icon", url: "/logo.ico" }],
+    icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
       ...baseOpenGraph,
       title: t("title"),
@@ -24,7 +24,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "/logo.ico",
+          url: "/logo.png",
         },
       ],
     },

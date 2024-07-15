@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import Logo from "@/../public/logo.ico";
+import Logo from "@/../public/logo.png";
 import ImageWithFallback from "@/components/common/FallbackImage";
 import { getAvatarUrl } from "@/libs/utils";
 import type { CommentBodyType, CommentType } from "@/types/comment";

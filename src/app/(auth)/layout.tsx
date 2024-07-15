@@ -14,7 +14,7 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: "Admin của Sơn",
   description: "Trang admin của Sơn, dùng để quản lý tài nguyên hệ thống.",
-  icons: [{ rel: "icon", url: "/logo.ico" }],
+  icons: [{ rel: "icon", url: "/logo.png" }],
 };
 
 const Mali = localFont({

@@ -34,7 +34,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    icons: [{ rel: "icon", url: "/logo.ico" }],
+    authors: [{ name: "Hoàng Sơn", url: envConfig.SITE_URL }],
+    keywords: post.tags,
+    icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
       ...baseOpenGraph,
       title: post.title,

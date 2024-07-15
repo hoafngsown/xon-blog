@@ -1,4 +1,4 @@
-import Logo from "@/../public/logo.ico";
+import Logo from "@/../public/logo.png";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import { ROUTE_PATH } from "@/constants/routes";
 import { Link } from "@/navigation";
@@ -106,7 +106,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                 </div>
               </article>
 
-              <div className="border-y-ddd mb-6 flex gap-x-4 border-y border-solid py-4 font-bold text-title sm:pb-6 md:mb-10">
+              <div className="mb-6 flex gap-x-4 border-y border-solid border-y-ddd py-4 font-bold text-title sm:pb-6 md:mb-10">
                 {t("page.blogsDetail.category")}:{" "}
                 <p className="flex items-center gap-x-2">
                   {post.categories.map((x: any, index) => (
