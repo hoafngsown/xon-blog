@@ -52,7 +52,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: "/OGLogo.png",
+          url: `/api/og?title=${title}&description=${description}`,
         },
       ],
     },

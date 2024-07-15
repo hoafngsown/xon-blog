@@ -269,7 +269,8 @@
     "category": {
       "title": "Category $$ - Hoàng Sơn",
       "description": "High-quality posts related to $$ are all shared here for everyone."
-    }
+    },
+    "og": "I'm"
   },
   "breadcrumbs": {
     "about": {
