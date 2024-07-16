@@ -35,6 +35,7 @@ export async function generateMetadata({
         },
       ],
     },
+    canonical: url,
     alternates: getAlternatesMetadata(locale),
   } as Metadata;
 }
