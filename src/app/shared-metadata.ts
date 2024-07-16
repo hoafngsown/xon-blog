@@ -25,9 +25,9 @@ export function getOpenGraphMetadata(locale: string) {
 }
 
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-export function getAlternatesMetadata(locale: string) {
+export function getAlternatesMetadata(locale: string, url?: string) {
   const baseMetadata: any = {
-    canonical: "/",
+    canonical: url ?? "/",
   };
 
   const language: any = {
