@@ -22,6 +22,7 @@ export default function ExperienceCompany({ item }: Props) {
               <MovingBorderComponent containerClassName="relative h-[50px] w-[50px] flex-shrink-0 overflow-hidden rounded-[10px] md:h-[75px] md:w-[75px]">
                 {item.logo && (
                   <Image
+                    title="experience-image"
                     src={item.logo}
                     alt="logo"
                     objectFit="cover"
@@ -34,6 +35,7 @@ export default function ExperienceCompany({ item }: Props) {
             <MovingBorderComponent containerClassName="bg-white relative h-[50px] w-[50px] flex-shrink-0 overflow-hidden rounded-[10px] md:h-[75px] md:w-[75px]">
               {item.logo && (
                 <Image
+                  title="experience-image"
                   src={item.logo}
                   alt="logo"
                   objectFit="cover"

@@ -17,7 +17,7 @@ export async function generateMetadata({
 
   return {
     title: t("title"),
-    keywords: ["Phạm Hoàng Sơn", "Góc của Sơn", "Hoàng Sơn space"],
+    keywords: t("keywords").split(","),
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {

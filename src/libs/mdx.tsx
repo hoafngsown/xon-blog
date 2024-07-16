@@ -90,7 +90,8 @@ export async function getCompileMDX(source: string) {
           src={props.src!}
           width={650}
           height={650}
-          alt="hehe"
+          title="parsed-mdx-image"
+          alt="parsed-mdx-image"
           className={cn(
             props.className,
             "mx-auto my-2 h-auto w-full rounded-[10px] shadow-sm md:my-4 lg:my-5 xl:my-6",

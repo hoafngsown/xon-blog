@@ -23,6 +23,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     icons: [{ rel: "icon", url: "/logo.png" }],
+    keywords: t("keywords").split(","),
     openGraph: {
       ...getOpenGraphMetadata(locale),
       title: t("title"),

@@ -136,7 +136,7 @@ export default function FormAddEditPost({
       <Typography text="Tạo bài viết mới" className="!text-2xl" />
 
       <form
-        className="border-ddd mt-6 flex w-full max-w-[700px] flex-col gap-y-6 rounded-[10px] border px-8 py-4"
+        className="mt-6 flex w-full max-w-[700px] flex-col gap-y-6 rounded-[10px] border border-ddd px-8 py-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex justify-end">
@@ -232,6 +232,7 @@ export default function FormAddEditPost({
           </div>
           {watch("thumbnail") && (
             <Image
+              title="thumbnail"
               src={watch("thumbnail")}
               alt="thumbnail"
               height={100}
@@ -290,7 +291,7 @@ export default function FormAddEditPost({
           <Button
             type="button"
             variant="ghost"
-            className="border-ddd rounded-[10px] border text-title"
+            className="rounded-[10px] border border-ddd text-title"
             onClick={handleReset}
           >
             Xoá dữ liệu

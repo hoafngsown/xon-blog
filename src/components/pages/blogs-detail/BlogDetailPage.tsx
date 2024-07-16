@@ -57,6 +57,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
 
               <div className="mt-4 flex gap-x-2 lg:mt-6 lg:gap-x-3">
                 <Image
+                  title="logo-image"
                   src={Logo}
                   alt="logo"
                   className="h-12 w-12 rounded-full lg:h-14 lg:w-14"
@@ -77,6 +78,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
 
               <div className="relative mx-auto mt-6 h-[350px] w-full overflow-hidden rounded-[10px] md:h-[500px] lg:mt-6 lg:h-[600px]">
                 <Image
+                  title="thumbnail-image"
                   src={post.thumbnail}
                   alt="thumbail"
                   layout="fill"
@@ -111,6 +113,7 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
                 <p className="flex items-center gap-x-2">
                   {post.categories.map((x: any, index) => (
                     <Link
+                      title={`Go to blog`}
                       key={index}
                       href={r(ROUTE_PATH.CATEGORY.SLUG, {
                         slug: x.category.slug,

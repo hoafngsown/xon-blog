@@ -47,7 +47,7 @@ export default async function Breadcrumbs({
                     isLastItem ? "pointer-events-none" : "underline",
                   )}
                 >
-                  <Link href={item.url} legacyBehavior>
+                  <Link href={item.url} legacyBehavior title="breadcrumbs">
                     <BreadcrumbLink>
                       <span
                         className={cn(

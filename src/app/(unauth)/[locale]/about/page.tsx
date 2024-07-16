@@ -19,6 +19,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    keywords: t("keywords").split(","),
     icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
       ...getOpenGraphMetadata(locale),
@@ -27,7 +28,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: `/api/og?title=${t("title")}&description=${t("description")}`,
+          url: `/api/og?title=${t("og.title")}&description=${t("og.description")}`,
         },
       ],
     },

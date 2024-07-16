@@ -47,6 +47,7 @@ export default function BottomNavigation() {
               className={cn("flex-1 rounded-[40px]", isActive && "bg-primary")}
             >
               <Link
+                title="navigation"
                 href={item.url}
                 className="flex h-full items-center justify-center gap-x-1 sm:gap-x-2"
               >

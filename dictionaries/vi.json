@@ -247,30 +247,58 @@
   },
   "metadata": {
     "home": {
-      "title": "Góc nhỏ - Hoàng Sơn",
-      "description": "Đây là nơi mà tui chia sẻ những câu chuyện linh tinh của mình, những blogs về lập trình, những kinh nghiệm phỏng vấn, bla bla..."
+      "title": "Góc của tui - Hoàng Sơn",
+      "description": "Đây là nơi mà tui chia sẻ những câu chuyện linh tinh của mình, những blogs về lập trình, những kinh nghiệm phỏng vấn, bla bla...",
+      "og": {
+        "title": "Hí, tui là Hoàng Sơn",
+        "description": "Đây là nơi tui chia sẻ mấy chuyện linh tinh..."
+      },
+      "keywords": "Phạm Hoàng Sơn,Góc của Sơn,Hoàng Sơn space"
     },
     "about": {
       "title": "Về tui - Hoàng Sơn",
-      "description": "Hi vọng sẽ giúp mọi người biết thêm đôi chút gì đó về tui hơn!"
+      "description": "Tìm hiểu thêm về tui, hành trình và kinh nghiệm của tui. Hi vọng sẽ giúp mọi người biết thêm một chút `gì đó` về tui.",
+      "og": {
+        "title": "Hoàng Sơn là ai ?",
+        "description": "Thắc mắc gì ở tui thì xem ở đây nhé."
+      },
+      "keywords": "Phạm Hoàng Sơn,Giới thiệu Hoàng Sơn,Thông tin cá nhân Hoàng Sơn,Hành trình của Hoàng Sơn,Kinh nghiệm của Hoàng Sơn,Sự nghiệp Hoàng Sơn,Hoàng Sơn Developer,Hoàng Sơn Frontend Developer,Hoàng Sơn Frontend Engineer,Hoàng Sơn Software Engineer"
     },
     "contacts": {
       "title": "Liên hệ tui - Hoàng Sơn",
-      "description": "mọi người có thể tìm kiếm thông tin liên hệ tui ở đây nghen!"
+      "description": "Mọi người có thể tìm kiếm thông tin liên hệ tui ở đây nghen.",
+      "og": {
+        "title": "Liên hệ tui",
+        "description": "Liên hệ với Hoàng Sơn."
+      },
+      "keywords": "Liên hệ Phạm Hoàng Sơn,Thông tin liên hệ Hoàng Sơn,Số điện thoại Hoàng Sơn,Email Hoàng Sơn,Địa chỉ liên hệ Hoàng Sơn,Phản hồi Hoàng Sơn,Hoàng Sơn Contact"
     },
     "experiences": {
       "title": "Kinh nghiệm làm việc - Hoàng Sơn",
-      "description": "Bản tóm tắt về quá trình làm việc của tui"
+      "description": "Bản tóm tắt về quá trình làm việc của tui.",
+      "og": {
+        "title": "Kinh nghiệm làm việc của Sơn",
+        "description": "Kinh nghiệm tích luỹ được tui sẽ để ở đây nhé."
+      },
+      "keywords": "Kinh nghiệm Phạm Hoàng Sơn,Kinh nghiệm làm việc Hoàng Sơn,Dự án Hoàng Sơn đã thực hiện,Kỹ năng chuyên môn Hoàng Sơn,Thành tựu nghề nghiệp Hoàng Sơn,Hoàng Sơn Developer,Hoàng Sơn Frontend Developer,Hoàng Sơn Projects,Frontend Developer,Hoàng Sơn Frontend Engineer,Frontend Engineer"
     },
     "blogs": {
       "title": "Blog của tui - Hoàng Sơn",
-      "description": "Những bài viết chất lượng liên quan đến công nghệ, kinh nghiệm làm việc, phỏng vấn và những chuyện linh tinh tui đều share hết ở đây nhé mọi người."
+      "description": "Những bài viết chất lượng liên quan đến công nghệ, kinh nghiệm làm việc, phỏng vấn và những chuyện linh tinh tui sẽ share ở đây.",
+      "og": {
+        "title": "Blogs của Hoàng Sơn",
+        "description": "Những blog mà Sơn tập tành viết"
+      },
+      "keywords": "Blog Phạm Hoàng Sơn,Bài viết Hoàng Sơn,Blog cá nhân Hoàng Sơn,Kinh nghiệm chia sẻ Hoàng Sơn,Hoàng Sơn Developer Blog,Bài viết công nghệ Hoàng Sơn,Chia sẻ kiến thức Hoàng Sơn,Hoàng Sơn Frontend Blog,Blogs,Hoàng Sơn,Frontend,Dev,Programming,Coding,JavaScript,Web Development,Tech Blogs,Development Tips,Software Engineering,Coding Tutorials,Developer Experiences,Interview Tips,Tech News,Software Development"
     },
     "category": {
       "title": "Danh mục $$ - Hoàng Sơn",
-      "description": "Những bài viết chất lượng liên quan đến $$ tui đều share hết ở đây nhé mọi người."
-    },
-    "og": "Tui là"
+      "description": "Những bài viết chất lượng liên quan đến $$ tui đều share hết ở đây nhé mọi người.",
+      "og": {
+        "title": "Danh mục $$ - Hoàng Sơn",
+        "description": "Những bài viết chất lượng về $$ !"
+      }
+    }
   },
   "breadcrumbs": {
     "about": {

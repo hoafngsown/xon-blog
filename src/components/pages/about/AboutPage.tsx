@@ -35,6 +35,7 @@ export default async function AboutPage() {
 
           <div className="relative hidden h-[350px] w-full md:block lg:w-[80%]">
             <Image
+              title="about-image"
               src={ChillImage}
               alt="chill"
               layout="fill"

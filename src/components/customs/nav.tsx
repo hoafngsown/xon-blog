@@ -92,6 +92,7 @@ function NavLink({
   const { checkActiveNav } = useCheckActiveNav();
   return (
     <Link
+      title="nav-link"
       href={href}
       onClick={closeNav}
       className={cn(
@@ -164,6 +165,7 @@ function NavLinkIcon({ title, icon, label, href }: NavLinkProps) {
     <Tooltip delayDuration={0}>
       <TooltipTrigger asChild>
         <Link
+          title="nav-link"
           href={href}
           className={cn(
             buttonVariants({
@@ -226,6 +228,7 @@ function NavLinkIconDropdown({ title, icon, label, sub }: NavLinkProps) {
         {sub!.map(({ title, icon, label, href }) => (
           <DropdownMenuItem key={`${title}-${href}`} asChild>
             <Link
+              title="nav-link"
               href={href}
               className={`${checkActiveNav(href) ? "bg-secondary" : ""}`}
             >

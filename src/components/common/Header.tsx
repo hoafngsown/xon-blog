@@ -69,6 +69,7 @@ export default function Header() {
               <Image
                 src={Logo}
                 alt="full-logo"
+                title="full-logo-image"
                 layout="fill"
                 objectFit="cover"
               />

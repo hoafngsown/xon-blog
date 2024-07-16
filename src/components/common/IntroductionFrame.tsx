@@ -28,7 +28,13 @@ export default async function IntroductionFrame({
           frameClassName,
         )}
       >
-        <Image src={FrameChat2} alt="logo" objectFit="contain" layout="fill" />
+        <Image
+          title="frame-chat-image"
+          src={FrameChat2}
+          alt="logo"
+          objectFit="contain"
+          layout="fill"
+        />
 
         <div className="mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium text-title md:text-sm lg:text-base">
           {children}
@@ -36,6 +42,7 @@ export default async function IntroductionFrame({
       </div>
 
       <Image
+        title="frame-chat-image"
         className="h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
         src={Logo}
         alt="logo"

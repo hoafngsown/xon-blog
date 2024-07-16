@@ -8,7 +8,13 @@ export default function BlogAuthorInfo() {
     <a href={MY_SOCIAL_LINK.FB} target="_blank">
       <div className="flex flex-col gap-x-2 md:flex-row md:gap-x-4">
         <div className="relative h-[100px] w-[100px] flex-shrink-0 rounded-full bg-white">
-          <Image src={Logo} alt="logo" layout="fill" objectFit="cover" />
+          <Image
+            title="social-image"
+            src={Logo}
+            alt="logo"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
 
         <div className="mt-3 flex flex-col gap-y-2 md:mt-0">

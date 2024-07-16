@@ -126,6 +126,13 @@ export const postServerServices = {
       where: {
         slug,
       },
+      include: {
+        categories: {
+          include: {
+            category: true,
+          },
+        },
+      },
     });
 
     return post;

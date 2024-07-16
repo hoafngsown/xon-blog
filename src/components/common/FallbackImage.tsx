@@ -29,6 +29,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
         maxWidth: "100%",
         height: "auto",
       }}
+      title="fallback-image"
     />
   );
 };

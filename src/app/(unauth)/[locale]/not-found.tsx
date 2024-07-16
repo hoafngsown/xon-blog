@@ -12,6 +12,7 @@ export default function NotFound() {
     <section className="flex h-[75vh] w-full flex-col items-center justify-center gap-y-4 sm:gap-y-6 md:gap-y-10">
       <div className="relative h-[300px] w-full md:h-[400px] lg:h-[500px]">
         <Image
+          title="not-found"
           src={NotFoundImage}
           alt="not-found-image"
           layout="fill"
@@ -25,7 +26,7 @@ export default function NotFound() {
       <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl">
         {t("description")}
       </p>
-      <Link href={ROUTE_PATH.HOME}>
+      <Link href={ROUTE_PATH.HOME} title="go-to-home">
         <Button
           type="button"
           className="text-base font-medium md:py-1.5 md:text-lg lg:px-4 lg:py-2 lg:text-2xl"

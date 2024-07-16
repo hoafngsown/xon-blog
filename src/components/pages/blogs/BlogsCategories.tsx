@@ -13,14 +13,18 @@ export default function BlogsCategories({
   return (
     <div>
       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
-        <Link href={ROUTE_PATH.BLOG.INDEX}>
+        <Link href={ROUTE_PATH.BLOG.INDEX} title={`Go to blog list`}>
           <BlogTag slug="">
             <span className="text-sm md:text-base">All</span>
             <span className="text-xs md:text-sm">({totalCount})</span>
           </BlogTag>
         </Link>
         {categories.map((ct) => (
-          <Link key={ct.id} href={`${ROUTE_PATH.CATEGORY.INDEX}/${ct.slug}`}>
+          <Link
+            key={ct.id}
+            href={`${ROUTE_PATH.CATEGORY.INDEX}/${ct.slug}`}
+            title={`Go to blog with category ${ct.name}`}
+          >
             <BlogTag slug={ct.slug}>
               <span className="text-sm md:text-base">{ct.name}</span>
               <span className="text-xs md:text-sm">({ct.totalPostCount})</span>

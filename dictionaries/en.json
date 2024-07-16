@@ -247,30 +247,58 @@
   },
   "metadata": {
     "home": {
-      "title": "My Corner - Hoàng Sơn",
-      "description": "This is my corner where I share my random stories, such as blogs, interview experiences, silly things that happen to me, bla bla..."
+      "title": "My Corner - Hoang Son",
+      "description": "This is where I share my random stories, programming blogs, interview experiences, bla bla...",
+      "og": {
+        "title": "Hi, I'm Hoang Son",
+        "description": "This is where I share my random stories..."
+      },
+      "keywords": "Pham Hoang Son,Son's Corner,Hoang Son space"
     },
     "about": {
-      "title": "About Me - Hoàng Sơn",
-      "description": "Hope this helps everyone learn a little more about me!"
+      "title": "About Me - Hoang Son",
+      "description": "Hope this helps everyone know a bit more about me.",
+      "og": {
+        "title": "Who is Hoang Son?",
+        "description": "Curious about me? Check this out."
+      },
+      "keywords": "Pham Hoang Son,About Hoang Son,Hoang Son's Personal Info,Hoang Son's Journey,Hoang Son's Experiences,Hoang Son's Career,Hoang Son Developer,Hoang Son Frontend Developer,Hoang Son Frontend Engineer,Hoang Son Software Engineer"
     },
     "contacts": {
-      "title": "Contact Me - Hoàng Sơn",
-      "description": "You can find my contact information here!"
+      "title": "Contact Me - Hoang Son",
+      "description": "Here you can find my contact information!",
+      "og": {
+        "title": "Contact Me",
+        "description": "Contact Hoang Son."
+      },
+      "keywords": "Contact Pham Hoang Son,Hoang Son's Contact Info,Hoang Son's Phone Number,Hoang Son's Email,Hoang Son's Customer Support,Hoang Son's Contact Address,Hoang Son's Feedback,Hoang Son Contact"
     },
     "experiences": {
-      "title": "Work Experience - Hoàng Sơn",
-      "description": "A summary of my work experience."
+      "title": "Work Experience - Hoang Son",
+      "description": "A summary of my work experience",
+      "og": {
+        "title": "Son's Work Experience",
+        "description": "The experience I've accumulated will be shared here."
+      },
+      "keywords": "Pham Hoang Son's Experience,Hoang Son's Work Experience,Projects Hoang Son Has Worked On,Hoang Son's Professional Skills,Hoang Son's Career Achievements,Hoang Son Developer,Hoang Son Frontend Developer,Hoang Son Projects,Frontend Developer,Hoang Son Frontend Engineer,Frontend Engineer"
     },
     "blogs": {
-      "title": "My Blog - Hoàng Sơn",
-      "description": "High-quality posts related to technology, work experiences, interviews, and random topics are all shared here for everyone."
+      "title": "My Blog - Hoang Son",
+      "description": "High-quality articles related to technology, work experience, interviews, and random stuff will be shared here.",
+      "og": {
+        "title": "Hoang Son's Blogs",
+        "description": "Blogs that Son is trying to write"
+      },
+      "keywords": "Pham Hoang Son's Blog,Hoang Son's Articles,Hoang Son's Personal Blog,Hoang Son's Shared Experiences,Hoang Son Developer Blog,Hoang Son's Tech Articles,Hoang Son's Knowledge Sharing,Hoang Son Frontend Blog,Blogs,Hoang Son,Frontend,Dev,Programming,Coding,JavaScript,Web Development,Tech Blogs,Development Tips,Software Engineering,Coding Tutorials,Developer Experiences,Interview Tips,Tech News,Software Development"
     },
     "category": {
-      "title": "Category $$ - Hoàng Sơn",
-      "description": "High-quality posts related to $$ are all shared here for everyone."
-    },
-    "og": "I'm"
+      "title": "Category $$ - Hoang Son",
+      "description": "High-quality articles related to $$ are all shared here.",
+      "og": {
+        "title": "Category $$ - Hoang Son",
+        "description": "High-quality articles about $$!"
+      }
+    }
   },
   "breadcrumbs": {
     "about": {

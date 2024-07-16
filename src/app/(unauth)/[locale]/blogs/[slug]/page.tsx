@@ -30,15 +30,20 @@ export async function generateMetadata({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const post = (await postServerServices.getPostBySlug(slug)) as PostType;
-
+  const post = (await postServerServices.getPostBySlug(
+    slug,
+  )) as unknown as PostType;
   const url = `${envConfig.SITE_URL}/${locale}/blogs/${slug}`;
 
   return {
     title: post.title,
     description: post.description,
     authors: [{ name: "Hoàng Sơn", url: envConfig.SITE_URL }],
-    keywords: post.tags,
+    keywords: [
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      ...post.categories.map((x: any) => x.category.name),
+      ...post.tags,
+    ],
     icons: [{ rel: "icon", url: "/logo.png" }],
     openGraph: {
       ...getOpenGraphMetadata(locale),

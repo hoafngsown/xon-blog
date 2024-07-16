@@ -53,7 +53,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
   return (
     <div
       className={cn(
-        "border-ddd relative overflow-hidden rounded-[10px] border bg-transparent shadow-sm lg:sticky lg:top-32",
+        "relative overflow-hidden rounded-[10px] border border-ddd bg-transparent shadow-sm lg:sticky lg:top-32",
         isExpanded ? "pb-6" : "pb-12 md:pb-6",
       )}
     >
@@ -68,6 +68,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
         {headings.map((heading) => {
           return (
             <Link
+              title={`Go to blog`}
               className={cn("text-base font-bold text-title", {
                 "pl-4": heading.level === 3,
               })}

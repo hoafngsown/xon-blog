@@ -43,7 +43,10 @@ export default function BlogPost({ item, isLast, locale, t }: Props) {
                 {formatDate(item.publishAt, locale, { hideTime: true })}
               </span>
 
-              <Link href={r(ROUTE_PATH.BLOG.DETAIL, { id: item.slug })}>
+              <Link
+                href={r(ROUTE_PATH.BLOG.DETAIL, { id: item.slug })}
+                title={`Go to blog ${item.title}`}
+              >
                 <p className="flex items-center gap-x-2 text-base text-primary md:text-xl">
                   <span>{item.title}</span>
                 </p>
@@ -61,6 +64,7 @@ export default function BlogPost({ item, isLast, locale, t }: Props) {
           </div>
 
           <Link
+            title={`Go to blog ${item.title}`}
             href={r(ROUTE_PATH.BLOG.DETAIL, { id: item.slug })}
             className="flex cursor-pointer items-center gap-x-1 md:pl-6"
           >

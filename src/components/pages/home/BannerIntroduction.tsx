@@ -30,7 +30,13 @@ export default function BannerIntroduction({ currentSlide }: Props) {
           "relative flex h-[90px] w-[175px] translate-x-[50px] justify-center sm:h-[120px] sm:w-[225px] md:mb-2 md:w-[300px]",
         )}
       >
-        <Image src={FrameChat2} alt="logo" objectFit="contain" layout="fill" />
+        <Image
+          title="frame-chat-image"
+          src={FrameChat2}
+          alt="logo"
+          objectFit="contain"
+          layout="fill"
+        />
 
         <p className="mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium text-title md:text-sm lg:text-base">
           <span>{t(`${translationKey}.title1`)}</span>
@@ -40,6 +46,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
       </div>
 
       <Image
+        title="logo-image"
         className="z-20 h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
         src={Logo}
         alt="logo"

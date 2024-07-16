@@ -56,6 +56,7 @@ export default async function ContactInfo() {
 
       <div className="relative h-[150px] w-[150px] md:mt-6 md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px]">
         <Image
+          title="contact-image"
           src={PiggyBankImage}
           alt="chill"
           className="sm:object-contain lg:object-cover"
