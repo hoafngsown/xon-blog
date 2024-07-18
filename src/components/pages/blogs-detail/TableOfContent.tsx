@@ -59,7 +59,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
     >
       <div
         className={cn(
-          "flex flex-col gap-y-4 overflow-hidden px-4 pb-8 pt-6 transition-all md:pb-0 lg:px-6",
+          "flex flex-col gap-y-2 overflow-hidden px-4 pb-8 pt-6 transition-all md:pb-0 lg:px-6",
           isExpanded ? "h-auto md:h-auto" : "h-[225px] md:h-auto",
         )}
       >
@@ -71,6 +71,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
               title={`Go to blog`}
               className={cn("text-base font-bold text-title", {
                 "pl-4": heading.level === 3,
+                "pl-8": heading.level === 4,
               })}
               key={heading.text}
               href={`#${heading.slug}`}
@@ -82,12 +83,12 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
               }}
             >
               <p
-                className={cn("transition-all ease-linear", {
-                  "rounded-[10px] bg-[#ddd]/30 px-4 py-2 text-primary dark:text-secondary":
+                className={cn("px-4 py-2 transition-all ease-linear", {
+                  "rounded-[10px] bg-[#ddd]/30 text-primary dark:text-secondary":
                     active === heading.slug,
                 })}
               >
-                {heading.text}
+                {heading.level === 4 ? `- ${heading.text}` : heading.text}
               </p>
             </Link>
           );

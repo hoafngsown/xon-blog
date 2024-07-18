@@ -147,11 +147,24 @@ export async function getCompileMDX(source: string) {
 
 export function getHeadings(source: string): HeadingType[] {
   const headingLines = source.split("\n").filter((line) => {
-    return line.match(/^###*\s/);
+    return line.match(/^###*\s/) ?? line.match(/^####*\s/);
   });
+
   return headingLines.map((raw) => {
-    const text = raw.replace(/^###*\s/, "");
-    const level = raw?.slice(0, 3) === "###" ? 3 : 2;
+    let level = 0;
+    let text = "";
+
+    if (raw.startsWith("####")) {
+      level = 4;
+      text = raw.replace(/^####*\s/, "");
+    } else if (raw.startsWith("###")) {
+      level = 3;
+      text = raw.replace(/^###*\s/, "");
+    } else {
+      level = 2;
+      text = raw.replace(/^##*\s/, "");
+    }
+
     return { text, level, slug: convertTitleToSlug(text) };
   });
 }
