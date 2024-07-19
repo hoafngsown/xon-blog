@@ -2,7 +2,9 @@
 import { TextGenerateEffect } from "@/components/animations/TextGenerateEffect";
 import { TypewriterEffectSmooth } from "@/components/animations/TypeWriterEffect";
 import IntroductionFrame from "@/components/common/IntroductionFrame";
+import { PDF_PATH } from "@/constants/paths";
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export default async function ExperienceInfo() {
   const t = await getTranslations();
@@ -11,9 +13,19 @@ export default async function ExperienceInfo() {
     <>
       <div className="relative w-full">
         <IntroductionFrame className="md:bottom-0 md:translate-y-full">
-          <div className="mt-0 flex flex-col items-center justify-center md:mt-5">
+          <div className="mt-0 flex flex-col items-center justify-center">
             <span>{t("page.experiences.introduction1")}</span>
             <span>{t("page.experiences.introduction2")}</span>
+
+            <Link
+              href={PDF_PATH.CV}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="cursor-pointer font-bold italic text-primary underline"
+            >
+              {t("page.experiences.introduction3")}
+            </Link>
           </div>
         </IntroductionFrame>
       </div>

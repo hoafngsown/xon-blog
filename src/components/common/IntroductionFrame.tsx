@@ -36,7 +36,7 @@ export default async function IntroductionFrame({
           layout="fill"
         />
 
-        <div className="mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium text-title md:text-sm lg:text-base">
+        <div className="z-[1000] mb-4 flex flex-col items-center justify-center gap-y-0.5 text-xs font-medium text-title md:text-sm lg:text-base">
           {children}
         </div>
       </div>
