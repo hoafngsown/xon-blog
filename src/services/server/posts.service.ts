@@ -139,7 +139,7 @@ export const postServerServices = {
   },
 
   async getPostBySlugAndExtractHeading(slug: string) {
-    const post = await db.post.findFirst({
+    const post = (await db.post.findFirst({
       where: {
         slug,
       },
@@ -156,11 +156,36 @@ export const postServerServices = {
           },
         },
       },
+    })) as any;
+
+    const categoryIds = post.categories.map((p: any) => p.category.id);
+
+    const relatedPosts = await db.post.findMany({
+      where: {
+        categories: {
+          some: {
+            categoryId: {
+              in: categoryIds,
+            },
+          },
+        },
+        id: {
+          not: post.id, // Exclude the current post
+        },
+      },
+      select: {
+        title: true,
+        slug: true,
+        id: true,
+        description: true,
+        thumbnail: true,
+      },
+      take: 5, // Limit to 5 related posts
     });
 
-    const formattedPost = formatPost(post);
+    const formattedPost = await formatPost(post);
 
-    return formattedPost;
+    return { post: formattedPost, relatedPosts };
   },
 
   async getPostsByCategorySlug(slug: string) {
@@ -176,6 +201,11 @@ export const postServerServices = {
           where: {
             post: {
               status: EPostStatus.Publish,
+            },
+          },
+          orderBy: {
+            post: {
+              priority: "asc",
             },
           },
         },

@@ -209,6 +209,9 @@
       "empty": "Không tìm thấy bài viết nào phù hợp hoặc chưa được đăng tải thuộc danh mục $$."
     },
     "blogsDetail": {
+      "relatedPost": {
+        "title": "Những bài viết bạn sẽ thích"
+      },
       "back": "Quay lại",
       "category": "Danh mục",
       "publishAt": "Đăng ngày",
@@ -241,7 +244,8 @@
         "buttonSubmit": "Gửi bình luận <3",
         "close": "Đóng",
         "invalidEmail": "Định dạng email không hợp lệ.",
-        "invalidUrl": "Định dạng URL không hợp lệ."
+        "invalidUrl": "Định dạng URL không hợp lệ.",
+        "checkbox": "Lưu tên, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi."
       }
     }
   },

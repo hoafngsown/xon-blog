@@ -5,7 +5,9 @@ import ErrorMessage from "@/components/common/Form/Message";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { LOCAL_STORAGE_KEYS } from "@/constants/local-storage";
 import { REGEX } from "@/constants/regex";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import type { CommentBodyType } from "@/types/comment";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
@@ -29,6 +31,18 @@ export default function FormComment({
   setOpen?: Dispatch<SetStateAction<boolean>>;
   onSubmit: (body: CommentBodyType) => Promise<void>;
 }) {
+  const [localData, setLocalData] = useLocalStorage({
+    key: LOCAL_STORAGE_KEYS.COMMENT_FORM_DATA,
+    defaultValue: {
+      name: "",
+      email: "",
+      website: "",
+      checkbox: false,
+    },
+  });
+
+  const [checkbox, setCheckbox] = useState(localData?.checkbox ?? false);
+
   const [loading, setLoading] = useState(false);
 
   const t = useTranslations("page.blogsDetail.form");
@@ -75,9 +89,13 @@ export default function FormComment({
     register,
     formState: { errors },
     reset,
+    setValue,
     handleSubmit,
   } = useForm<z.TypeOf<typeof AddReplyCommentSchema>>({
-    defaultValues,
+    defaultValues: {
+      ...defaultValues,
+      ...localData,
+    },
     resolver: zodResolver(AddReplyCommentSchema),
   });
 
@@ -85,8 +103,22 @@ export default function FormComment({
     try {
       setLoading(true);
       await onSubmitProps(data);
-      reset(defaultValues);
+
+      if (checkbox) {
+        setValue("content", "");
+      } else {
+        reset(defaultValues);
+      }
       setOpen && setOpen(false);
+
+      if (checkbox) {
+        setLocalData({
+          checkbox,
+          name: data.name,
+          email: data.email,
+          website: data?.website ?? "",
+        });
+      }
     } catch (error) {
     } finally {
       setLoading(false);
@@ -153,6 +185,21 @@ export default function FormComment({
         />
         <ErrorMessage message={errors.website?.message} />
       </div>
+
+      <label
+        className="mt-2 flex cursor-pointer items-center gap-x-2 font-bold italic"
+        htmlFor="checkbox-save-form-comment"
+      >
+        <input
+          type="checkbox"
+          id="checkbox-save-form-comment"
+          className="h-4 w-4 rounded-[10px]"
+          checked={checkbox}
+          onChange={(e) => setCheckbox(e.target.checked)}
+        />
+
+        <span className="inline-block"> {t("checkbox")}</span>
+      </label>
 
       <Button
         type="button"

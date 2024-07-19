@@ -209,6 +209,9 @@
       "empty": "No suitable posts found or not yet published under the category $$."
     },
     "blogsDetail": {
+      "relatedPost": {
+        "title": "Articles you might like"
+      },
       "back": "Back",
       "category": "Categories",
       "publishAt": "published at",
@@ -241,7 +244,8 @@
         "buttonSubmit": "Send comment <3",
         "close": "Hide",
         "invalidEmail": "Invalid email format.",
-        "invalidUrl": "Invalid URL format."
+        "invalidUrl": "Invalid URL format.",
+        "checkbox": "Save my name, email, and website in this browser for the next time I comment."
       }
     }
   },

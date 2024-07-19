@@ -14,10 +14,12 @@ import BlogView from "./BlogView";
 import ButtonBack from "./ButtonBack";
 import ButtonScrollTop from "./ButtonScrollTop";
 import IncreaseView from "./IncreaseView";
+import RelatedPosts from "./RelatedPosts";
 import { TableOfContents } from "./TableOfContent";
 
 export default async function BlogDetailPage({ slug }: { slug: string }) {
-  const post = await postServerServices.getPostBySlugAndExtractHeading(slug);
+  const { post, relatedPosts } =
+    await postServerServices.getPostBySlugAndExtractHeading(slug);
 
   const t = await getTranslations();
   const locale = (await getLocale()) as LocaleType;
@@ -129,11 +131,18 @@ export default async function BlogDetailPage({ slug }: { slug: string }) {
 
               <BlogAuthorInfo />
             </div>
+
+            <div className="col-span-12 mt-4 grid grid-cols-12">
+              <div className="hidden xl:col-span-3 xl:block" />
+              <div className="col-span-12 xl:col-span-9">
+                <RelatedPosts posts={relatedPosts} />
+              </div>
+            </div>
           </div>
 
-          <div className="mt-6 grid w-full grid-cols-12 lg:mt-8 lg:gap-x-8">
-            <div className="col-span-12 hidden lg:col-span-4 lg:block xl:col-span-3" />
-            <div className="col-span-12 w-full lg:col-span-8 xl:col-span-9">
+          <div className="mt-2 grid w-full grid-cols-12 lg:gap-x-8">
+            <div className="hidden xl:col-span-3 xl:block" />
+            <div className="col-span-12 w-full xl:col-span-9">
               <BlogCommentList postId={post.id} />
             </div>
           </div>

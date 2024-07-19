@@ -59,11 +59,11 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
     >
       <div
         className={cn(
-          "flex flex-col gap-y-2 overflow-hidden px-4 pb-8 pt-6 transition-all md:pb-0 lg:px-6",
+          "flex flex-col gap-y-1.5 overflow-hidden px-4 pb-8 pt-6 transition-all md:pb-0 lg:px-6",
           isExpanded ? "h-auto md:h-auto" : "h-[225px] md:h-auto",
         )}
       >
-        <p className="text-xl font-bold text-primary">{t("toc")}</p>
+        <p className="mb-2 text-xl font-bold text-primary">{t("toc")}</p>
 
         {headings.map((heading) => {
           return (
@@ -88,7 +88,7 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
                     active === heading.slug,
                 })}
               >
-                {heading.level === 4 ? `- ${heading.text}` : heading.text}
+                {heading.text}
               </p>
             </Link>
           );

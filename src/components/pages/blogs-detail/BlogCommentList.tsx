@@ -66,8 +66,8 @@ export default function BlogCommentList({ postId }: { postId: number }) {
   }, []);
 
   return (
-    <div className="border-t-ddd mt-8 w-full border-t border-solid pt-5 sm:mt-10 md:pt-10">
-      <p className="mb-4 text-2xl font-bold text-primary">
+    <div className="mt-8 w-full border-t border-solid border-t-ddd pt-5 sm:mt-10 md:pt-10">
+      <p className="mb-4 text-xl font-bold text-primary lg:text-2xl">
         {t("total").replace("$$", totalComment + "")}
       </p>
 
