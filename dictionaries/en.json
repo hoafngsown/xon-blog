@@ -10,7 +10,8 @@
       "about": "about me",
       "blog": "my blogs",
       "contact": "contact me",
-      "experience": "my experience"
+      "experience": "my experience",
+      "lifetime": "My lifetime"
     },
     "headerMobile": {
       "title": "Xơn Space",
@@ -20,7 +21,8 @@
       "about": "About Me",
       "blog": "My Blogs",
       "experience": "Experiences",
-      "contact": "Contact"
+      "contact": "Contact",
+      "lifetime": "Lifetime"
     },
     "social": {
       "fb": "Follow me on Facebook",
@@ -248,6 +250,12 @@
         "invalidUrl": "Invalid URL format.",
         "checkbox": "Save my name, email, and website in this browser for the next time I comment."
       }
+    },
+    "lifetime": {
+      "title1": "Photos of my life",
+      "title2": "Where I keep photos, memories, and journeys in life",
+      "introduction1": "These are the random",
+      "introduction2": "photos of Hoàng Sơn's life"
     }
   },
   "metadata": {
@@ -303,6 +311,15 @@
         "title": "Category $$ - Hoang Son",
         "description": "High-quality articles about $$!"
       }
+    },
+    "lifetime": {
+      "title": "Photos of my life - Hoàng Sơn",
+      "description": "Where I share and keep photos, memories, and journeys through different stages of my life.",
+      "og": {
+        "title": "Hi, I'm Hoàng Sơn",
+        "description": "This is where I share my lifetime photos..."
+      },
+      "keywords": "Pham Hoang Son,Son's Corner,Hoang Son space"
     }
   },
   "breadcrumbs": {
@@ -329,11 +346,10 @@
     "blogsDetail": {
       "home": "Home",
       "index": "All blogs"
+    },
+    "lifetime": {
+      "home": "Home",
+      "index": "Lifetime Pics"
     }
-  },
-  "theme": {
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
   }
 }

@@ -2,6 +2,7 @@ import IconBookText from "@/components/icons/IconBookText";
 import IconCategory from "@/components/icons/IconCategory";
 import IconComment from "@/components/icons/IconComment";
 import IconDashboard from "@/components/icons/IconDashboard";
+import IconImage from "@/components/icons/IconImage";
 import IconNote from "@/components/icons/IconNote";
 import { ROUTE_PATH } from "./routes";
 
@@ -47,12 +48,12 @@ export const sidelinks: SideLink[] = [
     href: ROUTE_PATH.ADMIN.CONTACTS.INDEX,
     icon: <IconNote />,
   },
-  // {
-  //   title: "Comments",
-  //   label: "",
-  //   href: ROUTE_PATH.ADMIN.COMMENTS.INDEX,
-  //   icon: <IconComment />,
-  // },
+  {
+    title: "Quản lý ảnh",
+    label: "",
+    href: ROUTE_PATH.ADMIN.IMAGES.INDEX,
+    icon: <IconImage />,
+  },
   // {
   //   title: "Blogs",
   //   label: "",

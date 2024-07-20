@@ -9,6 +9,7 @@ export const ROUTE_PATH = {
     SLUG: "/category/:slug",
   },
   ABOUT: "/about",
+  LIFETIME: "/lifetime",
   CONTACT: "/contacts",
   EXPERIENCES: "/experiences",
   ADMIN: {
@@ -32,6 +33,11 @@ export const ROUTE_PATH = {
       CREATE: "/admin/categories/create",
       EDIT: "/admin/categories/:id/edit",
     },
+    IMAGES: {
+      INDEX: "/admin/images",
+      CREATE: "/admin/images/create",
+      EDIT: "/admin/images/edit",
+    },
   },
   AUTH: {
     SIGNIN: "/sign-in",
@@ -46,6 +52,10 @@ export const API_ROUTE_PATH = {
   },
   CONTACTS: {
     INDEX: "/api/admin/contacts",
+  },
+  IMAGES: {
+    INDEX: "/api/admin/images",
+    UPLOAD: "/api/admin/images/upload",
   },
   POSTS: {
     INDEX: "/api/admin/posts",

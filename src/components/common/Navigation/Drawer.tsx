@@ -42,6 +42,10 @@ export default function NavigationDrawer() {
         url: ROUTE_PATH.EXPERIENCES,
       },
       {
+        label: t("lifetime"),
+        url: ROUTE_PATH.LIFETIME,
+      },
+      {
         label: t("contact"),
         url: ROUTE_PATH.CONTACT,
       },

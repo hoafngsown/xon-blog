@@ -10,7 +10,8 @@
       "about": "về tui",
       "blog": "blog tui viết",
       "contact": "liên hệ tui",
-      "experience": "kinh nghiệm làm việc"
+      "experience": "kinh nghiệm làm việc",
+      "lifetime": "Ảnh linh tinh"
     },
     "headerMobile": {
       "title": "Góc của Sơn",
@@ -20,7 +21,8 @@
       "about": "Về tui",
       "blog": "Blog tui viết",
       "experience": "Kinh nghiệm",
-      "contact": "Liên hệ tui"
+      "contact": "Liên hệ tui",
+      "lifetime": "Linh tinh"
     },
     "social": {
       "fb": "Theo dõi tui trên Facebook",
@@ -248,6 +250,12 @@
         "invalidUrl": "Định dạng URL không hợp lệ.",
         "checkbox": "Lưu tên, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi."
       }
+    },
+    "lifetime": {
+      "title1": "Những tấm ảnh linh tinh",
+      "title2": "Nơi tui lưu lại những tấm ảnh, kỉ niệm và hành trình trong đời",
+      "introduction1": "Mấy tấm ảnh",
+      "introduction2": "linh tinh của Hoàng Sơn"
     }
   },
   "metadata": {
@@ -303,6 +311,15 @@
         "title": "Danh mục $$ - Hoàng Sơn",
         "description": "Những bài viết chất lượng về $$ !"
       }
+    },
+    "lifetime": {
+      "title": "Những tấm ảnh linh tinh - Hoàng Sơn",
+      "description": "Nơi tui chia sẻ và lưu giữ những tấm ảnh, kỉ niệm và hành trình của tui qua từng giai đoạn trong đời.",
+      "og": {
+        "title": "Hí, Hoàng Sơn nè",
+        "description": "Đây là nơi tui chia sẻ mấy tấm ảnh linh tinh..."
+      },
+      "keywords": "Phạm Hoàng Sơn,Góc của Sơn,Hoàng Sơn space"
     }
   },
   "breadcrumbs": {
@@ -329,11 +346,10 @@
     "blogsDetail": {
       "home": "Trang chủ",
       "index": "Tất cả bài viết"
+    },
+    "lifetime": {
+      "home": "Trang chủ",
+      "index": "Lifetime Pics"
     }
-  },
-  "theme": {
-    "light": "Màu Sáng",
-    "dark": "Màu Tối",
-    "system": "Màu Hệ Thống"
   }
 }

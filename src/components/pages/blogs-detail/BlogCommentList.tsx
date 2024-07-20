@@ -27,7 +27,6 @@ export default function BlogCommentList({ postId }: { postId: number }) {
       const comments: any = await postServices.getComments(id);
       setCommentList(comments);
     } catch (error) {
-      console.log({ error });
     } finally {
       setFetching(false);
     }
