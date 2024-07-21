@@ -1,14 +1,15 @@
 "use client";
 import { cn } from "@/libs/utils";
+import type { ImageType } from "@/types/images";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
+import { DirectionAwareHover } from "./DirectionAwareHoverAnimation";
 
 export const ParallaxAnimation = ({
   images,
   className,
 }: {
-  images: string[];
+  images: ImageType[];
   className?: string;
 }) => {
   const gridRef = useRef<any>(null);
@@ -27,51 +28,41 @@ export const ParallaxAnimation = ({
   const secondPart = images.slice(third, 2 * third);
   const thirdPart = images.slice(2 * third);
 
+  const getImageComponents = (el: ImageType) => {
+    return (
+      <DirectionAwareHover imageUrl={el.url}>
+        <p className="text-xl font-bold text-white">{el.text}</p>
+      </DirectionAwareHover>
+    );
+  };
+
   return (
     <div
-      className={cn("h-auto w-full items-start overflow-y-auto", className)}
+      className={cn("h-[45rem] w-full items-start overflow-y-auto", className)}
       ref={gridRef}
     >
       <div
-        className="mx-auto grid max-w-5xl grid-cols-1 items-start gap-10 px-10 py-10 md:grid-cols-2 md:py-14 lg:grid-cols-3 lg:py-20"
+        className="mx-auto grid w-full grid-cols-1 items-start gap-10 md:grid-cols-2 lg:grid-cols-3"
         ref={gridRef}
       >
-        <div className="grid gap-10">
+        <div className="flex flex-col gap-10">
           {firstPart.map((el, idx) => (
             <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-              <Image
-                src={el}
-                className="!m-0 h-80 w-full cursor-pointer gap-10 rounded-[8px] object-cover object-left-top !p-0"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
+              {getImageComponents(el)}
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-10">
+        <div className="flex flex-col gap-10">
           {secondPart.map((el, idx) => (
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <Image
-                src={el}
-                className="!m-0 h-80 w-full cursor-pointer gap-10 rounded-[8px] object-cover object-left-top !p-0"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
+              {getImageComponents(el)}
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-10">
+        <div className="flex flex-col gap-10">
           {thirdPart.map((el, idx) => (
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <Image
-                src={el}
-                className="!m-0 h-80 w-full cursor-pointer gap-10 rounded-[8px] object-cover object-left-top !p-0"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              />
+              {getImageComponents(el)}
             </motion.div>
           ))}
         </div>
