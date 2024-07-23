@@ -8,6 +8,11 @@ export const ourFileRouter = {
       return { uploadedBy: "Hoang Son" };
     },
   ),
+  videoUploader: f({ video: { maxFileSize: "8MB" } }).onUploadComplete(
+    async () => {
+      return { uploadedBy: "Hoang Son" };
+    },
+  ),
   markdownUploader: f({
     "text/markdown": { maxFileSize: "8MB" },
   }).onUploadComplete(async () => {

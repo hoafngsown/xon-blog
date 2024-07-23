@@ -77,19 +77,19 @@ export const DirectionAwareHover = ({
           whileHover={direction}
           exit="exit"
         >
-          <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/40 transition duration-500 group-hover/card:block" />
+          <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/30 transition duration-500 group-hover/card:block" />
           <motion.div
             variants={variants}
-            className="relative h-full w-full bg-gray-50 dark:bg-black"
+            className="relative h-full w-full bg-ddd dark:bg-black/30"
             transition={{
-              duration: 0.2,
+              duration: 0.5,
               ease: "easeOut",
             }}
           >
             <Image
               alt="image"
               className={cn(
-                "aspect-square h-full w-full scale-[1.15] object-contain",
+                "aspect-square h-full w-full scale-[1.15] object-cover",
                 imageClassName,
               )}
               width="1000"

@@ -104,6 +104,7 @@ model Image {
   id        Int      @id @default(autoincrement())
   text      String?   
   url       String
+  type      MediaType @default(Image)
 
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
@@ -122,3 +123,7 @@ enum ECommentStatus {
     Approved
 }
 
+enum MediaType {
+  Image
+  Video
+}

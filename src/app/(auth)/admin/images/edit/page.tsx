@@ -53,6 +53,7 @@ export default function EditImage() {
             id: item.id,
             text: item.text,
             url: item.url,
+            type: item.type,
           })) as AddEditImageItemType[]
         }
         onSubmit={onSubmit}

@@ -1,8 +1,10 @@
 "use client";
 import { cn } from "@/libs/utils";
 import type { ImageType } from "@/types/images";
+import { MediaType } from "@prisma/client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import BaseVideo from "../common/BaseVideo";
 import { DirectionAwareHover } from "./DirectionAwareHoverAnimation";
 
 export const ParallaxAnimation = ({
@@ -18,9 +20,9 @@ export const ParallaxAnimation = ({
     offset: ["start start", "end start"], // remove this if your container is not fixed height
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -300]);
 
   const third = Math.ceil(images.length / 3);
 
@@ -29,16 +31,19 @@ export const ParallaxAnimation = ({
   const thirdPart = images.slice(2 * third);
 
   const getImageComponents = (el: ImageType) => {
-    return (
-      <DirectionAwareHover imageUrl={el.url}>
-        <p className="text-xl font-bold text-white">{el.text}</p>
-      </DirectionAwareHover>
-    );
+    if (el.type === MediaType.Image)
+      return (
+        <DirectionAwareHover imageUrl={el.url}>
+          <p className="text-xl font-bold text-white">{el.text}</p>
+        </DirectionAwareHover>
+      );
+
+    return <BaseVideo src={el.url} />;
   };
 
   return (
     <div
-      className={cn("h-[45rem] w-full items-start overflow-y-auto", className)}
+      className={cn("h-screen w-full items-start overflow-y-auto", className)}
       ref={gridRef}
     >
       <div

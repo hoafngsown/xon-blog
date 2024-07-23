@@ -1,5 +1,6 @@
 "use client";
 
+import BaseVideo from "@/components/common/BaseVideo";
 import { DataTable } from "@/components/common/Table/DataTable";
 import Typography from "@/components/common/Typography";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import { ROUTE_PATH } from "@/constants/routes";
 import { useLoader } from "@/hooks/useLoader";
 import { imageServices } from "@/services/client/images.service";
 import type { ImageType } from "@/types/images";
+import { MediaType } from "@prisma/client";
 import type { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,14 +42,19 @@ export default function ImageList() {
         accessorKey: "url",
         header: "Ảnh",
         cell: ({ row }) => {
+          const origin = row.original;
           return (
             <div className="relative h-28 w-28 rounded-[10px]">
-              <Image
-                src={row.getValue("url")}
-                objectFit="contain"
-                alt="url"
-                layout="fill"
-              />
+              {origin.type === MediaType.Image ? (
+                <Image
+                  src={row.getValue("url")}
+                  objectFit="contain"
+                  alt="url"
+                  layout="fill"
+                />
+              ) : (
+                <BaseVideo src={row.getValue("url")} />
+              )}
             </div>
           );
         },

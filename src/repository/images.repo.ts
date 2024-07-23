@@ -11,6 +11,7 @@ export class ImageRepository {
         data: data.data.map((item) => ({
           url: item.url as string,
           text: item.text ?? "",
+          type: item.type,
         })),
       });
 
@@ -32,6 +33,7 @@ export class ImageRepository {
           data: data.data.map((item) => ({
             url: item.url as string,
             text: item.text ?? "",
+            type: item.type,
           })),
         });
       });

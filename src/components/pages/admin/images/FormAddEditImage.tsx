@@ -5,20 +5,22 @@ import IconClose from "@/components/icons/IconClose";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
-import { ACCEPT_IMAGE_TYPE, LIMIT_FILE_SIZE } from "@/constants/common";
+import { LIMIT_FILE_SIZE } from "@/constants/common";
 import { useLoader } from "@/hooks/useLoader";
 import {
   AddEditImageSchema,
   type AddEditImageItemType,
   type AddEditImageType,
 } from "@/libs/schema/image.schema";
-import { checkFileSizeExceed, checkUploadFileType } from "@/utils/files";
+import { checkFileSizeExceed } from "@/utils/files";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import type { ChangeEvent } from "react";
 import { useForm } from "react-hook-form";
 
+import BaseVideo from "@/components/common/BaseVideo";
 import { imageServices } from "@/services/client/images.service";
+import { MediaType } from "@prisma/client";
 
 interface Props {
   isEdit?: boolean;
@@ -81,6 +83,7 @@ export default function FormAddEditImages({
         data: body.data.map((item) => {
           const record: any = {
             text: item.text,
+            type: item.type,
           };
           if (item.id) record.id = item.id;
 
@@ -117,7 +120,10 @@ export default function FormAddEditImages({
     reset({ data: [] });
   };
 
-  const handleUploadMultipleFiles = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleUploadMultipleFiles = (
+    e: ChangeEvent<HTMLInputElement>,
+    type: MediaType,
+  ) => {
     const files = e.target.files!;
 
     if (!files?.length) return;
@@ -130,17 +136,11 @@ export default function FormAddEditImages({
       if (file) {
         const isInvalidImage = checkFileSizeExceed(LIMIT_FILE_SIZE, file);
         if (isInvalidImage) {
-          invalidFiles.push(`Ảnh ${file.name} vượt quá dung lượng cho phép`);
+          invalidFiles.push(`File ${file.name} vượt quá dung lượng cho phép`);
           continue;
         }
 
-        const validType = checkUploadFileType(file.type);
-        if (!validType) {
-          invalidFiles.push(`Ảnh ${file.name} không hợp lệ`);
-          continue;
-        }
-
-        validFiles.push({ text: "", url: file });
+        validFiles.push({ text: "", url: file, type });
       }
     }
 
@@ -169,39 +169,60 @@ export default function FormAddEditImages({
         onSubmit={handleSubmit(onSubmit)}
       >
         <label
-          htmlFor="upload-multiple-files"
+          htmlFor="upload-multiple-images"
           className="w-full cursor-pointer rounded-[10px] bg-primary px-6 py-3 text-center font-medium text-white"
         >
           <input
-            id="upload-multiple-files"
-            accept={ACCEPT_IMAGE_TYPE.join(", ")}
+            id="upload-multiple-images"
+            accept="image/*"
             type="file"
             multiple
-            name="files"
+            name="images"
             className="hidden"
-            onChange={handleUploadMultipleFiles}
+            onChange={(e) => handleUploadMultipleFiles(e, MediaType.Image)}
           />
           Upload ảnh
         </label>
 
+        <label
+          htmlFor="upload-multiple-videos"
+          className="mt-4 w-full cursor-pointer rounded-[10px] bg-primary px-6 py-3 text-center font-medium text-white"
+        >
+          <input
+            id="upload-multiple-videos"
+            accept="video/*"
+            type="file"
+            multiple
+            name="videos"
+            className="hidden"
+            onChange={(e) => handleUploadMultipleFiles(e, MediaType.Video)}
+          />
+          Upload video
+        </label>
+
         <div className="my-5 flex flex-col gap-y-6">
           {watch("data")?.map((item: AddEditImageItemType, index) => {
+            const source =
+              typeof item.url === "string"
+                ? item.url
+                : URL.createObjectURL(item.url);
             return (
               <div
                 className="flex items-center gap-x-4"
-                key={`id_${item?.id ?? ""}_index_${index}`}
+                // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
+                key={`id_${item?.id ? item.id : "_"}_index_${index}`}
               >
-                <div className="relative h-28 w-40 rounded-[10px] border border-[#ddd] p-1">
-                  <Image
-                    src={
-                      typeof item.url === "string"
-                        ? item.url
-                        : URL.createObjectURL(item.url)
-                    }
-                    layout="fill"
-                    objectFit="contain"
-                    alt={""}
-                  />
+                <div className="relative h-40 w-40 rounded-[10px] border border-[#ddd] p-1">
+                  {item.type === MediaType.Image ? (
+                    <Image
+                      src={source}
+                      layout="fill"
+                      objectFit="contain"
+                      alt={""}
+                    />
+                  ) : (
+                    <BaseVideo src={source} />
+                  )}
 
                   <IconClose
                     onClick={() => handleRemoveImage(index)}
