@@ -48,6 +48,13 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
       : {};
   };
 
+  const renderHeadingText = (text: string) => {
+    if (text.includes("`"))
+      return <span className="font-bold">{text.replaceAll("`", '"')}</span>;
+
+    return <span>{text}</span>;
+  };
+
   const t = useTranslations("common");
 
   return (
@@ -83,12 +90,15 @@ export const TableOfContents = ({ headings }: { headings: HeadingType[] }) => {
               }}
             >
               <p
-                className={cn("px-4 py-2 transition-all ease-linear", {
-                  "rounded-[10px] bg-[#ddd]/30 text-primary dark:text-secondary":
-                    active === heading.slug,
-                })}
+                className={cn(
+                  "break-words px-4 py-2 transition-all ease-linear",
+                  {
+                    "rounded-[10px] bg-[#ddd]/30 text-primary dark:text-secondary":
+                      active === heading.slug,
+                  },
+                )}
               >
-                {heading.text}
+                {renderHeadingText(heading.text)}
               </p>
             </Link>
           );
