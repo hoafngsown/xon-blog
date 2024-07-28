@@ -10,15 +10,20 @@ const intlMiddleware = createMiddleware({
   defaultLocale: "vi",
 });
 
-const isProtectedRoute = createRouteMatcher(["/(auth)(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/admin(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
-  if (isProtectedRoute(req)) auth().protect();
+  if (isProtectedRoute(req)) {
+    const hasUserId = !!auth().userId;
+
+    if (!hasUserId) return auth().redirectToSignIn();
+    return;
+  }
 
   return intlMiddleware(req);
 });
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(vi|en)/:path*"],
+  matcher: ["/(vi|en)/:path*", "/admin/:path*"],
 };

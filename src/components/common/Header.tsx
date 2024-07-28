@@ -6,15 +6,15 @@ import Image from "next/image";
 import { ROUTE_PATH } from "@/constants/routes";
 import { cn } from "@/libs/utils";
 import { Link, usePathname } from "@/navigation";
-import Logo from "@/../public/logo.png";
+
 import { type LinkType } from "@/types/common";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import IconArrowHeader from "../icons/IconArrowHeader";
 import NavigationDrawer from "./Navigation/Drawer";
 import SwitchLanguage from "./Navigation/SwitchLanguage";
 import { ModeToggle } from "./ToggleTheme";
-import IconArrowHeader from "../icons/IconArrowHeader";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
 
 export default function Header() {
   const t = useTranslations("common.headerMd");
@@ -71,7 +71,7 @@ export default function Header() {
           <Link href={ROUTE_PATH.HOME} className="flex" title="Go to main page">
             <div className="relative h-[70px] w-[70px] rounded-full bg-white">
               <Image
-                src={Logo}
+                src="/logo.png"
                 alt="full-logo"
                 title="full-logo-image"
                 layout="fill"

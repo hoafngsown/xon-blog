@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../common/Footer";
 import Header from "../common/Header";
 import BottomNavigation from "../common/Navigation/BottomNavigation";
 import SocialSideBar from "../common/Navigation/SocialSideBar";
@@ -24,7 +23,7 @@ export default function DefaultLayout({
         <div className="mx-auto mt-4 w-full px-4 md:container md:mt-10 md:px-20">
           {children}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
 
       <SocialSideBar />

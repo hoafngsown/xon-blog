@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import DUTImage from "@/statics/images/DUT.png";
-import KozoImage from "@/statics/images/Kozo.png";
-import DiproImage from "@/statics/images/dipro.jpg";
-import FreelancerImage from "@/statics/images/freelancer.png";
 
 import Typography from "@/components/common/Typography";
 import IconMui from "@/components/icons/IconMui";
@@ -33,7 +29,7 @@ export default async function ExperienceLifeTime() {
           description: t("edu.experiences.description"),
           time: t("edu.experiences.time"),
           projects: [],
-          logo: DUTImage,
+          logo: "/images/DUT.png",
           previewLink: "https://dut.udn.vn/",
         },
       ],
@@ -90,7 +86,7 @@ export default async function ExperienceLifeTime() {
               ],
             },
           ],
-          logo: KozoImage,
+          logo: "/images/Kozo.png",
           previewLink: "https://kozocom.vn/",
         },
         {
@@ -228,7 +224,7 @@ export default async function ExperienceLifeTime() {
               ],
             },
           ],
-          logo: DiproImage,
+          logo: "/images/dipro.jpg",
           previewLink: "https://www.dipro-tech.com/",
         },
         {
@@ -280,7 +276,7 @@ export default async function ExperienceLifeTime() {
               ],
             },
           ],
-          logo: FreelancerImage,
+          logo: "/images/freelancer.png",
           previewLink: "",
         },
       ],
