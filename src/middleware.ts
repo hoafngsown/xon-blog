@@ -25,5 +25,5 @@ export default clerkMiddleware((auth, req) => {
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/(vi|en)/:path*", "/admin/:path*"],
+  matcher: ["/", "/(vi|en)/:path*", "/admin/:path*"],
 };
