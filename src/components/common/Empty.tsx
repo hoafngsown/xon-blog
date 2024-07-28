@@ -1,5 +1,3 @@
-import React from "react";
-import EmptyBoxImage from "@/statics/images/empty-box.png";
 import Image from "next/image";
 
 export default function Empty({ message }: { message: string }) {
@@ -7,7 +5,7 @@ export default function Empty({ message }: { message: string }) {
     <div className="flex flex-col items-center justify-center gap-y-1 md:gap-y-2">
       <Image
         title="empty-image"
-        src={EmptyBoxImage}
+        src="/images/empty-box.png"
         alt="empty-box"
         className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px]"
       />

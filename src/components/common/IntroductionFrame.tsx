@@ -1,6 +1,5 @@
 import Logo from "@/../public/logo.png";
 import { cn } from "@/libs/utils";
-import FrameChat2 from "@/statics/images/frame-chat-2.png";
 import Image from "next/image";
 import { type ReactNode } from "react";
 
@@ -30,7 +29,7 @@ export default async function IntroductionFrame({
       >
         <Image
           title="frame-chat-image"
-          src={FrameChat2}
+          src="/images/frame-chat-2.png"
           alt="logo"
           objectFit="contain"
           layout="fill"

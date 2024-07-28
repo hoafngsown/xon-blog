@@ -3,7 +3,6 @@ import { TypewriterEffectSmooth } from "@/components/animations/TypeWriterEffect
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import IntroductionFrame from "@/components/common/IntroductionFrame";
 import { ROUTE_PATH } from "@/constants/routes";
-import ChillImage from "@/statics/images/chill.png";
 import { type BreadcrumbType } from "@/types/common";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -36,7 +35,7 @@ export default async function AboutPage() {
           <div className="relative hidden h-[350px] w-full md:block lg:w-[80%]">
             <Image
               title="about-image"
-              src={ChillImage}
+              src="/images/chill.png"
               alt="chill"
               layout="fill"
               className="sm:object-contain lg:object-cover"

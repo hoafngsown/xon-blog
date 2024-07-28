@@ -1,6 +1,4 @@
-import Logo from "@/../public/logo.png";
 import { cn } from "@/libs/utils";
-import FrameChat2 from "@/statics/images/frame-chat-2.png";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -32,7 +30,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
       >
         <Image
           title="frame-chat-image"
-          src={FrameChat2}
+          src="/images/frame-chat-2.png"
           alt="logo"
           objectFit="contain"
           layout="fill"
@@ -48,7 +46,7 @@ export default function BannerIntroduction({ currentSlide }: Props) {
       <Image
         title="logo-image"
         className="z-20 h-20 w-20 rounded-[100%] bg-white sm:h-24 sm:w-24"
-        src={Logo}
+        src="/logo.png"
         alt="logo"
         width={80}
         height={80}

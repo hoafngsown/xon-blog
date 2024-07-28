@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ROUTE_PATH } from "@/constants/routes";
 import { Link } from "@/navigation";
-import NotFoundImage from "@/statics/images/notfound.png";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -13,7 +12,7 @@ export default function NotFound() {
       <div className="relative h-[300px] w-full md:h-[400px] lg:h-[500px]">
         <Image
           title="not-found"
-          src={NotFoundImage}
+          src="/images/notfound.png"
           alt="not-found-image"
           layout="fill"
           objectFit="contain"

@@ -1,7 +1,6 @@
 import { TextGenerateEffect } from "@/components/animations/TextGenerateEffect";
 import { TypewriterEffectSmooth } from "@/components/animations/TypeWriterEffect";
 import IntroductionFrame from "@/components/common/IntroductionFrame";
-import PiggyBankImage from "@/statics/images/piggy-bank.png";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
@@ -57,7 +56,7 @@ export default async function ContactInfo() {
       <div className="relative h-[150px] w-[150px] md:mt-6 md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px]">
         <Image
           title="contact-image"
-          src={PiggyBankImage}
+          src="/images/piggy-bank.png"
           alt="chill"
           className="sm:object-contain lg:object-cover"
           layout="fill"

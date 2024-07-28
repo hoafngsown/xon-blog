@@ -6,10 +6,6 @@ import {
   CarouselDots,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import Banner from "@/statics/images/banner.png";
-import Banner1 from "@/statics/images/banner1.png";
-import Banner2 from "@/statics/images/banner2.png";
-import Banner3 from "@/statics/images/banner3.png";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import BannerCarousel from "./BannerCarousel";
@@ -69,7 +65,12 @@ export default function HomePage() {
           ]}
         >
           <CarouselContent>
-            {[Banner, Banner1, Banner2, Banner3].map((banner, index) => (
+            {[
+              "/images/banner.png",
+              "/images/banner1.png",
+              "/images/banner2.png",
+              "/images/banner3.png",
+            ].map((banner, index) => (
               <BannerCarousel banner={banner} key={index} />
             ))}
           </CarouselContent>

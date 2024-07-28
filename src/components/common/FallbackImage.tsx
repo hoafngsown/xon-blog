@@ -1,4 +1,3 @@
-import DefaultUserImage from "@/statics/images/fallback-user.jpeg";
 import Image, {
   type ImageProps,
   type StaticImageData,
@@ -22,7 +21,7 @@ const ImageWithFallback = (props: ImageWithFallbackProps) => {
       {...rest}
       src={imgSrc}
       onError={() => {
-        setImgSrc(fallbackSrc ?? DefaultUserImage);
+        setImgSrc(fallbackSrc ?? "/images/fallback-user.jpeg");
       }}
       alt="fallback-image"
       style={{
