@@ -7,6 +7,7 @@ import type { ImageType } from "@/types/images";
 import { getTranslations } from "next-intl/server";
 import LifeTimeInfo from "./LifeTimeInfo";
 
+export const maxDuration = 50;
 export const revalidate = 86400;
 
 export default async function LifeTimePage() {

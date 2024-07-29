@@ -15,6 +15,7 @@ type Props = {
   };
 };
 
+export const maxDuration = 50;
 export const revalidate = 86400;
 
 export async function generateStaticParams() {

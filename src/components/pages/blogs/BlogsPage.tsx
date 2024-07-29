@@ -9,6 +9,7 @@ import BlogListPost from "./BlogListPost";
 
 import BlogsCategories from "./BlogsCategories";
 
+export const maxDuration = 50;
 export const revalidate = 86400;
 
 export default async function BlogsPage() {
