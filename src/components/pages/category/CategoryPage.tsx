@@ -8,6 +8,8 @@ import BlogListPost from "../blogs/BlogListPost";
 import BlogsCategories from "../blogs/BlogsCategories";
 import CategoryInfo from "./CategoryInfo";
 
+export const revalidate = 86400;
+
 export default async function CategoryPage({ slug }: { slug: string }) {
   const { posts, categories, category, totalCount } =
     await postServerServices.getPostsByCategorySlug(slug);

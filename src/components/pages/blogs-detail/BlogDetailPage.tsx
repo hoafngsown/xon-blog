@@ -17,6 +17,8 @@ import IncreaseView from "./IncreaseView";
 import RelatedPosts from "./RelatedPosts";
 import { TableOfContents } from "./TableOfContent";
 
+export const revalidate = 86400;
+
 export default async function BlogDetailPage({ slug }: { slug: string }) {
   const { post, relatedPosts } =
     await postServerServices.getPostBySlugAndExtractHeading(slug);

@@ -6,7 +6,10 @@ import { type BreadcrumbType } from "@/types/common";
 import { getTranslations } from "next-intl/server";
 import BlogsInfo from "./BlogInfo";
 import BlogListPost from "./BlogListPost";
+
 import BlogsCategories from "./BlogsCategories";
+
+export const revalidate = 86400;
 
 export default async function BlogsPage() {
   const { posts, categories, totalCount } =

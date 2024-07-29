@@ -15,6 +15,8 @@ type Props = {
   };
 };
 
+export const revalidate = 86400;
+
 export async function generateStaticParams() {
   const categories = await postServerServices.getCategoryMeta();
 

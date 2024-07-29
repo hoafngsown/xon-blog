@@ -6,6 +6,9 @@ import { type BreadcrumbType } from "@/types/common";
 import type { ImageType } from "@/types/images";
 import { getTranslations } from "next-intl/server";
 import LifeTimeInfo from "./LifeTimeInfo";
+
+export const revalidate = 86400;
+
 export default async function LifeTimePage() {
   const t = await getTranslations();
 

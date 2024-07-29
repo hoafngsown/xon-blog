@@ -16,8 +16,10 @@ import type {
 import { EPostStatus } from "@prisma/client";
 import matter from "gray-matter";
 
+import { cache } from "react";
+
 export const postServerServices = {
-  async getAllPostAndCategories() {
+  getAllPostAndCategories: cache(async () => {
     const promises = [];
 
     promises[0] = db.post.findMany({
@@ -82,9 +84,9 @@ export const postServerServices = {
       categories: formattedCategories,
       totalCount: totalPostCount,
     };
-  },
+  }),
 
-  async getPostMeta() {
+  getPostMeta: cache(async () => {
     const posts = await db.post.findMany({
       where: {
         status: EPostStatus.Publish,
@@ -97,9 +99,9 @@ export const postServerServices = {
       slug: p.slug,
       id: p.id,
     })) as PostMetadataType[];
-  },
+  }),
 
-  async getCategoryMeta() {
+  getCategoryMeta: cache(async () => {
     const categories = await db.category.findMany();
 
     return categories.map((p) => ({
@@ -107,9 +109,9 @@ export const postServerServices = {
       slug: p.slug,
       id: p.id,
     })) as CategoryMetadataType[];
-  },
+  }),
 
-  async getCategoryBySlug(slug: string) {
+  getCategoryBySlug: cache(async (slug: string) => {
     const category = await db.category.findFirst({
       where: { slug },
     });
@@ -119,9 +121,9 @@ export const postServerServices = {
       slug: category?.slug,
       id: category?.id,
     } as CategoryMetadataType;
-  },
+  }),
 
-  async getPostBySlug(slug: string) {
+  getPostBySlug: cache(async (slug: string) => {
     const post = await db.post.findFirst({
       where: {
         slug,
@@ -136,9 +138,9 @@ export const postServerServices = {
     });
 
     return post;
-  },
+  }),
 
-  async getPostBySlugAndExtractHeading(slug: string) {
+  getPostBySlugAndExtractHeading: cache(async (slug: string) => {
     const post = (await db.post.findFirst({
       where: {
         slug,
@@ -186,9 +188,9 @@ export const postServerServices = {
     const formattedPost = await formatPost(post);
 
     return { post: formattedPost, relatedPosts };
-  },
+  }),
 
-  async getPostsByCategorySlug(slug: string) {
+  getPostsByCategorySlug: cache(async (slug: string) => {
     const promises = [];
 
     promises[0] = db.category.findUnique({
@@ -258,7 +260,7 @@ export const postServerServices = {
       category: category as CategoryType,
       totalCount: totalPostCount,
     };
-  },
+  }),
 };
 
 export async function formatPost(post: any) {

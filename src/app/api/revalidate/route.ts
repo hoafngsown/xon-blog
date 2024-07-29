@@ -3,7 +3,7 @@
 
 import envConfig from "@/configs/env";
 import { revalidatePath } from "next/cache";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ message: "Invalid token" }, { status: 491 });
     }
 
-    revalidatePath(path);
+    revalidatePath(path, "layout");
 
     return NextResponse.json({ revalidated: true }, { status: 200 });
   } catch (error) {
