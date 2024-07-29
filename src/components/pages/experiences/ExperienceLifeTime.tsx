@@ -184,6 +184,44 @@ export default async function ExperienceLifeTime() {
               ],
             },
             {
+              time: t("work.dipro.projects.coco.time"),
+              title: t("work.dipro.projects.coco.title"),
+              subTitle: t("work.dipro.projects.coco.subTitle"),
+              description: t("work.dipro.projects.coco.description"),
+              tags: [
+                {
+                  title: "Typescript",
+                  icon: IconTypescript,
+                },
+                {
+                  title: "ReactJS",
+                  icon: IconReactJS,
+                },
+                {
+                  title: "MUI",
+                  icon: IconMui,
+                },
+                {
+                  title: "Tailwinds",
+                  icon: IconTailwinds,
+                },
+                {
+                  title: "React Hook Form",
+                  icon: IconReactHookForm,
+                },
+                {
+                  title: "React Query",
+                  icon: IconReactQuery,
+                },
+                {
+                  title: "Zustand",
+                },
+                {
+                  title: "Craco",
+                },
+              ],
+            },
+            {
               time: t("work.dipro.projects.hp.time"),
               title: t("work.dipro.projects.hp.title"),
               subTitle: t("work.dipro.projects.hp.subTitle"),
@@ -267,11 +305,53 @@ export default async function ExperienceLifeTime() {
                   icon: IconReactQuery,
                 },
                 {
-                  title: "Zustand",
-                },
-                {
                   title: "ViteJS",
                   icon: IconVite,
+                },
+                {
+                  title: "Zustand",
+                },
+              ],
+            },
+            {
+              time: t("work.freelancer.projects.kumu.time"),
+              title: t("work.freelancer.projects.kumu.title"),
+              subTitle: t("work.freelancer.projects.kumu.subTitle"),
+              description: t("work.freelancer.projects.kumu.description"),
+              tags: [
+                {
+                  title: "Typescript",
+                  icon: IconTypescript,
+                },
+                {
+                  title: "NextJS",
+                  icon: IconNextJS,
+                },
+                {
+                  title: "Next-Auth",
+                  icon: IconNextAuth,
+                },
+                {
+                  title: "MUI",
+                  icon: IconMui,
+                },
+                {
+                  title: "React Hook Form",
+                  icon: IconReactHookForm,
+                },
+                {
+                  title: "Tailwinds",
+                  icon: IconTailwinds,
+                },
+                {
+                  title: "Redux Toolkit",
+                  icon: IconRedux,
+                },
+                {
+                  title: "Stripe",
+                },
+                {
+                  title: "Google Map",
                 },
               ],
             },

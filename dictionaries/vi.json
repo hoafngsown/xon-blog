@@ -169,8 +169,14 @@
               "step": {
                 "title": "Step Travel",
                 "subTitle": "WEB APP",
-                "description": "Xây dựng ứng dụng gồm hai hệ thống: một hế thống quản lý các chức năng về người dùng, khách hàng, quản lý những tour du lịch, booking, các dịch vụ cung cấp, hoá đơn, thanh toán, v.v; Hệ thống còn lại cho phép người dùng booking các tour du lịch, sử dụng dịch vụ của hệ thống, thanh toán và hàng loạt các dịch vụ khác.",
+                "description": "Xây dựng ứng dụng gồm hai hệ thống: một hệ thống quản lý các chức năng về người dùng, khách hàng, quản lý những tour du lịch, booking, các dịch vụ cung cấp, hoá đơn, thanh toán, v.v; Hệ thống còn lại cho phép người dùng booking các tour du lịch, sử dụng dịch vụ của hệ thống, thanh toán và hàng loạt các dịch vụ khác.",
                 "time": "06/2022 - 01/2024"
+              },
+              "coco": {
+                "title": "Coco House",
+                "subTitle": "WEB APP",
+                "description": "Phát triển hệ thống quản trị đa chức năng dành cho các chủ khách sạn, cho phép quản lý nhân viên, khách hàng, lịch làm việc, lịch đặt phòng, doanh thu, trò chuyện, và nhiều tính năng khác. Đồng thời, phát triển ứng dụng di động giúp kiểm tra, thông báo và phân chia ca làm việc cho nhân viên tại các khách sạn.",
+                "time": "01/2023 - 04/2023"
               },
               "hp": {
                 "title": "Dipro Tech",
@@ -191,6 +197,12 @@
                 "subTitle": "WEB APP",
                 "description": "Xây dựng hệ thống phân tích khuôn mặt giúp các phòng khám thẩm mỹ quản lý thông tin người dùng, phân tích và so sánh hình ảnh trước và sau phẫu thuật, cũng như vẽ các đường trên khuôn mặt để mô tả kết quả sau phẫu thuật và những chức năng thẩm mỹ khác,v.v",
                 "time": "03/2023 - 07/2023"
+              },
+              "kumu": {
+                "title": "Kumu app",
+                "subTitle": "WEB APP",
+                "description": "Phát triển hệ thống mạng xã hội chuyên về quản lý và đặt khóa học, sử dụng kiến trúc micro-services. Ứng dụng cho phép người dùng tìm kiếm và đăng ký các khóa học do người dùng khác cung cấp, tìm hiểu thông tin chi tiết về khóa học, trò chuyện, tích hợp thanh toán và nhiều tính năng khác.",
+                "time": "02/2024 - Hiện tại"
               }
             }
           }

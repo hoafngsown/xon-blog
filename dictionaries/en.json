@@ -172,6 +172,12 @@
                 "description": "Developed an application consisting of two systems: one system manages functions such as users, customers, managing tours, booking, service provision, billing, payments, etc.; the other system allows users to book tours, use the system's services, make payments and a host of other services.",
                 "time": "June 2022 - Jane 2024"
               },
+              "coco": {
+                "title": "Coco House",
+                "subTitle": "WEB APP",
+                "description": "Developed a comprehensive admin system for hotel owners, enabling management of staff, customers, work shifts, room bookings, revenue, chat functions, and more across multiple hotels. Additionally, created a mobile app for checking, notifying, and scheduling shifts for hotel staff.",
+                "time": "Jan 2023 - Apr 2023"
+              },
               "hp": {
                 "title": "Dipro Tech",
                 "subTitle": "WEB APP",
@@ -191,6 +197,12 @@
                 "subTitle": "WEB APP",
                 "description": "Developed a face analysis system that helps aesthetic clinics manage user information, analyze and compare images before and after surgery, as well as draw lines on the face to depict post-surgery results and other aesthetic functions, etc.",
                 "time": "Mar 2023 - July 2023"
+              },
+              "kumu": {
+                "title": "Kumu app",
+                "subTitle": "WEB APP",
+                "description": "Developed a social networking system specialized in course management and booking, using micro-services architecture. The application allows users to search for and register for courses offered by other users, access detailed information about courses, chat, integrate payment, and many other features.",
+                "time": "Feb 2024 - Present"
               }
             }
           }
