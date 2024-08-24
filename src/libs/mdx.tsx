@@ -125,7 +125,7 @@ export async function getCompileMDX(source: string) {
             {...props}
             className={cn(
               props.className,
-              "bg-gradient-to-r from-purple-300 to-sky-500 bg-clip-text font-bold italic text-transparent",
+              "rounded-[10px] bg-gradient-to-r from-purple-300 to-sky-500 px-2 py-1.5 font-bold italic text-black/70",
             )}
           >
             {props.children}
